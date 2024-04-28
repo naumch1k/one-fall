@@ -1,0 +1,29 @@
+.menu {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.link {
+  position: relative;
+  top: 0;
+  display: inline-block;
+  font-size: 5.6vh;
+  line-height: .9;
+  letter-spacing: .015em;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: .2vh .2vh .2vh rgba(var(--foreground-rgb), .4);
+  transition: var(--common-transition);
+}
+
+.link:hover {
+  color: rgb(var(--inactive-rgb));
+  text-shadow: .2vh .2vh .2vh rgba(var(--inactive-rgb), .4);
+}
+
+.link:active { opacity: .7; }

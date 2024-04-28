@@ -1,0 +1,21 @@
+.root {
+  display: inline-block;
+  padding-top: 40px;
+  font-size: 50px;
+  line-height: .9;
+  letter-spacing: .015em;
+  text-transform: uppercase;
+  color: rgb(var(--foreground-rgb));
+  text-shadow: 2px 2px 2px rgba(var(--foreground-rgb), .4);
+  background: unset;
+  border: none;
+  cursor: pointer;
+  transition: var(--common-transition);
+}
+
+.root:hover {
+  color: rgb(var(--inactive-rgb));
+  text-shadow: 2px 2px 2px rgba(var(--inactive-rgb), .4);
+}
+
+.root:active { opacity: .7; }

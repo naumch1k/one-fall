@@ -1,0 +1,20 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('/images/hero-background.png') no-repeat center;
+  background-size: cover;
+}
+
+.logo {
+  width: 300px;
+  height: 100%;
+}
+
+@media screen and (max-width: 767px) {}
+@media screen and (max-width: 480px) {
+  .logo {
+    width: 200px;
+  }
+}
