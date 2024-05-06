@@ -1,6 +1,5 @@
 'use client'
 
-// import { anton } from '@/app/layout'
 import { Menu } from '../ui/Menu/Menu'
 import { useMainNavigation } from './hooks/useNavigation'
 import { mainNavigationItems } from '@/helpers/mainNavigationItems'
@@ -19,7 +18,6 @@ export const Navigation = () => {
             href={href}
             text={text}
             activeLink={activeLink}
-            // className={`${anton.className}`}
           />
         ))}
       </Menu>

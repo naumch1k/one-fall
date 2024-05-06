@@ -1,4 +1,3 @@
-// import { anton } from '@/app/layout'
 import styles from './MenuToggle.module.css'
 
 interface IMenuToggle {
@@ -13,7 +12,6 @@ export const MenuToggle = (props: IMenuToggle) => {
   return (
     <button
       className={`${styles.root} ${className}`}
-      // className={`${styles.root} ${anton.className} ${className}`}
       role='button'
       aria-label={isOpen ? 'Open Menu' : 'Close Menu'}
       onClick={onClick}
