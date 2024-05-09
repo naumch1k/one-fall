@@ -4,7 +4,8 @@
   --foreground-rgb: 248, 247, 240;
   --background-rgb: 27, 24, 28;
   --inactive-rgb: 125, 114, 97;
-  --common-transition: all .4s ease;
+  --accent-rgb: 212, 184, 57;
+  --common-transition: all .5s ease;
 }
 
 * {
