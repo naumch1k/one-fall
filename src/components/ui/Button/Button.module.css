@@ -1,0 +1,40 @@
+.root {
+  width: max-content;
+  transition: var(--common-transition);
+  cursor: pointer;
+}
+
+.primary {
+  padding: 12px 20px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+	color: rgb(var(--accent-rgb));
+  background-color: transparent;
+  border: 1px solid rgb(var(--accent-rgb));
+  border-radius: 64px;
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+/* Desktop hover effects */
+@media screen and (min-width: 1024px) {
+  .primary:hover {
+    color: rgb(var(--background-rgb));
+    background-color: rgb(var(--accent-rgb));
+  }
+  
+  .secondary:hover { text-decoration: underline;}
+
+  .primary:active,
+  .secondary:active { opacity: .7; }
+}
