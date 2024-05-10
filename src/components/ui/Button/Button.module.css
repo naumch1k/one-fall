@@ -5,6 +5,7 @@
 }
 
 .primary {
+  display: inline-block;
   padding: 12px 20px;
   font-size: 14px;
   line-height: 16px;
