@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import BandImage from '../../../../public/images/band-image.png'
 import styles from './About.module.css'
