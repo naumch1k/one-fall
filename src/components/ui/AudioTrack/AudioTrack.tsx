@@ -1,5 +1,5 @@
 import { FaPlay, FaPause } from 'react-icons/fa'
-import { MdOutlineEqualizer } from 'react-icons/md'
+import { Equalizer } from '../Equalizer/Equalizer'
 import { FormattedDuration } from '../FormattedDuration/FormattedDuration'
 import { useAudioTrackRefs } from '@/helpers/contexts/AudioTrackRefs.context'
 import { useAudioTrackDuration } from './hooks/useAudioTrackDuration'
@@ -28,7 +28,7 @@ export const AudioTrack = ({
       <div className={`${styles.root} ${isPlaying ? styles.isPlaying : ''}`}>
         <div className={styles.innerWrapper}>
           <span className={styles.number}>
-            {isPlaying ? <MdOutlineEqualizer /> : `${number}.`}
+            {isPlaying ? <Equalizer className={styles.equalizer}/> : `${number}.`}
           </span>
           <button className={styles.playToggle} onClick={() => onPlayPauseClick(name)}>
             {isPlaying ? <FaPause /> : <FaPlay />}

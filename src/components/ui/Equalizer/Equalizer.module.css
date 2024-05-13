@@ -1,0 +1,148 @@
+.root {
+  /* Local Variables */
+  --equalizer-size: 12px;
+  --gap: calc(var(--equalizer-size) / 14);
+  --item-width: calc(var(--equalizer-size) / 3.5);
+  
+  /* Equalizer Item Steps */
+  --two: calc(var(--equalizer-size) / 7);
+  --three: calc(var(--equalizer-size) / 4.666666667);
+  --four: calc(var(--equalizer-size) / 3.5);
+  --five: calc(var(--equalizer-size) / 2.8);
+  --six: calc(var(--equalizer-size) / 2.333333333);
+  --seven: calc(var(--equalizer-size) / 2);
+  --eight: calc(var(--equalizer-size) / 1.75);
+  --nine: calc(var(--equalizer-size) / 1.555555556);
+  --ten: calc(var(--equalizer-size) / 1.4);
+  --eleven: calc(var(--equalizer-size) / 1.272727273);
+  --twelve: calc(var(--equalizer-size) / 1.166666667);
+  --thirteen: calc(var(--equalizer-size) / 1.076923077);
+  --fourteen: var(--equalizer-size);
+
+  position: relative;
+}
+
+.item {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc((100% - var(--equalizer-size)) / 2);
+  display: block;
+  width: var(--item-width);
+  height: var(--equalizer-size);
+  background-color: rgb(var(--background-rgb));
+}
+
+.item,
+.item::before,
+.item::after {
+  animation: equalize2 1.25s steps(25, end) 0s infinite;
+}
+
+.item::before,
+.item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: var(--item-width);
+  background-color: rgb(var(--background-rgb));
+}
+
+.item::before {
+  height: var(--two);
+  left: calc(-1 * (var(--item-width) + var(--gap)));
+  animation-name: equalize;
+}
+
+.item::after {
+  height: var(--equalizer-size);
+  left: calc(var(--item-width) + var(--gap));
+  animation-name: equalize3;
+}
+
+@keyframes equalize {
+  0% { height: var(--four); }
+  4% { height: var(--two); }
+  8% { height: var(--four); }
+  12% { height: var(--seven); }
+  16% { height: var(--ten); }
+  20% { height: var(--thirteen); }
+  24% { height: var(--twelve); }
+  28% { height: var(--eleven); }
+  32% { height: var(--eleven); }
+  36% { height: var(--eight); }
+  40% { height: var(--ten); }
+  44% { height: var(--ten); }
+  48% { height: var(--eleven); }
+  52% { height: var(--twelve); }
+  56% { height: var(--thirteen); }
+  60% { height: var(--twelve); }
+  64% { height: var(--twelve); }
+  68% { height: var(--eleven); }
+  72% { height: var(--ten); }
+  76% { height: var(--eleven); }
+  80% { height: var(--twelve); }
+  84% { height: var(--twelve); }
+  88% { height: var(--thirteen); }
+  92% { height: var(--ten); }
+  96% { height: var(--seven); }
+  100% { height: var(--four); }
+}
+
+@keyframes equalize2 {
+  0% { height: var(--twelve); }
+  4% { height: var(--thirteen); }
+  8% { height: var(--twelve); }
+  12% { height: var(--twelve); }
+  16% { height: var(--eleven); }
+  20% { height: var(--eleven); }
+  24% { height: var(--eleven); }
+  28% { height: var(--twelve); }
+  32% { height: var(--twelve); }
+  36% { height: var(--thirteen); }
+  40% { height: var(--thirteen); }
+  44% { height: var(--thirteen); }
+  48% { height: var(--eleven); }
+  52% { height: var(--eight); }
+  56% { height: var(--six); }
+  60% { height: var(--eight); }
+  64% { height: var(--ten); }
+  68% { height: var(--eleven); }
+  72% { height: var(--thirteen); }
+  76% { height: var(--twelve); }
+  80% { height: var(--twelve); }
+  84% { height: var(--eleven); }
+  88% { height: var(--eleven); }
+  92% { height: var(--nine); }
+  96% { height: var(--eleven); }
+  100% { height: var(--twelve); }
+}
+
+@keyframes equalize3 {
+  0% { height: var(--nine); }
+  4% { height: var(--seven); }
+  8% { height: var(--nine); }
+  12% { height: var(--eleven); }
+  16% { height: var(--thirteen); }
+  20% { height: var(--thirteen); }
+  24% { height: var(--fourteen); }
+  28% { height: var(--eleven); }
+  32% { height: var(--nine); }
+  36% { height: var(--eight); }
+  40% { height: var(--seven); }
+  44% { height: var(--five); }
+  48% { height: var(--eight); }
+  52% { height: var(--ten); }
+  56% { height: var(--eleven); }
+  60% { height: var(--thirteen); }
+  64% { height: var(--twelve); }
+  68% { height: var(--eleven); }
+  72% { height: var(--eleven); }
+  76% { height: var(--ten); }
+  80% { height: var(--twelve); }
+  84% { height: var(--thirteen); }
+  88% { height: var(--fourteen); }
+  92% { height: var(--twelve); }
+  96% { height: var(--ten); }
+  100% { height: var(--nine); }
+}
