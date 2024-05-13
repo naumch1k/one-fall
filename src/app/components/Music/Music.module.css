@@ -8,16 +8,21 @@
   .root { 
     width: calc(100% - 24px * 2);
     margin: 0 auto;
+    padding: 120px 0;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .root {
     width: calc(100% - 48px * 2);
-    padding: 120px 0;
+    padding: 150px 0;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .root { width: 100%; }
+}
+
+@media screen and (min-width: 2560px) {
+  .root { padding: 200px 0; }
 }
