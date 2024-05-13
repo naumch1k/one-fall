@@ -14,9 +14,10 @@ const Component = (props: IMenuProps): JSX.Element => {
     className,
     children,
   } = props
+  const classes = `${styles[type].menu} ${className || ''}`
 
   return (
-    <ul className={`${styles[type].menu} ${className}`}>
+    <ul className={classes}>
       <MenuProvider value={{ type }}>
         {children}
       </MenuProvider>

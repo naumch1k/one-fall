@@ -6,7 +6,8 @@ interface IMenuItemProps {
   id: string
   href: string
   text: string
-  activeLink?: string
+  covert?: boolean
+  current?: boolean
   className?: string
   onClick?: () => void
 }
@@ -16,27 +17,20 @@ export const MenuItem = (props: IMenuItemProps) => {
     id,
     href,
     text,
-    activeLink,
+    covert,
+    current,
     className,
     onClick,
     ...restProps
   } = props
-
   const { type } = useMenu()
 
+  const classes = `${styles[type].link} ${covert ? styles[type].covert : ''} ${current ? styles[type].current : ''} ${className || ''}`
+
   return (
-    <li className={`${styles[type].item}`}>
+    <li>
       <Link
-        className={`
-          ${styles[type].link}
-          ${activeLink === 'hero' 
-            ? styles[type].default 
-            : activeLink === id 
-              ? styles[type].active 
-              : styles[type].inactive
-          }
-          ${className}
-        `}
+        className={classes}
         href={href}
         onClick={onClick}
         {...restProps}

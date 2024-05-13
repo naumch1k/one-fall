@@ -6,7 +6,7 @@ import { mainNavigationItems } from '@/helpers/mainNavigationItems'
 import styles from './Navigation.module.css'
 
 export const Navigation = () => {
-  const activeLink = useMainNavigation()
+  const { isCovert, currentLink } = useMainNavigation()
 
   return (
     <nav className={styles.root}>
@@ -17,7 +17,8 @@ export const Navigation = () => {
             id={id}
             href={href}
             text={text}
-            activeLink={activeLink}
+            covert={isCovert}
+            current={currentLink===id}
           />
         ))}
       </Menu>
