@@ -1,140 +1,140 @@
 {
-    "items": [
-      {
-        "name": "One Fall",
-        "type": "EP",
-        "date": {
-          "year": 2022
-        },
-        "duration": {
-          "totalMilliseconds": 575572
-        },
-        "sharingInfo": {
-          "shareId": "8-h3ubAwQnmlQ-k-PCxGIQ",
-          "shareUrl": "https://open.spotify.com/album/77Gh4WZg0yWsqza4vNHuOI?si=8-h3ubAwQnmlQ-k-PCxGIQ"
-        },
-        "purchaseInfo": {
-          "purchaseUrl": "https://onefall.bandcamp.com/album/one-fall"
-        },
-        "tracks": {
-          "items": [
-            {
-              "number": 1,
-              "name": "Slingshot",
-              "duration": {
-                "totalMilliseconds": 161099
-              },
-              "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153124/05-King-of-Everything.mp3"
-            },
-            {
-              "number": 2,
-              "name": "Rats Abandon Ship",
-              "duration": {
-                "totalMilliseconds": 206173
-              },
-              "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153124/05-King-of-Everything.mp3"
-            },
-            {
-              "number": 3,
-              "name": "Shoot Straight",
-              "duration": {
-                "totalMilliseconds": 208300
-              },
-              "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153124/05-King-of-Everything.mp3"
-            }
-          ],
-          "totalCount": 3
-        },
-        "coverArt": {
-          "sources": [
-            {
-              "height": 300,
-              "url": "https://i.scdn.co/image/ab67616d00001e0209409eedc641e54ca12a8c02",
-              "width": 300
-            },
-            {
-              "height": 640,
-              "url": "https://i.scdn.co/image/ab67616d0000b27309409eedc641e54ca12a8c02",
-              "width": 640
-            }
-          ]
-        }
+  "items": [
+    {
+      "name": "Spine First!",
+      "type": "EP",
+      "date": {
+        "year": 2023
       },
-      {
-        "name": "Spine First!",
-        "type": "EP",
-        "date": {
-          "year": 2023
-        },
-        "duration": {
-          "totalMilliseconds": 1005092
-        },
-        "sharingInfo": {
-          "shareId": "3wUAKsnLSha6cDBDWSmjMg",
-          "shareUrl": "https://open.spotify.com/album/6XmubXWjH8QLVWLgEGPmoF?si=3wUAKsnLSha6cDBDWSmjMg"
-        },
-        "purchaseInfo": {
-          "purchaseUrl": "https://onefall.bandcamp.com/album/spine-first"
-        },
-        "tracks": {
-          "items": [
-            {
-              "number": 1,
-              "name": "Rage/Quit",
-              "duration": {
-                "totalMilliseconds": 170072
-              },
-              "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153035/01-Long-Drive.mp3"
+      "duration": {
+        "totalMilliseconds": 1005092
+      },
+      "sharingInfo": {
+        "shareId": "3wUAKsnLSha6cDBDWSmjMg",
+        "shareUrl": "https://open.spotify.com/album/6XmubXWjH8QLVWLgEGPmoF?si=3wUAKsnLSha6cDBDWSmjMg"
+      },
+      "purchaseInfo": {
+        "purchaseUrl": "https://onefall.bandcamp.com/album/spine-first"
+      },
+      "tracks": {
+        "items": [
+          {
+            "number": 1,
+            "name": "Rage/Quit",
+            "duration": {
+              "totalMilliseconds": 170072
             },
-            {
-              "number": 2,
-              "name": "Surrounder",
-              "duration": {
-                "totalMilliseconds": 211379
-              },
-              "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153041/02-New-Brand.mp3"
+            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153035/01-Long-Drive.mp3"
+          },
+          {
+            "number": 2,
+            "name": "Surrounder",
+            "duration": {
+              "totalMilliseconds": 211379
             },
-            {
-              "number": 3,
-              "name": "Raleigh",
-              "duration": {
-                "totalMilliseconds": 206815
-              },
-              "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153044/03-Hell-Radio.mp3"
+            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153041/02-New-Brand.mp3"
+          },
+          {
+            "number": 3,
+            "name": "Raleigh",
+            "duration": {
+              "totalMilliseconds": 206815
             },
-            {
-              "number": 4,
-              "name": "Back to the Wall",
-              "duration": {
-                "totalMilliseconds": 169603
-              },
-              "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153049/04-My-Pills.mp3"
+            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153044/03-Hell-Radio.mp3"
+          },
+          {
+            "number": 4,
+            "name": "Back to the Wall",
+            "duration": {
+              "totalMilliseconds": 169603
             },
-            {
-              "number": 5,
-              "name": "Born to Run",
-              "duration": {
-                "totalMilliseconds": 247223
-              },
-              "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153124/05-King-of-Everything.mp3"
-            }
-          ],
-          "totalCount": 5
-        },
-        "coverArt": {
-          "sources": [
-            {
-                "height": 300,
-                "url": "https://i.scdn.co/image/ab67616d00001e02a11928eb9e3014c0d95d8f63",
-                "width": 300
+            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153049/04-My-Pills.mp3"
+          },
+          {
+            "number": 5,
+            "name": "Born to Run",
+            "duration": {
+              "totalMilliseconds": 247223
             },
-            {
-                "height": 640,
-                "url": "https://i.scdn.co/image/ab67616d0000b273a11928eb9e3014c0d95d8f63",
-                "width": 640
-            }
-          ]
-        }
+            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153124/05-King-of-Everything.mp3"
+          }
+        ],
+        "totalCount": 5
+      },
+      "coverArt": {
+        "sources": [
+          {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02a11928eb9e3014c0d95d8f63",
+              "width": 300
+          },
+          {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273a11928eb9e3014c0d95d8f63",
+              "width": 640
+          }
+        ]
       }
-    ]
+    },
+    {
+      "name": "One Fall",
+      "type": "EP",
+      "date": {
+        "year": 2022
+      },
+      "duration": {
+        "totalMilliseconds": 575572
+      },
+      "sharingInfo": {
+        "shareId": "8-h3ubAwQnmlQ-k-PCxGIQ",
+        "shareUrl": "https://open.spotify.com/album/77Gh4WZg0yWsqza4vNHuOI?si=8-h3ubAwQnmlQ-k-PCxGIQ"
+      },
+      "purchaseInfo": {
+        "purchaseUrl": "https://onefall.bandcamp.com/album/one-fall"
+      },
+      "tracks": {
+        "items": [
+          {
+            "number": 1,
+            "name": "Slingshot",
+            "duration": {
+              "totalMilliseconds": 161099
+            },
+            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153124/05-King-of-Everything.mp3"
+          },
+          {
+            "number": 2,
+            "name": "Rats Abandon Ship",
+            "duration": {
+              "totalMilliseconds": 206173
+            },
+            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153124/05-King-of-Everything.mp3"
+          },
+          {
+            "number": 3,
+            "name": "Shoot Straight",
+            "duration": {
+              "totalMilliseconds": 208300
+            },
+            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153124/05-King-of-Everything.mp3"
+          }
+        ],
+        "totalCount": 3
+      },
+      "coverArt": {
+        "sources": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e0209409eedc641e54ca12a8c02",
+            "width": 300
+          },
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b27309409eedc641e54ca12a8c02",
+            "width": 640
+          }
+        ]
+      }
+    }
+  ]
 }
