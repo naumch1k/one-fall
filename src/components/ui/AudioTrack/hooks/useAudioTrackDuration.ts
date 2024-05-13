@@ -10,7 +10,7 @@ export const useAudioTrackDuration = (audioRef: TAudioRef) =>  {
       if (audioRef?.current) setTimeProgress(audioRef.current.currentTime)
     }
 
-    const intervalId = setInterval(updateProgress, 100)
+    const intervalId = setInterval(updateProgress, 1000)
 
     return () => clearInterval(intervalId)
   }, [audioRef])
