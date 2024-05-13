@@ -21,7 +21,7 @@
   background-color: rgb(var(--accent-rgb));
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .root {
     grid-template-columns: 16px 8fr 1fr;
     padding: 17px 70px 17px 37px;
@@ -41,7 +41,7 @@
   width: 100%;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .innerWrapper {
     position: relative;
     display: inline-block;
@@ -60,7 +60,7 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .playToggle { display: none; }
 }
 
@@ -74,7 +74,7 @@
 .duration { margin-left: auto; }
 
 /* Desktop hover effects */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .root:hover {
     width: calc(100% - 38px);
     left: 38px;
