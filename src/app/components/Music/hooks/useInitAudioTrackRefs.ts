@@ -1,7 +1,7 @@
 import { createRef, useEffect, useState } from 'react';
 import { IAlbum, ITrack, TAudioRef } from '@/helpers/types';
 
-export const useAudioTrackRefs = (data: { items: IAlbum[] }) => {
+export const useInitAudioTrackRefs = (data: { items: IAlbum[] }) => {
   const [tracks, setTracks] = useState<ITrack[]>([])
   const audioTrackRefs: Record<string, TAudioRef> = {}
 

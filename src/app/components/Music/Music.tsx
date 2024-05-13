@@ -3,7 +3,7 @@
 import { AlbumList } from '../AlbumList/AlbumList'
 import { TrackList } from '../TrackList/TrackList'
 import { AudioTrack } from '@/components/ui/AudioTrack/AudioTrack'
-import { useAudioTrackRefs } from './hooks/useAudioTrackRefs'
+import { useInitAudioTrackRefs } from './hooks/useInitAudioTrackRefs'
 import { useMusicPlayer } from './hooks/useMusicPlayer'
 import { AudioTrackRefsProvider } from '@/helpers/contexts/AudioTrackRefs.context'
 import styles from './Music.module.css'
@@ -11,7 +11,7 @@ import styles from './Music.module.css'
 import data from './data.json'
 
 export const Music = () => {
-  const audioTrackRefs = useAudioTrackRefs(data)
+  const audioTrackRefs = useInitAudioTrackRefs(data)
   const {
     trackPlaying,
     handlePlayPauseClick,
