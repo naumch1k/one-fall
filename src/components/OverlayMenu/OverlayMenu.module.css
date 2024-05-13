@@ -20,7 +20,7 @@
 
 .toggle {
   position: fixed;
-  top: 0;
+  top: 40px;
   right: 30px;
   z-index: 1;
 }

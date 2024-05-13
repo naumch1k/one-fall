@@ -1,8 +1,7 @@
 'use client'
 
-// import { anton } from '@/app/layout'
 import { Menu } from '../ui/Menu/Menu'
-import { MenuToggle } from '../ui/MenuToggle/MenuToggle'
+import { OverlayMenuToggle } from '../ui/OverlayMenuToggle/OverlayMenuToggle'
 import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
 import { useOverlayMenu } from './hooks/useOverlayMenu'
 import { mainNavigationItems } from '@/helpers/mainNavigationItems'
@@ -10,11 +9,8 @@ import styles from './OverlayMenu.module.css'
 
 
 export const OverlayMenu = () => {
-  const isMobile = useMediaQuery(`(max-width: 767px)`)
-  const {
-    isOverlayMenuOpen,
-    toggleOverlayMenu,
-  } = useOverlayMenu()
+  const isMobile = useMediaQuery(`(max-width: 1023px)`)
+  const { isOverlayMenuOpen, toggleOverlayMenu } = useOverlayMenu()
 
   return (
     isMobile ? (    
@@ -28,14 +24,13 @@ export const OverlayMenu = () => {
                   id={id}
                   href={href}
                   text={text}
-                  // className={`${anton.className}`}
                   onClick={toggleOverlayMenu}
                 />
               ))}
             </Menu>
           </nav>
         </div>
-        <MenuToggle
+        <OverlayMenuToggle
           isOpen={isOverlayMenuOpen}
           className={styles.toggle}
           onClick={toggleOverlayMenu}

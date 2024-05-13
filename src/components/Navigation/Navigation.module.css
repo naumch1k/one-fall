@@ -1,5 +1,5 @@
-@media screen and (max-width: 767px) {
-  .root {
-    display: none;
-  }
+.root {  display: none; }
+
+@media screen and (min-width: 1024px) {
+  .root { display: block; }
 }

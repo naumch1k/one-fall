@@ -1,12 +1,12 @@
-import styles from './MenuToggle.module.css'
+import styles from './OverlayMenuToggle.module.css'
 
-interface IMenuToggle {
+interface IOverlayMenuToggle {
   isOpen: boolean
   className?: string
   onClick: () => void
 }
 
-export const MenuToggle = (props: IMenuToggle) => {
+export const OverlayMenuToggle = (props: IOverlayMenuToggle) => {
   const { isOpen, className, onClick } = props
 
   return (
