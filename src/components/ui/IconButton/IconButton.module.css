@@ -1,0 +1,29 @@
+.root {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  color: rgb(var(--foreground-rgb));
+  background-color: unset;
+  border: 1px solid rgb(var(--foreground-rgb));
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--common-transition);
+}
+
+@media screen and (min-width: 1280px) {
+  .root {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+  }
+
+  .root:hover {
+    color: rgb(var(--inactive-rgb));
+    border-color: rgb(var(--inactive-rgb));
+  }
+
+  .root:active { opacity: .7; }
+}
