@@ -11,14 +11,14 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--rgb-foreground));
   background-color: transparent;
   transition: all .7s ease;
 }
 
 .root.isPlaying {
-  color: rgb(var(--background-rgb));
-  background-color: rgb(var(--accent-rgb));
+  color: rgb(var(--rgb-background));
+  background-color: rgb(var(--rgb-accent));
 }
 
 @media screen and (min-width: 1280px) {
@@ -82,8 +82,8 @@
   .root:hover {
     width: calc(100% - 38px);
     left: 38px;
-    color: rgb(var(--background-rgb));
-    background-color: rgb(var(--accent-rgb));
+    color: rgb(var(--rgb-background));
+    background-color: rgb(var(--rgb-accent));
   }
 
   .root:hover .number { display: none; }

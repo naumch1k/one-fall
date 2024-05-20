@@ -4,8 +4,10 @@ interface IEqualizerProps {
   className?: string
 }
 
-export const Equalizer = ({ className }: IEqualizerProps) => (
-  <div className={`${styles.root} ${className || ''}`}>
+export const Equalizer = ({ 
+  className = '',
+}: IEqualizerProps) => (
+  <div className={`${styles.root} ${className}`}>
     <div className={styles.item}></div>
   </div>
 )

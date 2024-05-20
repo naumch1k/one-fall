@@ -1,8 +1,8 @@
 .root {
   /* Local Variables */
   --equalizer-size: 12px;
-  --gap: calc(var(--equalizer-size) / 14);
-  --item-width: calc(var(--equalizer-size) / 3.5);
+  --equalizer-gap: calc(var(--equalizer-size) / 14);
+  --equalizer-item-width: calc(var(--equalizer-size) / 3.5);
   
   /* Equalizer Item Steps */
   --two: calc(var(--equalizer-size) / 7);
@@ -28,9 +28,9 @@
   transform: translateX(-50%);
   bottom: calc((100% - var(--equalizer-size)) / 2);
   display: block;
-  width: var(--item-width);
+  width: var(--equalizer-item-width);
   height: var(--equalizer-size);
-  background-color: rgb(var(--background-rgb));
+  background-color: rgb(var(--rgb-background));
 }
 
 .item,
@@ -44,19 +44,19 @@
   content: '';
   position: absolute;
   bottom: 0;
-  width: var(--item-width);
-  background-color: rgb(var(--background-rgb));
+  width: var(--equalizer-item-width);
+  background-color: rgb(var(--rgb-background));
 }
 
 .item::before {
   height: var(--two);
-  left: calc(-1 * (var(--item-width) + var(--gap)));
+  left: calc(-1 * (var(--equalizer-item-width) + var(--equalizer-gap)));
   animation-name: equalize;
 }
 
 .item::after {
   height: var(--equalizer-size);
-  left: calc(var(--item-width) + var(--gap));
+  left: calc(var(--equalizer-item-width) + var(--equalizer-gap));
   animation-name: equalize3;
 }
 

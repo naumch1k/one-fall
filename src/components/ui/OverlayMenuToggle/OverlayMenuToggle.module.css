@@ -5,8 +5,8 @@
   line-height: .9;
   letter-spacing: .015em;
   text-transform: uppercase;
-  color: rgb(var(--foreground-rgb));
-  text-shadow: 2px 2px 2px rgba(var(--foreground-rgb), .4);
+  color: rgb(var(--rgb-foreground));
+  text-shadow: 2px 2px 2px rgba(var(--rgb-foreground), .4);
   background: unset;
   border: none;
   cursor: pointer;

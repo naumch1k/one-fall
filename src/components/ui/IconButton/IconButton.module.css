@@ -5,9 +5,9 @@
   width: 50px;
   height: 50px;
   padding: 15px;
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--rgb-foreground));
   background-color: unset;
-  border: 1px solid rgb(var(--foreground-rgb));
+  border: 1px solid rgb(var(--rgb-foreground));
   border-radius: 50%;
   cursor: pointer;
   transition: var(--common-transition);
@@ -21,8 +21,8 @@
   }
 
   .root:hover {
-    color: rgb(var(--inactive-rgb));
-    border-color: rgb(var(--inactive-rgb));
+    color: rgb(var(--rgb-inactive));
+    border-color: rgb(var(--rgb-inactive));
   }
 
   .root:active { opacity: .7; }

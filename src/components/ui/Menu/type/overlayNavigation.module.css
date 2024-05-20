@@ -18,13 +18,13 @@
   letter-spacing: .015em;
   text-transform: uppercase;
   text-align: center;
-  text-shadow: .2vh .2vh .2vh rgba(var(--foreground-rgb), .4);
+  text-shadow: .2vh .2vh .2vh rgba(var(--rgb-foreground), .4);
   transition: var(--common-transition);
 }
 
 .link:hover {
-  color: rgb(var(--inactive-rgb));
-  text-shadow: .2vh .2vh .2vh rgba(var(--inactive-rgb), .4);
+  color: rgb(var(--rgb-inactive));
+  text-shadow: .2vh .2vh .2vh rgba(var(--rgb-inactive), .4);
 }
 
 .link:active { opacity: .7; }

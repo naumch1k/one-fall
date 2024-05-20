@@ -1,10 +1,10 @@
 :root {
   --max-content-width: 1170px;
   /* --border-radius: 12px; */
-  --foreground-rgb: 248, 247, 240;
-  --background-rgb: 27, 24, 28;
-  --inactive-rgb: 125, 114, 97;
-  --accent-rgb: 212, 184, 57;
+  --rgb-foreground: 248, 247, 240;
+  --rgb-background: 27, 24, 28;
+  --rgb-inactive: 125, 114, 97;
+  --rgb-accent: 212, 184, 57;
   --common-transition: all .5s ease;
 }
 
@@ -24,8 +24,8 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  background: rgb(var(--background-rgb));
-  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--rgb-background));
+  color: rgb(var(--rgb-foreground));
 }
 
 main { flex-grow: 1; }
