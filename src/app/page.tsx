@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Hero } from '@/app/components/Hero/Hero'
 import { About } from '@/app/components/About/About'
 import { Music } from '@/app/components/Music/Music'
+import { Events } from './components/Events/Events'
 
 export const metadata: Metadata = {
   title: 'One Fall',
@@ -14,6 +15,7 @@ export default function Main() {
       <Hero/>
       <About/>
       <Music/>
+      <Events/>
     </main>
   )
 }

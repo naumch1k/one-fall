@@ -1,7 +1,7 @@
 .root {
   width: 100%;
   max-width: var(--max-content-width);
-  padding: 100px 0;
+  padding-top: 100px;
 }
 
 @media screen and (min-width: 480px) {
@@ -15,7 +15,7 @@
 @media screen and (min-width: 1024px) {
   .root {
     width: calc(100% - 48px * 2);
-    padding: 150px 0;
+    padding: 120px 0 50px;
   }
 }
 
@@ -24,5 +24,5 @@
 }
 
 @media screen and (min-width: 2560px) {
-  .root { padding: 200px 0; }
+  .root { padding: 200px 0 100px; }
 }

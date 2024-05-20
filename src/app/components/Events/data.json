@@ -1,0 +1,75 @@
+{
+  "items": [
+    {
+      "date": "2024-04-26T20:00:00.199Z",
+      "city": "Lowell, MA",
+      "venue": "The Town and City Festival",
+      "url": "https://www.thetownandthecityfestival.com/"
+    },
+    {
+      "date": "2024-04-27T20:00:00.199Z",
+      "city": "Queens, NY",
+      "venue": "Bar Freda",
+      "url": "https://www.barfreda.com/events"
+    },
+    {
+      "date": "2024-03-08T20:00:00.199Z",
+      "city": "Medford, MA",
+      "venue": "Deep Cuts",
+      "url": "https://www.deepcuts.rocks/events"
+    },
+    {
+      "date": "2024-05-31T20:00:00.199Z",
+      "city": "Salem, MA",
+      "venue": "Koto",
+      "url": "https://www.thetownandthecityfestival.com/"
+    },
+    {
+      "date": "2024-05-03T20:00:00.199Z",
+      "city": "Medford, MA",
+      "venue": "Deep Cuts",
+      "url": "https://www.deepcuts.rocks/events"
+    },
+    {
+      "date": "2024-06-28T20:00:00.199Z",
+      "city": "Oxford, UK",
+      "venue": "The Library"
+    },
+    {
+      "date": "2024-06-29T20:00:00.199Z",
+      "city": "London, UK",
+      "venue": "Signature Brew Haggerston",
+      "url": "https://events.signaturebrew.co.uk/?months=june"
+    },
+    {
+      "date": "2024-07-01T20:00:00.199Z",
+      "city": "Reading, UK",
+      "venue": "The Purple Turtle",
+      "url": "https://www.purpleturtlebar.com/#calendar-1b55a3f5-2b2e-4448-be33-d239fac0264d-event-ltpqp6od-1715625000-1719858600"
+    },
+    {
+      "date": "2024-07-03T20:00:00.199Z",
+      "city": "Nottingham, UK",
+      "venue": "Rough Trade",
+      "url": "https://www.roughtrade.com/en-gb/events/nottingham"
+    },
+    {
+      "date": "2024-07-04T20:00:00.199Z",
+      "city": "Bradford, UK",
+      "venue": "The Underground",
+      "url": "https://www.undergroundbradford.co.uk/gig-tickets"
+    },
+    {
+      "date": "2024-07-05T20:00:00.199Z",
+      "city": "Birmingham, UK",
+      "venue": "The Flapper",
+      "url": "https://theflapper.co.uk/whats-on/"
+    },
+    {
+      "date": "2024-07-06T20:00:00.199Z",
+      "city": "Brighton, UK",
+      "venue": "The Pipeline",
+      "url": "https://www.songkick.com/concerts/41923899-oh-the-humanity-at-pipeline"
+    }
+  ]
+}
