@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import { TAudioRef } from '@/helpers/types'
 
 export const useAudioTrackDuration = (audioRef: TAudioRef) =>  {
@@ -15,13 +15,21 @@ export const useAudioTrackDuration = (audioRef: TAudioRef) =>  {
     return () => clearInterval(intervalId)
   }, [audioRef])
 
-  const setTrackDuration = useCallback(() => {
-    if (audioRef?.current) setDuration(audioRef.current.duration)
-  }, [audioRef])
-
   useEffect(() => {
-    setTrackDuration()
-  }, [setTrackDuration])
+    if (audioRef?.current) {
+      const audioElement = audioRef.current
+
+      const updateDuration = () => setDuration(audioElement.duration)
+
+      updateDuration()
+      
+      audioElement.addEventListener('loadedmetadata', updateDuration)
+
+      return () => {
+        audioElement.removeEventListener('loadedmetadata', updateDuration)
+      }
+    }
+  }, [audioRef])
 
   return { duration, timeProgress }
 }

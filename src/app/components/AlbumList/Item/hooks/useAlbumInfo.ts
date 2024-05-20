@@ -6,24 +6,40 @@ export const useAlbumInfo = (tracks: ITrack[], audioTrackRefs: Record<string, TA
   const [trackCount, setTrackCount] = useState<number>(0)
 
   useEffect(() => {
-    const calculateAlbumDurations = () => {
-        let duration = 0
-        let trackCount = 0
+    let totalDuration = 0
+    let totalTrackCount = 0
 
-        tracks.forEach(track => {
-          const audioTrackRef = audioTrackRefs[track.name]
+     const promises = tracks.map(track => {
+      return new Promise<void>(resolve => {
+        const audioTrackRef = audioTrackRefs[track.name]
 
-          if (audioTrackRef?.current && !isNaN(audioTrackRef.current.duration)) {
-            duration += audioTrackRef.current.duration
+        if (audioTrackRef?.current) {
+          const audioElement = audioTrackRef.current
+
+          const handleLoadedMetadata = () => {
+            if (!isNaN(audioElement.duration)) {
+              totalDuration += audioElement.duration
+              totalTrackCount += 1
+            }
+            audioElement.removeEventListener('loadedmetadata', handleLoadedMetadata)
+            resolve()
           }
-          trackCount += 1
-        })
 
-      setDuration(duration)
-      setTrackCount(trackCount)
-    }
+          if (audioElement.readyState >= 1) {
+            handleLoadedMetadata()
+          } else {
+            audioElement.addEventListener('loadedmetadata', handleLoadedMetadata)
+          }
+        } else {
+          resolve()
+        }
+      })
+    })
 
-    calculateAlbumDurations()
+     Promise.all(promises).then(() => {
+      setDuration(totalDuration)
+      setTrackCount(totalTrackCount)
+    })
   }, [tracks, audioTrackRefs])
   
   return { duration, trackCount }

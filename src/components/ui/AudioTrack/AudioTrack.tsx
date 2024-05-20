@@ -41,7 +41,7 @@ export const AudioTrack = ({
           className={styles.duration}
         />
       </div>
-      <audio ref={audioTrackRefs[name]} src={dataFileUrl}/>
+      <audio ref={audioTrackRefs[name]} src={dataFileUrl} preload='metadata'/>
     </>
   )
 }
