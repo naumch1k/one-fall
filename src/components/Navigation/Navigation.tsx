@@ -2,7 +2,7 @@
 
 import { Menu } from '../ui/Menu/Menu'
 import { useMainNavigation } from './hooks/useNavigation'
-import { mainNavigationItems } from '@/helpers/mainNavigationItems'
+import { mainNavigationItems } from '@/helpers/constants/mainNavigationItems'
 import styles from './Navigation.module.css'
 
 export const Navigation = () => {

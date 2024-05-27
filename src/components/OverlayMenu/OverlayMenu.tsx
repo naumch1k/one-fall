@@ -4,7 +4,7 @@ import { Menu } from '../ui/Menu/Menu'
 import { OverlayMenuToggle } from '../ui/OverlayMenuToggle/OverlayMenuToggle'
 import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
 import { useOverlayMenu } from './hooks/useOverlayMenu'
-import { mainNavigationItems } from '@/helpers/mainNavigationItems'
+import { mainNavigationItems } from '@/helpers/constants/mainNavigationItems'
 import styles from './OverlayMenu.module.css'
 
 
