@@ -11,7 +11,7 @@ export const useEventLink = (date: string) => {
     const eventMonth = eventDate.getMonth()
     const eventDay = eventDate.getDate()
 
-    const isPastEvent = todaysDate.getTime() - eventDate.getTime() > 0
+    const isPastEvent = eventDate < todaysDate  
 
     setIsPast(isPastEvent)
     setFormattedDate(`${MONTHS[eventMonth]} ${eventDay}`)

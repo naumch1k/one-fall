@@ -22,10 +22,26 @@ export const useEvents = (data: { items: IEvent[] }) => {
 
   useEffect(() => {
     const sortEvents = (a: IEvent, b: IEvent) => {
-      const ADate = new Date(a.date.split('T')[0])
-      const BDate = new Date(b.date.split('T')[0])
-    
-      return BDate >= ADate ? 1 : -1
+      const todaysDate = new Date()
+      const aDate = new Date(a.date)
+      const bDate = new Date(b.date)
+
+      // Check if events are upcoming or past
+      const isAUpcoming = aDate >= todaysDate
+      const isBUpcoming = bDate >= todaysDate
+  
+      // If one event is upcoming and the other is not, prioritize the upcoming event
+      if (isAUpcoming !== isBUpcoming) {
+        return isAUpcoming ? -1 : 1
+      }
+
+      // If both events are past, sort by date reversed
+      if (!isAUpcoming && !isBUpcoming) {
+        return bDate.getTime() - aDate.getTime()
+      }
+
+      // If both events are upcoming, sort by date
+      return aDate.getTime() - bDate.getTime()
     }
 
     const sortedEventsData = [...data.items].sort(sortEvents)
