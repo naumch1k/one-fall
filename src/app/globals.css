@@ -1,8 +1,10 @@
 :root {
+  --min-content-width: 414px;
   --max-content-width: 1170px;
   /* --border-radius: 12px; */
   --rgb-foreground: 248, 247, 240;
   --rgb-background: 27, 24, 28;
+  --rgb-background-lighter: 32, 29, 32;
   --rgb-inactive: 125, 114, 97;
   --rgb-accent: 212, 184, 57;
   --common-transition: all .5s ease;
@@ -28,7 +30,10 @@ body {
   color: rgb(var(--rgb-foreground));
 }
 
-main { flex-grow: 1; }
+main {
+  flex-grow: 1;
+  min-width: var(--min-content-width);
+}
 
 a {
   font-family: inherit;
