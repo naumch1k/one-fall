@@ -1,0 +1,95 @@
+.root {
+  display: grid;
+  grid-template-rows: 360px 1fr;
+  gap: 30px;
+}
+
+.imageWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(var(--rgb-background-lighter));
+  border: 1px solid rgb(var(--rgb-accent), .1);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 481px) {
+  .imageWrapper { border: 0; }
+}
+
+.image { object-fit: contain; }
+
+.detailsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  max-width: calc(100% - 40px);
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.price,
+.description {
+  line-height: 19.5px;
+  letter-spacing: -.5%;
+  color: rgb(var(--rgb-inactive));
+}
+
+.price {
+  font-weight: 500;
+  letter-spacing: 2%;
+}
+
+.button {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(var(--rgb-accent), .1);
+  border-radius: 15px;
+  outline: none;
+  background-color: transparent;
+  transition: var(--common-transition);
+  cursor: pointer;
+}
+
+.eyeIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: var(--common-transition);
+  opacity: 0;
+}
+
+@media screen and (min-width: 480px) {
+  .button:focus {
+    background-color: rgb(var(--rgb-background), .8);
+    border-color: rgb(var(--rgb-accent), .05);
+  }
+
+  .button:focus .eyeIcon { 
+    opacity: 1;
+  }
+}
+
+/* Desktop hover effects */
+@media screen and (min-width: 1280px) {
+  .button:hover {
+    background-color: rgb(var(--rgb-background), .8);
+    border-color: rgb(var(--rgb-accent), .05);
+  }
+
+  .button:hover .eyeIcon { 
+    opacity: 1;
+  }
+}

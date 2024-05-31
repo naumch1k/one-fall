@@ -1,0 +1,70 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "title": "One Fall Super Tough Skull Tee",
+      "type": "T-Shirt/Shirt",
+      "description": "Get the latest tee designed by 8-year-old artist Marty Kristek",
+      "price": 20,
+      "purchaseInfo": {
+        "purchaseUrl": "https://onefall.bandcamp.com/merch/one-fall-super-tough-skull-tee-black"
+      },
+      "image": "https://raw.githubusercontent.com/naumch1k/misc/main/images/one-fall/merch-skull-tee.png"
+    },
+    {
+      "id": "2",
+      "title": "One Fall Pigeon Logo Tee (Vintage Black)",
+      "type": "T-Shirt/Shirt",
+      "description": "New tee by Adam Cutler at Motionless Visions",
+      "price": 20,
+      "purchaseInfo": {
+        "purchaseUrl": "https://onefall.bandcamp.com/merch/one-fall-pigeon-logo-tee-vintage-black"
+      },
+      "image": "https://raw.githubusercontent.com/naumch1k/misc/main/images/one-fall/merch-pigeon-logo-tee.png"
+    },
+    {
+      "id": "3",
+      "title": "One Fall Logo Tee",
+      "type": "T-Shirt/Shirt",
+      "description": "Introducing the ONE FALL tee with art by Paul Lyons",
+      "price": 15,
+      "purchaseInfo": {
+        "purchaseUrl": "https://onefall.bandcamp.com/merch/one-fall-logo-tee-black"
+      },
+      "image": "https://raw.githubusercontent.com/naumch1k/misc/main/images/one-fall/merch-logo-tee.png"
+    },
+    {
+      "id": "4",
+      "title": "One Fall Logo Snapback Hat",
+      "type": "Hat",
+      "description": "These hats? Super cool! People love them once they try them on",
+      "price": 25,
+      "purchaseInfo": {
+        "purchaseUrl": "https://onefall.bandcamp.com/merch/one-fall-logo-snapback-hat"
+      },
+      "image": "https://raw.githubusercontent.com/naumch1k/misc/main/images/one-fall/merch-snapback-hat.png"
+    },
+    {
+      "id": "5",
+      "title": "One Fall Baby Onesie",
+      "type": "Other Apparel",
+      "description": "Dunno, maybe you have a baby and the baby isn't that cool?",
+      "price": 20,
+      "purchaseInfo": {
+        "purchaseUrl": "https://onefall.bandcamp.com/merch/one-fall-baby-onesie"
+      },
+      "image": "https://raw.githubusercontent.com/naumch1k/misc/main/images/one-fall/merch-baby-onesie.png"
+    },
+    {
+      "id": "6",
+      "title": "One Fall logo patch",
+      "type": "Button/Pin/Patch",
+      "description": "4\"×3\" embroidered patch featuring the iconic ONE FALL logo designed by Paul Lyons",
+      "price": 5,
+      "purchaseInfo": {
+        "purchaseUrl": "https://onefall.bandcamp.com/merch/one-fall-logo-patch"
+      },
+      "image": "https://raw.githubusercontent.com/naumch1k/misc/main/images/one-fall/merch-logo-patch.png"
+    }
+  ]
+}
