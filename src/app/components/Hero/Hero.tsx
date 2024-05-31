@@ -8,7 +8,7 @@ export const Hero = () => {
   return (
     <section id='hero' className={styles.root}>
       <h1 className='visuallyHidden'>One Fall</h1>
-      <Image className={styles.logo} src={Logo} alt='One Fall Logo' width={100}/>
+      <Image className={styles.logo} src={Logo} alt='One Fall Logo' width={300}/>
     </section>
   )
 }
