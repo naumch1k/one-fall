@@ -1,12 +1,10 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
 import { MerchList } from '../MerchList/MerchList'
 import { MerchCard } from '../MerchCard/MerchCard'
 import { Modal } from '@/components/ui/Modal/Modal'
-import { useModal } from '@/components/ui/Modal/hooks/useModal'
-import { IMerchItem } from '@/helpers/types'
+import { useFullscreenImageView } from './hooks/useFullscreenImageView'
 import styles from './Merch.module.css'
 
 import data from './data.json'
@@ -14,21 +12,11 @@ import data from './data.json'
 export const Merch = () => {
   const {    
     isModalOpen,
-    openModal,
     closeModal,
-    closeByBackdropClick,
-  } = useModal()
-
-  const [previewedItem, setPreviewedItem] = useState<IMerchItem | undefined>(undefined)
-
-  const handleImageClick = (id: string) => {
-    const previewedItem = data.items.find(item => item.id === id)
-
-    if (previewedItem) {
-      setPreviewedItem(previewedItem)
-      openModal()
-    }
-  }
+    closeByBackdropClick, 
+    currentItem,
+    handleImageClick,
+  } = useFullscreenImageView(data)
 
   return (
     <>
@@ -50,7 +38,7 @@ export const Merch = () => {
           ))}
         </MerchList>
       </section>
-      {previewedItem &&
+      {currentItem &&
         <Modal 
           isOpen={isModalOpen}
           onClose={closeModal}
@@ -59,8 +47,8 @@ export const Merch = () => {
           <div className={styles.imageWrapper}>
             <Image
               className={styles.image}
-              src={previewedItem.image}
-              alt={previewedItem.title}
+              src={currentItem.image}
+              alt={currentItem.title}
               width={500}
               height={500}
             />

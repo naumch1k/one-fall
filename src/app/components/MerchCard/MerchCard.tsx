@@ -29,16 +29,15 @@ export const MerchCard = ({
     <div className={styles.root}>
       <div className={styles.imageWrapper}>
         <Image className={styles.image} src={image} alt={title} width={280} height={280}/>
-        {!isMobile
-          ? <button
-              className={styles.button}
-              type='button'
-              aria-label='Open full sized image'
-              onClick={() => onImageClick(id)}
-            >
-              <Icon glyph='eye' className={styles.eyeIcon} />
-            </button>
-          : null
+        {!isMobile && 
+          <button
+            className={styles.button}
+            type='button'
+            aria-label='Open full sized image'
+            onClick={() => onImageClick(id)}
+          >
+            <Icon glyph='eye' className={styles.eyeIcon} />
+          </button>
         }
       </div>
       <div className={styles.detailsWrapper}>
