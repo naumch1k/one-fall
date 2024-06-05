@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import BandImage from '../../../../public/images/band-image.png'
 import styles from './About.module.css'
 
 export const About = () => {
@@ -8,7 +7,7 @@ export const About = () => {
       <div className={styles.imageWrapper}>
         <Image 
           className={styles.image}
-          src={BandImage}
+          src='/images/band-image.png'
           alt='Band members standing against yellow brick wall'
           fill
           sizes='100wv'

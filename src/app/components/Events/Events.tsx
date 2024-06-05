@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import EventsImage from '../../../../public/images/events-image.png'
 import { EventList } from '../EventList/EventList'
 import { EventLink } from '@/components/ui/EventLink/EventLink'
 import { IconButton } from '@/components/ui/IconButton/IconButton'
@@ -21,7 +20,7 @@ export const Events = () => {
     <section id='dates' className={styles.root}>
       <h2 className='visuallyHidden'>Events</h2>
       <div className={styles.imageWrapper}>
-        <Image className={styles.image} src={EventsImage} alt='One Fall performing' fill/>
+        <Image className={styles.image} src='/images/events-image.png' alt='One Fall performing' fill/>
       </div>
       <EventList>
         {eventsToRender.map(event => (
