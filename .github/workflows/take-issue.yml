@@ -1,0 +1,22 @@
+name: Assign Issue to Contributor
+on:
+  issue_comment:
+jobs:
+  assign-and-comment:
+    name: Take the issue and create comment
+    permissions:
+      issues: write
+    runs-on: ubuntu-latest
+    steps:
+    - name: Take the issue and create comment
+      uses: bdougie/take-action@main
+      with:
+        message: |
+          @${{ github.event.comment.user.login }} 👋 Thanks for picking up this issue! 🙌 Feel free to reach out if you need any help or have questions!
+        issueCurrentlyAssignedMessage: |
+          @${{ github.event.comment.user.login }} 👋 Thanks for showing interest in this issue ❤️ This ticket seems to be in good hands with another contributor.
+        blockingLabels: 👀 needs triage,🖇️ duplicate,⛔ wontfix
+        blockingLabelsMessage: |
+          @${{ github.event.comment.user.login }} 👋 Looks like the issue you're looking into is currently on hold until it's properly assessed or until a certain label is addressed. Hang tight, and we'll get it sorted soon!
+        trigger: .take
+        token: ${{ secrets.GITHUB_TOKEN }}

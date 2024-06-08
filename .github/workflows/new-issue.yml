@@ -1,0 +1,27 @@
+name: Greet Issue Opener
+on:
+  issues:
+    types: [opened]
+permissions:
+  contents: read
+jobs:
+  comment:
+    name: Create comment
+    permissions:
+      issues: write  # for peter-evans/create-or-update-comment to create or update comment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            @${{ github.event.issue.user.login }} 👋
+
+            Thanks for dropping in with the issue! Our team is ready to dive into it as soon as possible! 🚀
+
+            If you would like to work on this issue, please wait for us to decide if it's ready; hang tight until we've given it the green light. The issue will be ready to work on once we remove the <img height="22px" src="https://raw.githubusercontent.com/naumch1k/misc/main/images/needs-triage-label.png" alt="Needs triage"/> label.
+
+            To claim an issue that does not have the <img height="22px" src="https://raw.githubusercontent.com/naumch1k/misc/main/images/needs-triage-label.png" alt="Needs triage"/> label, please leave a comment that says ".take". If you have any questions, please follow up on the issue itself.
+
+            Let's make some magic together! ✨
