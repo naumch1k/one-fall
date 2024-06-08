@@ -1,12 +1,22 @@
-# How to use Git for a project
+# Introduction to Contributing
+*Contributions are always welcome, no matter how large or small!*
 
-To make changes to the project code, follow these steps:
+**To make changes to the project code, follow these steps:**
 
-1. [Create a new branch](#create-a-new-branch)
-2. Make and [commit](#commits) changes to the project code
-3. [Rebase against `develop` branch](#rebase)
-4. Open a Pull Request to the `develop` branch
-5. Wait for [code review](#code-review), make changes if needed, perform a rebase, and push changes to the GitHub
+1. [Self-assign an issue](#self-assign-an-issue)
+2. [Create a new branch](#create-a-new-branch)
+3. Make and [commit](#commits) changes to the project code
+4. [Rebase against `develop` branch](#rebase)
+5. Open a [Pull Request](#pull-requests) to the `develop` branch
+6. Wait for [code review](#code-review), make changes if needed, perform a rebase, and push changes to the GitHub
+
+## Self-Assign an Issue
+
+- If you wish to work on an open issue, please comment on the issue with `.take`, and it will be assigned to you.
+> **INFO:** If an issue is not assigned, it is assumed to be available for anyone to work on. Please assign yourself to an issue before working on it to avoid conflicts.
+- Issues with the `👀 needs triage` label are unavailable to `.take` until they are triaged and the label is removed. Feel free to check on the issue regularly if you want to work on it.
+- If you contribute to the project for the first time, you can search for issues with `⚡ good first issue` in the repository.
+> **NOTE:** Please only self-assign a good first issue one time. Maintainers may remove you from the assignees and not accept your pull request if you choose to proceed.
 
 ## Create a new branch
 
@@ -64,6 +74,19 @@ or
 ```bash
   $ git pull --rebase origin develop
 ```
+
+## Pull Requests
+
+We actively welcome your pull requests. However, you must ensure that you are assigned to an existing issue before working on changes, and you need to link your work to the issue in your PR form.
+
+* Please complete the PR form. Make sure to fill in the PR title, description, link to an issue, and all the necessary areas.
+* Start PR title with `FEAT:`, `BUGFIX:`, or anything related to your changes.
+
+> **WARNING:** PRs will be marked as invalid and may be closed if:
+> - the issue is not assigned to the contributor who opened the PR
+> - no issue is linked to the PR
+> - PR form is incomplete
+> - changes are made directly on the `main` branch
 
 ## Code Review
 
