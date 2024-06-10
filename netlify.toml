@@ -1,2 +1,8 @@
+[dev]
+  command = "next dev"
+  framework = "#custom"
+  targetPort = 3000
+  port = 8888
+  autoLaunch = true
 [images]
   remote_images = ["https://raw.githubusercontent.com/naumch1k/misc/main/images/one-fall/.*"]
