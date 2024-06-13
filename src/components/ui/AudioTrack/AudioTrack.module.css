@@ -13,7 +13,7 @@
   font-weight: 500;
   color: rgb(var(--rgb-foreground));
   background-color: transparent;
-  transition: all .7s ease;
+  transition: all 0.7s ease;
 }
 
 .root.isPlaying {
@@ -65,7 +65,9 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .playToggle { display: none; }
+  .playToggle {
+    display: none;
+  }
 }
 
 .name {
@@ -75,7 +77,9 @@
   overflow: hidden;
 }
 
-.duration { margin-left: auto; }
+.duration {
+  margin-left: auto;
+}
 
 /* Desktop hover effects */
 @media screen and (min-width: 1280px) {
@@ -86,6 +90,10 @@
     background-color: rgb(var(--rgb-accent));
   }
 
-  .root:hover .number { display: none; }
-  .root:hover .playToggle { display: flex; }
+  .root:hover .number {
+    display: none;
+  }
+  .root:hover .playToggle {
+    display: flex;
+  }
 }

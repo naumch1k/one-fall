@@ -1,4 +1,4 @@
-.root {  
+.root {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -8,11 +8,15 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .root { padding: 120px 0 50px; }
+  .root {
+    padding: 120px 0 50px;
+  }
 }
 
 @media screen and (min-width: 2560px) {
-  .root { padding: 200px 0 100px; }
+  .root {
+    padding: 200px 0 100px;
+  }
 }
 
 .imageWrapper {
@@ -26,4 +30,6 @@
   object-fit: cover;
 }
 
-.button { margin: 50px auto 0; }
+.button {
+  margin: 50px auto 0;
+}

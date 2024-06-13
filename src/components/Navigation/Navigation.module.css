@@ -1,5 +1,9 @@
-.root {  display: none; }
+.root {
+  display: none;
+}
 
 @media screen and (min-width: 1024px) {
-  .root { display: block; }
+  .root {
+    display: block;
+  }
 }

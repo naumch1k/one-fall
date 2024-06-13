@@ -9,9 +9,13 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .root { padding: 0 50px; }
+  .root {
+    padding: 0 50px;
+  }
 }
 
 @media screen and (min-width: 2560px) {
-  .root { padding: 0 100px; }
+  .root {
+    padding: 0 100px;
+  }
 }

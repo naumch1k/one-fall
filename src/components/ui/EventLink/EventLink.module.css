@@ -1,9 +1,9 @@
 .root {
   display: grid;
   grid-template-areas:
-    "date "
-    "venue"
-    "city ";
+    'date '
+    'venue'
+    'city ';
   grid-template-columns: 1fr;
   padding: 15px 4px;
   font-size: 18px;
@@ -13,11 +13,11 @@
   letter-spacing: 5px;
   vertical-align: text-bottom;
   background-color: transparent;
-  transition: all .7s ease;
+  transition: all 0.7s ease;
 }
 
 .root.isPast {
-  color: rgb(var(--rgb-inactive), .5);
+  color: rgb(var(--rgb-inactive), 0.5);
   text-decoration: line-through;
   text-decoration-thickness: 1px;
   cursor: default;
@@ -27,8 +27,8 @@
 @media screen and (min-width: 768px) {
   .root {
     grid-template-areas:
-      "date venue"
-      "city venue";
+      'date venue'
+      'city venue';
     grid-template-columns: 260px 1fr;
     column-gap: 80px;
   }
@@ -36,14 +36,18 @@
 
 @media screen and (min-width: 1280px) {
   .root {
-    grid-template-areas: "date city venue";
+    grid-template-areas: 'date city venue';
     grid-template-columns: 260px 340px 1fr;
     gap: 0;
     padding: 8px 4px 4px;
   }
 
-  .root.isPast { text-decoration: none; }
-  .root.isPast span { position: relative; }
+  .root.isPast {
+    text-decoration: none;
+  }
+  .root.isPast span {
+    position: relative;
+  }
   .root.isPast span::before {
     content: '';
     position: absolute;
@@ -52,7 +56,7 @@
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: rgb(var(--rgb-inactive), .25);
+    background-color: rgb(var(--rgb-inactive), 0.25);
   }
 
   .root.isPast .date::before,
@@ -60,7 +64,9 @@
     width: calc(100% + 4px);
   }
 
-  .root.isPast .date::before { left: -4px; }
+  .root.isPast .date::before {
+    left: -4px;
+  }
 }
 
 .date {
@@ -68,9 +74,13 @@
   color: rgb(var(--rgb-inactive));
 }
 
-.root.isPast .date { color: rgb(var(--rgb-inactive), .5); }
+.root.isPast .date {
+  color: rgb(var(--rgb-inactive), 0.5);
+}
 
-.city { grid-area: city; }
+.city {
+  grid-area: city;
+}
 
 .venue {
   grid-area: venue;

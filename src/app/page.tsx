@@ -7,17 +7,18 @@ import { Merch } from './components/Merch/Merch'
 
 export const metadata: Metadata = {
   title: 'One Fall',
-  description: 'One Fall - melodic punk and hardcore quartet from Salem, Massachusetts',
+  description:
+    'One Fall - melodic punk and hardcore quartet from Salem, Massachusetts',
 }
 
 export default function Main() {
   return (
     <main>
-      <Hero/>
-      <About/>
-      <Music/>
-      <Events/>
-      <Merch/>
+      <Hero />
+      <About />
+      <Music />
+      <Events />
+      <Merch />
     </main>
   )
 }

@@ -13,28 +13,15 @@ interface IMenuItemProps {
 }
 
 export const MenuItem = (props: IMenuItemProps) => {
-  const {
-    id,
-    href,
-    text,
-    covert,
-    current,
-    className,
-    onClick,
-    ...restProps
-  } = props
+  const { id, href, text, covert, current, className, onClick, ...restProps } =
+    props
   const { type } = useMenu()
 
   const classes = `${styles[type].link} ${covert ? styles[type].covert : ''} ${current ? styles[type].current : ''} ${className || ''}`
 
   return (
     <li>
-      <Link
-        className={classes}
-        href={href}
-        onClick={onClick}
-        {...restProps}
-      >
+      <Link className={classes} href={href} onClick={onClick} {...restProps}>
         {text}
       </Link>
     </li>

@@ -1,10 +1,10 @@
 .root {
   display: grid;
   grid-template-areas:
-    "coverArt "
-    "details  "
-    "buttons  "
-    "trackList";
+    'coverArt '
+    'details  '
+    'buttons  '
+    'trackList';
   grid-template-columns: 1fr;
   gap: 50px 20px;
 }
@@ -12,9 +12,9 @@
 @media screen and (min-width: 480px) {
   .root {
     grid-template-areas:
-      "coverArt  details  "
-      "coverArt  buttons  "
-      "trackList trackList";
+      'coverArt  details  '
+      'coverArt  buttons  '
+      'trackList trackList';
     grid-template-columns: 200px 1fr;
     grid-template-rows: max-content min-content max-content;
   }
@@ -26,18 +26,18 @@
     gap: 40px 20px;
     padding: 50px;
     background-color: rgb(var(--rgb-background-lighter));
-    border: 1px solid rgb(var(--rgb-accent), .1);
+    border: 1px solid rgb(var(--rgb-accent), 0.1);
     border-radius: 18px;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .root { 
+  .root {
     grid-template-columns: 300px 1fr;
     grid-template-areas:
-      "coverArt details  "
-      "coverArt buttons  "
-      "coverArt trackList"; 
+      'coverArt details  '
+      'coverArt buttons  '
+      'coverArt trackList';
   }
 }
 
@@ -66,17 +66,21 @@
   object-fit: cover;
 }
 
-.detailsWrapper { padding: 0 20px; }
+.detailsWrapper {
+  padding: 0 20px;
+}
 
 @media screen and (min-width: 480px) {
-  .detailsWrapper { 
+  .detailsWrapper {
     align-self: end;
     padding: 0;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .detailsWrapper { margin-left: 38px; }
+  .detailsWrapper {
+    margin-left: 38px;
+  }
 }
 
 .name {
@@ -93,11 +97,13 @@
   font-size: 14px;
   line-height: 19.5px;
   font-weight: 500;
-  color: rgb(var(--rgb-foreground), .8);
+  color: rgb(var(--rgb-foreground), 0.8);
 }
 
 @media screen and (min-width: 768px) {
-  .details { gap: 13px; }
+  .details {
+    gap: 13px;
+  }
 }
 
 .buttons {
@@ -106,9 +112,13 @@
 }
 
 @media screen and (min-width: 480px) {
-  .buttons { padding: 0; }
+  .buttons {
+    padding: 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  .buttons { margin-left: 38px; }
+  .buttons {
+    margin-left: 38px;
+  }
 }

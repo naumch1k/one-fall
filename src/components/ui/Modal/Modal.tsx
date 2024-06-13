@@ -5,7 +5,7 @@ import styles from './Modal.module.css'
 interface IModalProps {
   isOpen: boolean
   onClose: () => void
-  onBackdropClick:  React.MouseEventHandler<HTMLDivElement>
+  onBackdropClick: React.MouseEventHandler<HTMLDivElement>
   children: React.ReactNode
 }
 
@@ -15,7 +15,6 @@ export const Modal = ({
   onBackdropClick,
   children,
 }: IModalProps) => {
-
   if (!isOpen) return null
 
   return (

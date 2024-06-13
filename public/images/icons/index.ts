@@ -10,6 +10,6 @@ export default {
   'arrow-left': ArrowLeft,
   'arrow-right': ArrowRight,
   'arrow-up': ArrowUp,
-  'eye': Eye,
-  'plus': Plus,
+  eye: Eye,
+  plus: Plus,
 }

@@ -4,7 +4,7 @@ import useThrottle from './useThrottle'
 export const useWindowSize = () => {
   const getWindowSize = (): { width: number; height: number } => {
     if (typeof window === 'undefined') return { width: 0, height: 0 }
-    
+
     const { innerWidth: width, innerHeight: height } = window
     return { width, height }
   }
@@ -19,7 +19,8 @@ export const useWindowSize = () => {
 
     window.addEventListener('resize', throttledHandleWindowResize)
 
-    return () => window.removeEventListener('resize', throttledHandleWindowResize)
+    return () =>
+      window.removeEventListener('resize', throttledHandleWindowResize)
   }, [throttledHandleWindowResize])
 
   return windowSize

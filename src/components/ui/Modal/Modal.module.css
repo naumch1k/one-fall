@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(var(--rgb-background), .8);
+  background-color: rgba(var(--rgb-background), 0.8);
   z-index: 2;
 }
 

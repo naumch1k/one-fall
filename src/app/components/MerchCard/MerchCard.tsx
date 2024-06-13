@@ -28,8 +28,14 @@ export const MerchCard = ({
   return (
     <div className={styles.root}>
       <div className={styles.imageWrapper}>
-        <Image className={styles.image} src={image} alt={title} width={280} height={280}/>
-        {!isMobile && 
+        <Image
+          className={styles.image}
+          src={image}
+          alt={title}
+          width={280}
+          height={280}
+        />
+        {!isMobile && (
           <button
             className={styles.button}
             type='button'
@@ -38,7 +44,7 @@ export const MerchCard = ({
           >
             <Icon glyph='eye' className={styles.eyeIcon} />
           </button>
-        }
+        )}
       </div>
       <div className={styles.detailsWrapper}>
         <h3 className={styles.title}>{title}</h3>

@@ -23,25 +23,18 @@ export const Button = ({
 }: IButtonProps) => {
   const classes = `${styles.root} ${styles[view]} ${className}`
 
-  return (
-    !isLink ? (
-      <button
-        className={classes}
-        type={type}
-        disabled={disabled}
-        {...restButtonProps}
-      >
-        {children}
-      </button>
-    ) : (
-      <a
-        className={classes}
-        href={href}
-        target={target}
-      >
-        {children}
-      </a>
-    )
-
+  return !isLink ? (
+    <button
+      className={classes}
+      type={type}
+      disabled={disabled}
+      {...restButtonProps}
+    >
+      {children}
+    </button>
+  ) : (
+    <a className={classes} href={href} target={target}>
+      {children}
+    </a>
   )
 }

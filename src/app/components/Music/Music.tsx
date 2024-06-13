@@ -12,10 +12,7 @@ import data from './data.json'
 
 export const Music = () => {
   const audioTrackRefs = useInitAudioTrackRefs(data)
-  const {
-    trackPlaying,
-    handlePlayPauseClick,
-  } = useMusicPlayer(audioTrackRefs)
+  const { trackPlaying, handlePlayPauseClick } = useMusicPlayer(audioTrackRefs)
 
   return (
     <section id='music' className={styles.root}>

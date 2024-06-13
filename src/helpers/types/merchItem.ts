@@ -5,6 +5,6 @@ export interface IMerchItem {
   price: number
   purchaseInfo: {
     purchaseUrl: string
-  },
+  }
   image: string
 }

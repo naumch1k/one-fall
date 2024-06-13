@@ -7,16 +7,17 @@ import { useOverlayMenu } from './hooks/useOverlayMenu'
 import { mainNavigationItems } from '@/helpers/constants/mainNavigationItems'
 import styles from './OverlayMenu.module.css'
 
-
 export const OverlayMenu = () => {
   const isMobile = useMediaQuery(`(max-width: 1023px)`)
   const { isOverlayMenuOpen, toggleOverlayMenu } = useOverlayMenu()
 
   if (!isMobile) return null
 
-  return ( 
+  return (
     <>
-      <div className={`${styles.root} ${isOverlayMenuOpen ? `${styles.isOpen}` : ''}`}>
+      <div
+        className={`${styles.root} ${isOverlayMenuOpen ? `${styles.isOpen}` : ''}`}
+      >
         <nav>
           <Menu type='overlay-navigation'>
             {mainNavigationItems.map(({ id, text, href }) => (

@@ -10,17 +10,18 @@ import styles from './Events.module.css'
 import data from './data.json'
 
 export const Events = () => {
-  const {
-    eventsToRender,
-    handleLoadMoreClick,
-    hasMoreItems,
-  } = useEvents(data)
+  const { eventsToRender, handleLoadMoreClick, hasMoreItems } = useEvents(data)
 
   return (
     <section id='dates' className={styles.root}>
       <h2 className='visuallyHidden'>Events</h2>
       <div className={styles.imageWrapper}>
-        <Image className={styles.image} src='/images/events-image.png' alt='One Fall performing' fill/>
+        <Image
+          className={styles.image}
+          src='/images/events-image.png'
+          alt='One Fall performing'
+          fill
+        />
       </div>
       <EventList>
         {eventsToRender.map(event => (
@@ -34,14 +35,14 @@ export const Events = () => {
           </EventList.Item>
         ))}
       </EventList>
-      {hasMoreItems &&
+      {hasMoreItems && (
         <IconButton
           icon='arrow-down'
           ariaLabel='Show more events'
           className={styles.button}
           onClick={handleLoadMoreClick}
         />
-      }
+      )}
     </section>
   )
 }

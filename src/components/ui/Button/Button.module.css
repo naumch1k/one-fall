@@ -14,12 +14,12 @@
 }
 
 .primary {
-	color: rgb(var(--rgb-accent));
+  color: rgb(var(--rgb-accent));
   border: 1px solid rgb(var(--rgb-accent));
 }
 
 .secondary {
-	color: rgb(var(--rgb-foreground));
+  color: rgb(var(--rgb-foreground));
   border: 1px solid rgb(var(--rgb-foreground));
 }
 
@@ -28,8 +28,8 @@
     color: rgb(var(--rgb-background));
     background-color: rgb(var(--rgb-accent));
   }
-  
-  .secondary:focus { 
+
+  .secondary:focus {
     color: rgb(var(--rgb-inactive));
     border-color: rgb(var(--rgb-inactive));
   }
@@ -41,12 +41,14 @@
     color: rgb(var(--rgb-background));
     background-color: rgb(var(--rgb-accent));
   }
-  
-  .secondary:hover { 
+
+  .secondary:hover {
     color: rgb(var(--rgb-inactive));
     border-color: rgb(var(--rgb-inactive));
   }
 
   .primary:active,
-  .secondary:active { opacity: .7; }
+  .secondary:active {
+    opacity: 0.7;
+  }
 }

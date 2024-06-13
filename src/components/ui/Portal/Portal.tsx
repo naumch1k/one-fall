@@ -1,4 +1,4 @@
-import { useEffect,useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 interface IPortalProps {
@@ -24,5 +24,5 @@ export const Portal = ({ children }: IPortalProps) => {
     }
   }, [])
 
-  return (mounted && ref.current) ? createPortal(children, ref.current) : null
+  return mounted && ref.current ? createPortal(children, ref.current) : null
 }
