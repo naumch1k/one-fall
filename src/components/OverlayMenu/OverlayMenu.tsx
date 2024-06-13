@@ -15,9 +15,8 @@ export const OverlayMenu = () => {
 
   return (
     <>
-      <div
-        className={`${styles.root} ${isOverlayMenuOpen ? `${styles.isOpen}` : ''}`}
-      >
+      {/* prettier-ignore */}
+      <div className={`${styles.root} ${isOverlayMenuOpen ? `${styles.isOpen}` : ''}`}>
         <nav>
           <Menu type='overlay-navigation'>
             {mainNavigationItems.map(({ id, text, href }) => (

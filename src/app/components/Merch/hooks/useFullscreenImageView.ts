@@ -3,11 +3,15 @@ import { useModal } from '@/components/ui/Modal/hooks/useModal'
 import { IMerchItem } from '@/helpers/types'
 
 export const useFullscreenImageView = (data: { items: IMerchItem[] }) => {
-  const [currentItem, setCurrentItem] = useState<IMerchItem | undefined>(
-    undefined
-  )
-  const { isModalOpen, openModal, closeModal, closeByBackdropClick } =
-    useModal()
+  /* prettier-ignore */
+  const [currentItem, setCurrentItem] = useState<IMerchItem | undefined>(undefined)
+  /* prettier-ignore */
+  const {
+    isModalOpen, 
+    openModal,
+    closeModal,
+    closeByBackdropClick,
+  } = useModal()
 
   const handleImageClick = useCallback(
     (id: string) => {
