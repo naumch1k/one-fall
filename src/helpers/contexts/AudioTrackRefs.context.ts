@@ -1,9 +1,7 @@
 import { createContext, useContext } from 'react'
 import { TAudioRef } from '@/helpers/types'
 
-const AudioTrackRefsContext = createContext<
-  Record<string, TAudioRef> | undefined
->(undefined)
+const AudioTrackRefsContext = createContext<Record<string, TAudioRef> | undefined>(undefined)
 
 export const AudioTrackRefsProvider = AudioTrackRefsContext.Provider
 

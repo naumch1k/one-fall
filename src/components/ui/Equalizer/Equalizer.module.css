@@ -61,244 +61,88 @@
 }
 
 @keyframes equalize {
-  0% {
-    height: var(--four);
-  }
-  4% {
-    height: var(--two);
-  }
-  8% {
-    height: var(--four);
-  }
-  12% {
-    height: var(--seven);
-  }
-  16% {
-    height: var(--ten);
-  }
-  20% {
-    height: var(--thirteen);
-  }
-  24% {
-    height: var(--twelve);
-  }
-  28% {
-    height: var(--eleven);
-  }
-  32% {
-    height: var(--eleven);
-  }
-  36% {
-    height: var(--eight);
-  }
-  40% {
-    height: var(--ten);
-  }
-  44% {
-    height: var(--ten);
-  }
-  48% {
-    height: var(--eleven);
-  }
-  52% {
-    height: var(--twelve);
-  }
-  56% {
-    height: var(--thirteen);
-  }
-  60% {
-    height: var(--twelve);
-  }
-  64% {
-    height: var(--twelve);
-  }
-  68% {
-    height: var(--eleven);
-  }
-  72% {
-    height: var(--ten);
-  }
-  76% {
-    height: var(--eleven);
-  }
-  80% {
-    height: var(--twelve);
-  }
-  84% {
-    height: var(--twelve);
-  }
-  88% {
-    height: var(--thirteen);
-  }
-  92% {
-    height: var(--ten);
-  }
-  96% {
-    height: var(--seven);
-  }
-  100% {
-    height: var(--four);
-  }
+  0% { height: var(--four); }
+  4% { height: var(--two); }
+  8% { height: var(--four); }
+  12% { height: var(--seven); }
+  16% { height: var(--ten); }
+  20% { height: var(--thirteen); }
+  24% { height: var(--twelve); }
+  28% { height: var(--eleven); }
+  32% { height: var(--eleven); }
+  36% { height: var(--eight); }
+  40% { height: var(--ten); }
+  44% { height: var(--ten); }
+  48% { height: var(--eleven); }
+  52% { height: var(--twelve); }
+  56% { height: var(--thirteen); }
+  60% { height: var(--twelve); }
+  64% { height: var(--twelve); }
+  68% { height: var(--eleven); }
+  72% { height: var(--ten); }
+  76% { height: var(--eleven); }
+  80% { height: var(--twelve); }
+  84% { height: var(--twelve); }
+  88% { height: var(--thirteen); }
+  92% { height: var(--ten); }
+  96% { height: var(--seven); }
+  100% { height: var(--four); }
 }
 
 @keyframes equalize2 {
-  0% {
-    height: var(--twelve);
-  }
-  4% {
-    height: var(--thirteen);
-  }
-  8% {
-    height: var(--twelve);
-  }
-  12% {
-    height: var(--twelve);
-  }
-  16% {
-    height: var(--eleven);
-  }
-  20% {
-    height: var(--eleven);
-  }
-  24% {
-    height: var(--eleven);
-  }
-  28% {
-    height: var(--twelve);
-  }
-  32% {
-    height: var(--twelve);
-  }
-  36% {
-    height: var(--thirteen);
-  }
-  40% {
-    height: var(--thirteen);
-  }
-  44% {
-    height: var(--thirteen);
-  }
-  48% {
-    height: var(--eleven);
-  }
-  52% {
-    height: var(--eight);
-  }
-  56% {
-    height: var(--six);
-  }
-  60% {
-    height: var(--eight);
-  }
-  64% {
-    height: var(--ten);
-  }
-  68% {
-    height: var(--eleven);
-  }
-  72% {
-    height: var(--thirteen);
-  }
-  76% {
-    height: var(--twelve);
-  }
-  80% {
-    height: var(--twelve);
-  }
-  84% {
-    height: var(--eleven);
-  }
-  88% {
-    height: var(--eleven);
-  }
-  92% {
-    height: var(--nine);
-  }
-  96% {
-    height: var(--eleven);
-  }
-  100% {
-    height: var(--twelve);
-  }
+  0% { height: var(--twelve); }
+  4% { height: var(--thirteen); }
+  8% { height: var(--twelve); }
+  12% { height: var(--twelve); }
+  16% { height: var(--eleven); }
+  20% { height: var(--eleven); }
+  24% { height: var(--eleven); }
+  28% { height: var(--twelve); }
+  32% { height: var(--twelve); }
+  36% { height: var(--thirteen); }
+  40% { height: var(--thirteen); }
+  44% { height: var(--thirteen); }
+  48% { height: var(--eleven); }
+  52% { height: var(--eight); }
+  56% { height: var(--six); }
+  60% { height: var(--eight); }
+  64% { height: var(--ten); }
+  68% { height: var(--eleven); }
+  72% { height: var(--thirteen); }
+  76% { height: var(--twelve); }
+  80% { height: var(--twelve); }
+  84% { height: var(--eleven); }
+  88% { height: var(--eleven); }
+  92% { height: var(--nine); }
+  96% { height: var(--eleven); }
+  100% { height: var(--twelve); }
 }
 
 @keyframes equalize3 {
-  0% {
-    height: var(--nine);
-  }
-  4% {
-    height: var(--seven);
-  }
-  8% {
-    height: var(--nine);
-  }
-  12% {
-    height: var(--eleven);
-  }
-  16% {
-    height: var(--thirteen);
-  }
-  20% {
-    height: var(--thirteen);
-  }
-  24% {
-    height: var(--fourteen);
-  }
-  28% {
-    height: var(--eleven);
-  }
-  32% {
-    height: var(--nine);
-  }
-  36% {
-    height: var(--eight);
-  }
-  40% {
-    height: var(--seven);
-  }
-  44% {
-    height: var(--five);
-  }
-  48% {
-    height: var(--eight);
-  }
-  52% {
-    height: var(--ten);
-  }
-  56% {
-    height: var(--eleven);
-  }
-  60% {
-    height: var(--thirteen);
-  }
-  64% {
-    height: var(--twelve);
-  }
-  68% {
-    height: var(--eleven);
-  }
-  72% {
-    height: var(--eleven);
-  }
-  76% {
-    height: var(--ten);
-  }
-  80% {
-    height: var(--twelve);
-  }
-  84% {
-    height: var(--thirteen);
-  }
-  88% {
-    height: var(--fourteen);
-  }
-  92% {
-    height: var(--twelve);
-  }
-  96% {
-    height: var(--ten);
-  }
-  100% {
-    height: var(--nine);
-  }
+  0% { height: var(--nine); }
+  4% { height: var(--seven); }
+  8% { height: var(--nine); }
+  12% { height: var(--eleven); }
+  16% { height: var(--thirteen); }
+  20% { height: var(--thirteen); }
+  24% { height: var(--fourteen); }
+  28% { height: var(--eleven); }
+  32% { height: var(--nine); }
+  36% { height: var(--eight); }
+  40% { height: var(--seven); }
+  44% { height: var(--five); }
+  48% { height: var(--eight); }
+  52% { height: var(--ten); }
+  56% { height: var(--eleven); }
+  60% { height: var(--thirteen); }
+  64% { height: var(--twelve); }
+  68% { height: var(--eleven); }
+  72% { height: var(--eleven); }
+  76% { height: var(--ten); }
+  80% { height: var(--twelve); }
+  84% { height: var(--thirteen); }
+  88% { height: var(--fourteen); }
+  92% { height: var(--twelve); }
+  96% { height: var(--ten); }
+  100% { height: var(--nine); }
 }
