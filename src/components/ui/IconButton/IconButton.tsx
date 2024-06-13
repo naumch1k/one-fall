@@ -29,11 +29,7 @@ export const IconButton = ({
       disabled={disabled}
       onClick={onClick}
     >
-      <Icon
-        glyph={icon}
-        width='100%'
-        height='100%'
-      />
+      <Icon glyph={icon} width='100%' height='100%' />
     </button>
   )
 }

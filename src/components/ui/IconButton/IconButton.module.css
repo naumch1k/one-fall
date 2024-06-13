@@ -25,5 +25,7 @@
     border-color: rgb(var(--rgb-inactive));
   }
 
-  .root:active { opacity: .7; }
+  .root:active {
+    opacity: 0.7;
+  }
 }

@@ -10,10 +10,10 @@ import styles from './Merch.module.css'
 import data from './data.json'
 
 export const Merch = () => {
-  const {    
+  const {
     isModalOpen,
     closeModal,
-    closeByBackdropClick, 
+    closeByBackdropClick,
     currentItem,
     handleImageClick,
   } = useFullscreenImageView(data)
@@ -38,8 +38,8 @@ export const Merch = () => {
           ))}
         </MerchList>
       </section>
-      {currentItem &&
-        <Modal 
+      {currentItem && (
+        <Modal
           isOpen={isModalOpen}
           onClose={closeModal}
           onBackdropClick={closeByBackdropClick}
@@ -54,7 +54,7 @@ export const Merch = () => {
             />
           </div>
         </Modal>
-      } 
+      )}
     </>
   )
 }

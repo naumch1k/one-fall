@@ -22,15 +22,22 @@ export const AudioTrack = ({
 }: IAudioTrackProps) => {
   const audioTrackRefs = useAudioTrackRefs()
   const { duration, timeProgress } = useAudioTrackDuration(audioTrackRefs[name])
-  
+
   return (
     <>
       <div className={`${styles.root} ${isPlaying ? styles.isPlaying : ''}`}>
         <div className={styles.innerWrapper}>
           <span className={styles.number}>
-            {isPlaying ? <Equalizer className={styles.equalizer}/> : `${number}.`}
+            {isPlaying ? (
+              <Equalizer className={styles.equalizer} />
+            ) : (
+              `${number}.`
+            )}
           </span>
-          <button className={styles.playToggle} onClick={() => onPlayPauseClick(name)}>
+          <button
+            className={styles.playToggle}
+            onClick={() => onPlayPauseClick(name)}
+          >
             {isPlaying ? <FaPause /> : <FaPlay />}
           </button>
         </div>
@@ -41,7 +48,7 @@ export const AudioTrack = ({
           className={styles.duration}
         />
       </div>
-      <audio ref={audioTrackRefs[name]} src={dataFileUrl} preload='metadata'/>
+      <audio ref={audioTrackRefs[name]} src={dataFileUrl} preload='metadata' />
     </>
   )
 }

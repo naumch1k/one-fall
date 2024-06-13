@@ -18,7 +18,7 @@ export const Navigation = () => {
             href={href}
             text={text}
             covert={isCovert}
-            current={currentLink===id}
+            current={currentLink === id}
           />
         ))}
       </Menu>

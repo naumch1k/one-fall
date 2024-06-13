@@ -5,7 +5,7 @@ export const About = () => {
   return (
     <section id='about' className={styles.root}>
       <div className={styles.imageWrapper}>
-        <Image 
+        <Image
           className={styles.image}
           src='/images/band-image.png'
           alt='Band members standing against yellow brick wall'
@@ -15,8 +15,9 @@ export const About = () => {
       </div>
       <div className={styles.story}>
         <p className={styles.storyText}>
-          Formed just over a year ago, this Salem-based melodic punk and hardcore quartet has rapidly made a mark in New England.
-          Known for their early hit songs, powerful riffs, and dynamic live.
+          Formed just over a year ago, this Salem-based melodic punk and
+          hardcore quartet has rapidly made a mark in New England. Known for
+          their early hit songs, powerful riffs, and dynamic live.
         </p>
       </div>
     </section>

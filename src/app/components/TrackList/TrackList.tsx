@@ -1,11 +1,7 @@
 import { TrackListItem } from './Item/TrackListItem'
 import styles from './TrackList.module.css'
 
-const Component = ({ 
-  children,
-}: {
-  children: React.ReactNode 
-}) => (
+const Component = ({ children }: { children: React.ReactNode }) => (
   <ul className={styles.root}>{children}</ul>
 )
 

@@ -14,10 +14,14 @@ const renderSettings = {
 
 export const useEvents = (data: { items: IEvent[] }) => {
   const windowSize = useWindowSize()
-  const renderSettingsRef = useRef<IEventListRenderSettings>(renderSettings.tablet).current
+  const renderSettingsRef = useRef<IEventListRenderSettings>(
+    renderSettings.tablet
+  ).current
   const [sortedData, setSortedData] = useState<IEvent[]>([])
   const [eventsToRender, setEventsToRender] = useState<IEvent[]>([])
-  const [numberOfEventsToRender, setNumberOfEventsToRender] = useState(renderSettings.tablet.total)
+  const [numberOfEventsToRender, setNumberOfEventsToRender] = useState(
+    renderSettings.tablet.total
+  )
   const [hasMoreItems, setHasMoreItems] = useState(false)
 
   useEffect(() => {
@@ -29,7 +33,7 @@ export const useEvents = (data: { items: IEvent[] }) => {
       // Check if events are upcoming or past
       const isAUpcoming = aDate >= todaysDate
       const isBUpcoming = bDate >= todaysDate
-  
+
       // If one event is upcoming and the other is not, prioritize the upcoming event
       if (isAUpcoming !== isBUpcoming) {
         return isAUpcoming ? -1 : 1
@@ -75,17 +79,18 @@ export const useEvents = (data: { items: IEvent[] }) => {
 
   const handleLoadMoreClick = () => {
     const totalNumberOfEvents = sortedData.length
-    let newNumberOfEventsToRender = numberOfEventsToRender + renderSettingsRef.add
+    let newNumberOfEventsToRender =
+      numberOfEventsToRender + renderSettingsRef.add
 
     if (newNumberOfEventsToRender >= totalNumberOfEvents) {
       newNumberOfEventsToRender = totalNumberOfEvents
       setHasMoreItems(false)
     }
-      
+
     setNumberOfEventsToRender(newNumberOfEventsToRender)
   }
-  
-  return { 
+
+  return {
     eventsToRender,
     handleLoadMoreClick,
     hasMoreItems,

@@ -2,11 +2,11 @@
   display: inline-block;
   font-family: var(--font-anton);
   font-size: 50px;
-  line-height: .9;
-  letter-spacing: .015em;
+  line-height: 0.9;
+  letter-spacing: 0.015em;
   text-transform: uppercase;
   color: rgb(var(--rgb-foreground));
-  text-shadow: 2px 2px 2px rgba(var(--rgb-foreground), .4);
+  text-shadow: 2px 2px 2px rgba(var(--rgb-foreground), 0.4);
   background: unset;
   border: none;
   cursor: pointer;

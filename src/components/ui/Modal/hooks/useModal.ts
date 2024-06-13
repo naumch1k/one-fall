@@ -11,13 +11,19 @@ export const useModal = () => {
     setIsModalOpen(false)
   }, [])
 
-  const closeByBackdropClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) closeModal()
-  }, [closeModal])
+  const closeByBackdropClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (e.target === e.currentTarget) closeModal()
+    },
+    [closeModal]
+  )
 
-  const closeByEsc = useCallback((e: Event) => {
-    if (e instanceof KeyboardEvent && e.code === 'Escape') closeModal()
-  }, [closeModal])
+  const closeByEsc = useCallback(
+    (e: Event) => {
+      if (e instanceof KeyboardEvent && e.code === 'Escape') closeModal()
+    },
+    [closeModal]
+  )
 
   useEffect(() => {
     if (isModalOpen) document.documentElement.style.overflow = 'hidden'

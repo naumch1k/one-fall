@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { TAudioRef } from '@/helpers/types'
 
-export const useAudioTrackDuration = (audioRef: TAudioRef) =>  {
+export const useAudioTrackDuration = (audioRef: TAudioRef) => {
   const [duration, setDuration] = useState(0)
   const [timeProgress, setTimeProgress] = useState(0)
 
@@ -22,7 +22,7 @@ export const useAudioTrackDuration = (audioRef: TAudioRef) =>  {
       const updateDuration = () => setDuration(audioElement.duration)
 
       updateDuration()
-      
+
       audioElement.addEventListener('loadedmetadata', updateDuration)
 
       return () => {

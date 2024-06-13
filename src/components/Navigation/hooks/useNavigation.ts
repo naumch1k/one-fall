@@ -1,9 +1,4 @@
-import { 
-  useRef,
-  useCallback,
-  useState,
-  useEffect,
-} from 'react'
+import { useRef, useCallback, useState, useEffect } from 'react'
 
 export const useMainNavigation = () => {
   const prevScrollPosition = useRef(0)

@@ -9,18 +9,12 @@ interface IMenuProps {
 }
 
 const Component = (props: IMenuProps): JSX.Element => {
-  const { 
-    type, 
-    className,
-    children,
-  } = props
+  const { type, className, children } = props
   const classes = `${styles[type].menu} ${className || ''}`
 
   return (
     <ul className={classes}>
-      <MenuProvider value={{ type }}>
-        {children}
-      </MenuProvider>
+      <MenuProvider value={{ type }}>{children}</MenuProvider>
     </ul>
   )
 }

@@ -7,9 +7,13 @@
 }
 
 @media screen and (min-width: 768px) {
-  .root { grid-template-columns: repeat(auto-fill, minmax(352px, 1fr)); }
+  .root {
+    grid-template-columns: repeat(auto-fill, minmax(352px, 1fr));
+  }
 }
 
 @media screen and (min-width: 1280px) {
-  .root { gap: 100px 30px; }
+  .root {
+    gap: 100px 30px;
+  }
 }

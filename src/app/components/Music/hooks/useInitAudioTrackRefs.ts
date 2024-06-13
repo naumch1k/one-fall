@@ -1,5 +1,5 @@
-import { createRef, useEffect, useState } from 'react';
-import { IAlbum, ITrack, TAudioRef } from '@/helpers/types';
+import { createRef, useEffect, useState } from 'react'
+import { IAlbum, ITrack, TAudioRef } from '@/helpers/types'
 
 export const useInitAudioTrackRefs = (data: { items: IAlbum[] }) => {
   const [tracks, setTracks] = useState<ITrack[]>([])
@@ -19,7 +19,9 @@ export const useInitAudioTrackRefs = (data: { items: IAlbum[] }) => {
     getAllTracks(data)
   }, [data])
 
-  tracks.forEach(track => audioTrackRefs[track.name] = createRef<HTMLAudioElement>())
+  tracks.forEach(
+    track => (audioTrackRefs[track.name] = createRef<HTMLAudioElement>())
+  )
 
   return audioTrackRefs
 }

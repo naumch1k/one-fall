@@ -13,5 +13,7 @@
 }
 
 @media screen and (min-width: 480px) {
-  .logo { width: 300px; }
+  .logo {
+    width: 300px;
+  }
 }
