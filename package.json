@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "netlify dev",
     "build": "next build",
     "start": "npx serve@latest out",
     "lint": "next lint"
@@ -24,6 +24,7 @@
     "eslint-config-next": "14.1.1",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "3.3.2",
+    "netlify-cli": "^17.26.0",
     "typescript": "^5"
   }
 }
