@@ -37,6 +37,7 @@ export const AudioTrack = ({
           <button
             className={styles.playToggle}
             onClick={() => onPlayPauseClick(name)}
+            aria-label={isPlaying ? `Pause ${name} preview` : `Play ${name} preview` }
           >
             {isPlaying ? <FaPause /> : <FaPlay />}
           </button>
