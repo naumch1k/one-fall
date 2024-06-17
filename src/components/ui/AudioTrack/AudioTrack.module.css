@@ -72,8 +72,8 @@
 
 @media screen and (min-width: 1280px) {
   .playToggle {
-    display: none;
     padding-left: 0;
+    opacity: 0;
   }
 }
 
@@ -90,17 +90,18 @@
 
 /* Desktop hover effects */
 @media screen and (min-width: 1280px) {
-  .root:hover {
+  .root:hover, .root:focus-within {
     width: calc(100% - 38px);
     left: 38px;
     color: rgb(var(--rgb-background));
     background-color: rgb(var(--rgb-accent));
   }
 
-  .root:hover .number {
+  .root:hover .number, .root:focus-within .number {
     display: none;
   }
-  .root:hover .playToggle {
-    display: flex;
+  .root:hover .playToggle, .root:focus-within .playToggle {
+    opacity: 1;
+    outline: none;
   }
 }
