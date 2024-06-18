@@ -57,9 +57,9 @@
 .playToggle {
   background: transparent;
   border: 0;
+  outline: 0;
   color: inherit;
   cursor: pointer;
-
   position: absolute;
   top: 0;
   left: 0;
@@ -90,18 +90,21 @@
 
 /* Desktop hover effects */
 @media screen and (min-width: 1280px) {
-  .root:hover, .root:focus-within {
+  .root:hover,
+  .root:has(.playToggle:focus-visible) {
     width: calc(100% - 38px);
     left: 38px;
     color: rgb(var(--rgb-background));
     background-color: rgb(var(--rgb-accent));
   }
 
-  .root:hover .number, .root:focus-within .number {
+  .root:hover .number,
+  .root:has(.playToggle:focus-visible) .number {
     display: none;
   }
-  .root:hover .playToggle, .root:focus-within .playToggle {
+
+  .root:hover .playToggle,
+  .root:has(.playToggle:focus-visible) .playToggle {
     opacity: 1;
-    outline: none;
   }
 }
