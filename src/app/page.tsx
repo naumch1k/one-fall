@@ -4,6 +4,7 @@ import { About } from '@/app/components/About/About'
 import { Music } from '@/app/components/Music/Music'
 import { Events } from './components/Events/Events'
 import { Merch } from './components/Merch/Merch'
+import { Gallery } from './components/Gallery/Gallery'
 
 export const metadata: Metadata = {
   title: 'One Fall',
@@ -19,6 +20,7 @@ export default function Main() {
       <Music />
       <Events />
       <Merch />
+      <Gallery />
     </main>
   )
 }
