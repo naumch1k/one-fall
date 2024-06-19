@@ -1,0 +1,49 @@
+.root {
+  /* Local Variables */
+  --desktop-gap: var(--image-gallery-desktop-gap);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1184px;
+  height: 584px;
+  overflow: hidden;
+}
+
+.root::before,
+.root::after {
+  content: '';
+  position: absolute;
+  background-color: rgb(var(--rgb-background));
+  z-index: 1;
+}
+
+.root::before {
+  top: 0;
+  left: 284px;
+  width: var(--desktop-gap);
+  height: 100%;
+  box-shadow:
+    calc(284px + var(--desktop-gap)) 0 rgb(var(--rgb-background)),
+    calc(284px * 2 + var(--desktop-gap) * 2) 0 rgb(var(--rgb-background));
+}
+
+.root::after {
+  top: 284px;
+  left: 0;
+  width: 100%;
+  height: var(--desktop-gap);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  transform: scale(1.1);
+}
+
+.image.isVisible {
+  transform: scale(1);
+  transition: transform 4s linear, opacity 0.2s linear;
+}
