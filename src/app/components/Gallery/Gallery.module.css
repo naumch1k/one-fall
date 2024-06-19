@@ -2,22 +2,27 @@
   /* Local Variables */
   --desktop-gap: var(--image-gallery-desktop-gap);
 
-  width: calc(100% - 16px * 2);
-  max-width: 1184px;
+  width: 100%;
+  max-width: calc(100% - 16px * 2);
   margin: 0 auto;
   padding-top: 100px;
 }
 
 @media screen and (min-width: 768px) {
   .root {
-    width: calc(100% - 24px * 2);
+    max-width: calc(100% - 24px * 2);
   }
 }
 
 @media screen and (min-width: 1024px) {
   .root {
-    width: calc(100% - 48px * 2);
     padding: 70px 0 50px;
+  }
+}
+
+@media screen and (min-width: 1272px) {
+  .root {
+    max-width: 1184px;
   }
 }
 
@@ -51,7 +56,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1272px) {
   .list {
     gap: var(--desktop-gap);
   }
@@ -76,7 +81,7 @@
   z-index: 2;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1272px) {
   /* First column */
   .listItem:nth-of-type(4n + 1) .lightboxButton {
     left: 0;
