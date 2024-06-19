@@ -36,7 +36,7 @@
 }
 
 /* Desktop hover effects */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1272px) {
   .root:hover {
     background-color: rgb(var(--rgb-background), 0.8);
   }

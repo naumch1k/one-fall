@@ -10,7 +10,7 @@ import styles from './Gallery.module.css'
 import data from './data.json'
 
 export const Gallery = () => {
-  const isDesktop = useMediaQuery(`(min-width: 1280px)`)
+  const isDesktop = useMediaQuery(`(min-width: 1272px)`)
   const {
     previewedItem,
     previewImageRef,
