@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Button } from '@/components/ui/Button/Button'
+import { ArrowLink } from '@/components/ui/ArrowLink/ArrowLink'
 import { Icon } from '@/components/ui/Icon/Icon'
 import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
 import styles from './MerchCard.module.css'
@@ -50,15 +50,7 @@ export const MerchCard = ({
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
         <span className={styles.price}>{`${price} USD`}</span>
-        <Button
-          view='secondary'
-          isLink
-          href={purchaseUrl}
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          Buy on Bandcamp
-        </Button>
+        <ArrowLink href={purchaseUrl} target='_blank' text='Buy on Bandcamp' />
       </div>
     </div>
   )
