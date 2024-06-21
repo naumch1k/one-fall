@@ -9,8 +9,10 @@
 
 .story {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 30px;
   min-height: 100vh;
   background: url('/images/story-background.png') no-repeat center;
   background-size: cover;
