@@ -10,25 +10,21 @@ interface IArrowLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 export const ArrowLink = ({
-  className,
+  className = '',
   href,
   target = '_blank',
   text,
-}: IArrowLinkProps) => {
-  const classes = `${className ?? ''} ${styles.root}`
-
-  return (
-    <a
-      className={classes}
-      href={href}
-      target={target}
-      rel='noopener noreferrer'
-    >
-      <span className={styles.text}>{text}</span>
-      <div className={styles.arrows} aria-hidden>
-        <span className={styles.arrow}>➞</span>
-        <span className={styles.arrow}>➞</span>
-      </div>
-    </a>
-  )
-}
+}: IArrowLinkProps) => (
+  <a
+    className={`${styles.root} ${className}`}
+    href={href}
+    target={target}
+    rel='noopener noreferrer'
+  >
+    <span className={styles.text}>{text}</span>
+    <div className={styles.arrows} aria-hidden>
+      <span className={styles.arrow}>➞</span>
+      <span className={styles.arrow}>➞</span>
+    </div>
+  </a>
+)
