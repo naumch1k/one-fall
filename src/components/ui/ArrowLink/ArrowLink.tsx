@@ -26,8 +26,8 @@ export const ArrowLink = ({
     >
       <span className={styles.text}>{text}</span>
       <div className={styles.arrows} aria-hidden>
-        <span className={styles.arrow}>&#8594;</span>
-        <span className={styles.arrow}>&#8594;</span>
+        <span className={styles.arrow}>➞</span>
+        <span className={styles.arrow}>➞</span>
       </div>
     </a>
   )
