@@ -22,7 +22,6 @@ export const About = () => {
         </p>
         <ArrowLink
           href='https://docs.google.com/document/d/1ewbz8SDwqfCvDqanZPgs-DbR6oCl0i7TNjxYrznLeA4/edit'
-          target='_blank'
           text='Read more'
         />
       </div>

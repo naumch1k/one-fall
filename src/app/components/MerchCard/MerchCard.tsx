@@ -50,7 +50,7 @@ export const MerchCard = ({
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
         <span className={styles.price}>{`${price} USD`}</span>
-        <ArrowLink href={purchaseUrl} target='_blank' text='Buy on Bandcamp' />
+        <ArrowLink href={purchaseUrl} text='Buy on Bandcamp' />
       </div>
     </div>
   )
