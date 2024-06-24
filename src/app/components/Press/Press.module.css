@@ -1,0 +1,6 @@
+.root {
+  width: calc(100% - 24px * 2);
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding-top: 100px;
+}
