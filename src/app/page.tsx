@@ -5,6 +5,7 @@ import { Music } from '@/app/components/Music/Music'
 import { Events } from './components/Events/Events'
 import { Merch } from './components/Merch/Merch'
 import { Gallery } from './components/Gallery/Gallery'
+import { Press } from './components/Press/Press'
 
 export const metadata: Metadata = {
   title: 'One Fall',
@@ -21,6 +22,7 @@ export default function Main() {
       <Events />
       <Merch />
       <Gallery />
+      <Press />
     </main>
   )
 }
