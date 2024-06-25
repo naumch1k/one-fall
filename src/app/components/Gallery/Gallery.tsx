@@ -13,7 +13,6 @@ export const Gallery = () => {
   const isDesktop = useMediaQuery(`(min-width: 1272px)`)
   const {
     previewedItem,
-    previewImageRef,
     handleMouseEnter,
     handleMouseLeave,
     isPreviewing,
@@ -47,7 +46,6 @@ export const Gallery = () => {
             <GalleryImagePreview
               currentItem={previewedItem}
               isVisible={isPreviewing}
-              previewImageRef={previewImageRef}
             />
           )}
         </ul>
