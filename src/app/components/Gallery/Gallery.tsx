@@ -25,10 +25,10 @@ export const Gallery = () => {
       <div className={styles.innerWrapper}>
         <ul className={styles.list}>
           {data.items.map(item => (
-            <li key={item.url} className={styles.listItem}>
+            <li key={item.id} className={styles.listItem}>
               <Image
                 className={styles.image}
-                src={item.url}
+                src={item.imageUrl}
                 alt={item.description}
                 width={500}
                 height={500}

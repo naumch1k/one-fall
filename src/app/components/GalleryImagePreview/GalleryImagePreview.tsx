@@ -19,7 +19,7 @@ export const GalleryImagePreview = ({
       <Image
         ref={previewImageRef}
         className={`${styles.image} ${isVisible ? styles.isVisible : ''}`}
-        src={currentItem.url}
+        src={currentItem.imageUrl}
         alt={currentItem.description}
         width={1303}
         height={643}
