@@ -1,4 +1,5 @@
 export interface IGalleryImage {
-  url: string
+  id: string
+  imageUrl: string
   description: string
 }

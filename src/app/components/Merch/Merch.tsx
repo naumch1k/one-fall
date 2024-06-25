@@ -4,7 +4,8 @@ import Image from 'next/image'
 import { MerchList } from '../MerchList/MerchList'
 import { MerchCard } from '../MerchCard/MerchCard'
 import { Modal } from '@/components/ui/Modal/Modal'
-import { useFullscreenImageView } from './hooks/useFullscreenImageView'
+import { useFullscreenImageView } from '@/helpers/hooks/useFullscreenImageView'
+import { IMerchItem } from '@/helpers/types'
 import styles from './Merch.module.css'
 
 import data from './data.json'
@@ -16,7 +17,7 @@ export const Merch = () => {
     closeByBackdropClick,
     currentItem,
     handleImageClick,
-  } = useFullscreenImageView(data)
+  } = useFullscreenImageView<IMerchItem>(data)
 
   return (
     <>
@@ -31,7 +32,7 @@ export const Merch = () => {
                 description={item.description}
                 price={item.price}
                 purchaseUrl={item.purchaseInfo.purchaseUrl}
-                image={item.image}
+                image={item.imageUrl}
                 onImageClick={handleImageClick}
               />
             </MerchList.Item>
@@ -47,7 +48,7 @@ export const Merch = () => {
           <div className={styles.imageWrapper}>
             <Image
               className={styles.image}
-              src={currentItem.image}
+              src={currentItem.imageUrl}
               alt={currentItem.title}
               width={500}
               height={500}
