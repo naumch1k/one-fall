@@ -1,7 +1,6 @@
 'use client'
 
-import Image from 'next/image'
-import { LightboxButton } from '@/components/ui/LightboxButton/LightboxButton'
+import { GalleryImage } from '../GalleryImage/GalleryImage'
 import { GalleryImagePreview } from '../GalleryImagePreview/GalleryImagePreview'
 import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
 import { useGalleryImagePreview } from './hooks/useGalleryImagePreview'
@@ -25,20 +24,12 @@ export const Gallery = () => {
         <ul className={styles.list}>
           {data.items.map(item => (
             <li key={item.id} className={styles.listItem}>
-              <Image
-                className={styles.image}
-                src={item.imageUrl}
-                alt={item.description}
-                width={500}
-                height={500}
-              />
-              <LightboxButton
-                className={styles.lightboxButton}
-                onClick={() => console.log('Click!')}
-                onMouseEnter={() => handleMouseEnter(item)}
+              <GalleryImage
+                item={item}
+                onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                onFocus={() => handleMouseEnter(item)}
-                onBlur={handleMouseLeave}
+                onImageClick={() => console.log('Click!')}
+                buttonClassName={styles.lightboxButton}
               />
             </li>
           ))}
