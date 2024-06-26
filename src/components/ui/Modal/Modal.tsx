@@ -4,6 +4,7 @@ import { OverlayToggle } from '../OverlayToggle/OverlayToggle'
 import styles from './Modal.module.css'
 
 interface IModalProps {
+  variant: 'lightbox' | 'dialog'
   isOpen: boolean
   onClose: () => void
   onBackdropClick: React.MouseEventHandler<HTMLDivElement>
@@ -11,6 +12,7 @@ interface IModalProps {
 }
 
 export const Modal = ({
+  variant,
   isOpen,
   onClose,
   onBackdropClick,
@@ -29,7 +31,9 @@ export const Modal = ({
           >
             Close
           </OverlayToggle>
-          {children}
+          <div className={styles[variant]}>
+            {children}
+          </div>
         </div>
       </FocusLock>
     </Portal>

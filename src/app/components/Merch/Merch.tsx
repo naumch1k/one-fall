@@ -41,19 +41,18 @@ export const Merch = () => {
       </section>
       {currentItem && (
         <Modal
+          variant='dialog'
           isOpen={isModalOpen}
           onClose={closeModal}
           onBackdropClick={closeByBackdropClick}
         >
-          <div className={styles.imageWrapper}>
-            <Image
-              className={styles.image}
-              src={currentItem.imageUrl}
-              alt={currentItem.title}
-              width={500}
-              height={500}
-            />
-          </div>
+          <Image
+            className={styles.modalImage}
+            src={currentItem.imageUrl}
+            alt={currentItem.title}
+            width={500}
+            height={500}
+          />
         </Modal>
       )}
     </>
