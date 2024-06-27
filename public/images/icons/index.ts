@@ -4,6 +4,7 @@ import ArrowRight from './arrow-right.svg'
 import ArrowUp from './arrow-up.svg'
 import Eye from './eye.svg'
 import Plus from './plus.svg'
+import X from './x.svg'
 
 export default {
   'arrow-down': ArrowDown,
@@ -12,4 +13,5 @@ export default {
   'arrow-up': ArrowUp,
   'eye': Eye,
   'plus': Plus,
+  'x': X,
 }
