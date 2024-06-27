@@ -5,14 +5,12 @@ import styles from './Press.module.css'
 import data from './data.json'
 
 export const Press = () => {
-  const sortedCardsByDESC = [...data.items].toSorted(
-    (firstCard, secondCard) => {
-      const firstDate = new Date(firstCard.publishDate).getTime()
-      const secondDate = new Date(secondCard.publishDate).getTime()
+  const sortedCardsByDESC = [...data.items].sort((firstCard, secondCard) => {
+    const firstDate = new Date(firstCard.publishDate).getTime()
+    const secondDate = new Date(secondCard.publishDate).getTime()
 
-      return secondDate - firstDate
-    }
-  )
+    return secondDate - firstDate
+  })
 
   return (
     <section id='press' className={styles.root}>
