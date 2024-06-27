@@ -1,11 +1,11 @@
 'use client'
 
-import { useEventLink } from './hooks/useEventLink'
 import { IEvent } from '@/helpers/types'
 import styles from './EventLink.module.css'
+import { useFormattedDate } from '../../../helpers/hooks/useFormattedDate'
 
 export const EventLink = ({ url, date, city, venue }: IEvent) => {
-  const { formattedDate, isPast } = useEventLink(date)
+  const { formattedDate, isPast } = useFormattedDate(date, 'EventLink')
 
   const classes = `${styles.root} ${isPast ? styles.isPast : ''}`
 
