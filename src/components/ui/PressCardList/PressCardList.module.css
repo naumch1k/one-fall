@@ -1,0 +1,17 @@
+.root {
+  list-style-type: none;
+}
+
+@media screen and (min-width: 768px) {
+  .root {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  .root {
+    gap: 85px;
+  }
+}
