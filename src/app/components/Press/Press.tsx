@@ -17,7 +17,7 @@ export const Press = () => {
       <h2 className='visuallyHidden'>Press</h2>
 
       <PressCardList>
-        {sortedCardsByDESC.map(card => (
+        {sortedCardsByDESC.slice(0, 3).map(card => (
           <PressCardItem
             key={card.id}
             id={card.id}
