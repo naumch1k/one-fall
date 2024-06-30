@@ -5,6 +5,7 @@ import { GalleryImage } from '../GalleryImage/GalleryImage'
 import { GalleryImagePreview } from '../GalleryImagePreview/GalleryImagePreview'
 import { Modal } from '@/components/ui/Modal/Modal'
 import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
+import { useGalleryImages } from './hooks/useGalleryImages'
 import { useGalleryImagePreview } from './hooks/useGalleryImagePreview'
 import { useFullscreenImageView } from '@/helpers/hooks/useFullscreenImageView'
 import { IGalleryImage } from '@/helpers/types'
@@ -14,6 +15,7 @@ import data from './data.json'
 
 export const Gallery = () => {
   const isDesktop = useMediaQuery(`(min-width: 1272px)`)
+  const imagesToRender = useGalleryImages(data)
   const {
     previewedItem,
     handleMouseEnter,
@@ -34,7 +36,7 @@ export const Gallery = () => {
         <h2 className='visuallyHidden'>Gallery</h2>
         <div className={styles.innerWrapper}>
           <ul className={styles.list}>
-            {data.items.map(item => (
+            {imagesToRender.map(item => (
               <li key={item.id} className={styles.listItem}>
                 <GalleryImage
                   item={item}
