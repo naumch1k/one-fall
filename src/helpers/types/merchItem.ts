@@ -6,5 +6,5 @@ export interface IMerchItem {
   purchaseInfo: {
     purchaseUrl: string
   }
-  image: string
+  imageUrl: string
 }

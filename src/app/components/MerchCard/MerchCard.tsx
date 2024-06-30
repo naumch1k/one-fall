@@ -1,6 +1,6 @@
 import Image from 'next/image'
+import { LightboxButton } from '@/components/ui/LightboxButton/LightboxButton'
 import { ArrowLink } from '@/components/ui/ArrowLink/ArrowLink'
-import { Icon } from '@/components/ui/Icon/Icon'
 import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
 import styles from './MerchCard.module.css'
 
@@ -36,14 +36,10 @@ export const MerchCard = ({
           height={280}
         />
         {!isMobile && (
-          <button
-            className={styles.button}
-            type='button'
-            aria-label='Open full sized image'
+          <LightboxButton
+            className={styles.lightboxButton}
             onClick={() => onImageClick(id)}
-          >
-            <Icon glyph='eye' className={styles.eyeIcon} />
-          </button>
+          />
         )}
       </div>
       <div className={styles.detailsWrapper}>

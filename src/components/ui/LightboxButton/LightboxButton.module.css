@@ -1,0 +1,64 @@
+.root {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: none;
+  color: rgb(var(--rgb-foreground));
+  background-color: transparent;
+  transition: var(--common-transition);
+  cursor: pointer;
+}
+
+.eyeIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 40px;
+  fill: currentColor;
+  transition: var(--common-transition);
+  opacity: 0;
+}
+
+.eyeIcon > path {
+  animation: blink 2.4s infinite;
+}
+
+@media screen and (min-width: 1024px) {
+  .root:focus {
+    background-color: rgb(var(--rgb-background), 0.8);
+  }
+
+  .root:focus .eyeIcon {
+    opacity: 1;
+  }
+}
+
+/* Desktop hover effects */
+@media screen and (min-width: 1272px) {
+  .root:hover {
+    background-color: rgb(var(--rgb-background), 0.8);
+  }
+
+  .root:hover .eyeIcon {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  90% {
+    transform: none;
+    animation-timing-function: ease-in;
+  }
+  93% {
+    transform: translateY(14px) scaleY(0.125);
+  }
+  100% {
+    animation-timing-function: ease-out;
+  }
+}

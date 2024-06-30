@@ -1,10 +1,14 @@
 import { useCallback, useState } from 'react'
 import { useModal } from '@/components/ui/Modal/hooks/useModal'
-import { IMerchItem } from '@/helpers/types'
 
-export const useFullscreenImageView = (data: { items: IMerchItem[] }) => {
+type FullscreenViewItem = {
+  id: string
+  imageUrl: string
+}
+
+export const useFullscreenImageView = <T extends FullscreenViewItem>(data: { items: T[] }) => {
   /* prettier-ignore */
-  const [currentItem, setCurrentItem] = useState<IMerchItem | undefined>(undefined)
+  const [currentItem, setCurrentItem] = useState<T | undefined>(undefined)
   /* prettier-ignore */
   const {
     isModalOpen, 

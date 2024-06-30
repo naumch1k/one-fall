@@ -13,7 +13,7 @@
 }
 
 .root.isOpen {
-  z-index: 1;
+  z-index: 3;
   opacity: 1;
   visibility: visible;
 }
@@ -22,5 +22,5 @@
   position: fixed;
   top: 40px;
   right: 30px;
-  z-index: 1;
+  z-index: 3;
 }
