@@ -23,26 +23,26 @@
   font-size: 12px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #aaa078;
+  color: rgb(var(--rgb-foreground-secondary));
 }
 
 .title {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: #f8f7f0;
+  color: rgb(var(--rgb-foreground));
 }
 
 .imgWrapper {
   width: 100%;
-  height: 290px;
+  aspect-ratio: 3/2;
+  position: relative;
 }
 
 .img {
   width: 100%;
   object-fit: cover;
-  aspect-ratio: 3/2;
   object-position: center top;
 }
 
@@ -67,7 +67,7 @@
     width: 1px;
     height: 100%;
     display: block;
-    background-color: rgba(125, 114, 97, 0.5);
+    background-color: rgb(var(--rgb-inactive), 0.5);
     position: absolute;
     top: 0;
     left: -34px;
