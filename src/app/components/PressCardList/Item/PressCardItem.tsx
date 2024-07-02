@@ -2,7 +2,8 @@
 
 import Image from 'next/image'
 import { useFormattedDate } from '../../../../helpers/hooks/useFormattedDate'
-import { ArrowLink } from '../../ArrowLink/ArrowLink'
+import { ArrowLink } from '@/components/ui/ArrowLink/ArrowLink'
+
 import { IPressCard } from '@/helpers/types/pressItem'
 import styles from './PressCardItem.module.css'
 
@@ -32,8 +33,7 @@ export const PressCardItem = ({
 
         <div className={styles.imgWrapper}>
           <Image
-            width={720}
-            height={290}
+            fill={true}
             src={imageUrl}
             alt='One Fall article cover'
             className={styles.img}
