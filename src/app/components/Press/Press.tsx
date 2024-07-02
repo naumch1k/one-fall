@@ -1,5 +1,5 @@
-import { PressCardList } from '@/components/ui/PressCardList/PressCardList'
-import { PressCardItem } from '@/components/ui/PressCardList/Item/PressCardItem'
+import { PressCardList } from '../PressCardList/PressCardList'
+import { PressCardItem } from '../PressCardList/Item/PressCardItem'
 import { useSortedPressCards } from './hook/useSortedPressCards'
 import styles from './Press.module.css'
 import data from './data.json'
