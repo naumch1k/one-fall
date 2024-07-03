@@ -22,7 +22,12 @@ export const Modal = ({
 
   return (
     <Portal>
-      <FocusLock returnFocus>
+      <FocusLock
+        returnFocus={suggestedNode => {
+          setTimeout(() => (suggestedNode as HTMLElement).blur(), 0)
+          return true
+        }}
+      >
         <div className={styles.root} onClick={onBackdropClick}>
           <button
             className={styles.closeButton}
@@ -32,9 +37,7 @@ export const Modal = ({
           >
             <Icon glyph='x' width='100%' height='100%' />
           </button>
-          <div className={styles[variant]}>
-            {children}
-          </div>
+          <div className={styles[variant]}>{children}</div>
         </div>
       </FocusLock>
     </Portal>
