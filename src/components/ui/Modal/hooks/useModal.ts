@@ -20,6 +20,7 @@ export const useModal = () => {
 
   const closeByEsc = useCallback(
     (e: Event) => {
+      e.preventDefault()
       if (e instanceof KeyboardEvent && e.code === 'Escape') closeModal()
     },
     [closeModal]
