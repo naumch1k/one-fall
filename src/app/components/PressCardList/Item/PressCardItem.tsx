@@ -1,11 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import { useFormattedDate } from '../../../../helpers/hooks/useFormattedDate'
 import { ArrowLink } from '@/components/ui/ArrowLink/ArrowLink'
 
 import { IPressCard } from '@/helpers/types/pressItem'
 import styles from './PressCardItem.module.css'
+import { FormattedDate } from '@/components/ui/FormattedDate/FormattedDate'
 
 export const PressCardItem = ({
   title,
@@ -15,12 +15,14 @@ export const PressCardItem = ({
   publishUrl,
   imageUrl,
 }: IPressCard) => {
-  const { formattedDate } = useFormattedDate(publishDate, 'PressCard')
-
   return (
     <li className={styles.root}>
       <div className={styles.header}>
-        <span className={styles.date}>{formattedDate}</span>
+        <FormattedDate
+          dateString={publishDate}
+          outputFormat='month dd, yyyy'
+          className={styles.date}
+        />
         <h3 className={styles.title}>{title}</h3>
       </div>
       <div className={styles.body}>
