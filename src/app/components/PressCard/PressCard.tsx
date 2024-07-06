@@ -1,13 +1,11 @@
-'use client'
-
 import Image from 'next/image'
-import { ArrowLink } from '@/components/ui/ArrowLink/ArrowLink'
-
 import { IPressCard } from '@/helpers/types/pressItem'
-import styles from './PressCardItem.module.css'
+import { ArrowLink } from '@/components/ui/ArrowLink/ArrowLink'
 import { FormattedDate } from '@/components/ui/FormattedDate/FormattedDate'
 
-export const PressCardItem = ({
+import styles from './PressCard.module.css'
+
+export const PressCard = ({
   title,
   outline,
   publisher,
@@ -16,7 +14,7 @@ export const PressCardItem = ({
   imageUrl,
 }: IPressCard) => {
   return (
-    <li className={styles.root}>
+    <>
       <div className={styles.header}>
         <FormattedDate
           dateString={publishDate}
@@ -35,13 +33,14 @@ export const PressCardItem = ({
 
         <div className={styles.imgWrapper}>
           <Image
-            fill={true}
+            fill
+            sizes='(max-width: 767px) 100vw, (max-width: 1179px) 50vw, 30vw'
             src={imageUrl}
             alt='One Fall article cover'
             className={styles.img}
           />
         </div>
       </div>
-    </li>
+    </>
   )
 }
