@@ -1,8 +1,8 @@
 'use client'
 
+import { FormattedDate } from '../FormattedDate/FormattedDate'
 import { IEvent } from '@/helpers/types'
 import styles from './EventLink.module.css'
-import { FormattedDate } from '../FormattedDate/FormattedDate'
 
 export const EventLink = ({ url, date, city, venue }: IEvent) => {
   const isPast = new Date(date) < new Date()
