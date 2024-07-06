@@ -1,8 +1,7 @@
 import Image from 'next/image'
-import { IPressCard } from '@/helpers/types/pressItem'
-import { ArrowLink } from '@/components/ui/ArrowLink/ArrowLink'
 import { FormattedDate } from '@/components/ui/FormattedDate/FormattedDate'
-
+import { ArrowLink } from '@/components/ui/ArrowLink/ArrowLink'
+import { IPressCard } from '@/helpers/types'
 import styles from './PressCard.module.css'
 
 export const PressCard = ({

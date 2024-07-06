@@ -1,8 +1,9 @@
 import { PressList } from '../PressList/PressList'
-import { useSortedPressCards } from './hook/useSortedPressCards'
 import { PressCard } from '../PressCard/PressCard'
-import data from './data.json'
+import { useSortedPressCards } from './hook/useSortedPressCards'
 import styles from './Press.module.css'
+
+import data from './data.json'
 
 export const Press = () => {
   const sortedPressCards = useSortedPressCards(data.items)
