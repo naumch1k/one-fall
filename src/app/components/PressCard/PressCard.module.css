@@ -26,12 +26,12 @@
 }
 
 .imgWrapper {
+  width: 100%;
   aspect-ratio: 3/2;
   position: relative;
 }
 
 .img {
-  width: 100%;
   object-fit: cover;
   object-position: center top;
 }
