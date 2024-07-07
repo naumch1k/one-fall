@@ -1,11 +1,12 @@
 'use client'
 
 import Image from 'next/image'
-import { EventList } from '../EventList/EventList'
+import { List } from '@/components/ui/List/List'
 import { EventLink } from '@/components/ui/EventLink/EventLink'
 import { IconButton } from '@/components/ui/IconButton/IconButton'
 import { useEvents } from './hooks/useEvents'
 import styles from './Events.module.css'
+import stylesEventListItem from '@/components/ui/List/type/events.module.css'
 
 import data from './data.json'
 
@@ -23,18 +24,18 @@ export const Events = () => {
           fill
         />
       </div>
-      <EventList>
+      <List type='events-list'>
         {eventsToRender.map(event => (
-          <EventList.Item key={event.date}>
+          <List.Item key={event.date} className={stylesEventListItem.item}>
             <EventLink
               url={event.url}
               date={event.date}
               city={event.city}
               venue={event.venue}
             />
-          </EventList.Item>
+          </List.Item>
         ))}
-      </EventList>
+      </List>
       {hasMoreItems && (
         <IconButton
           icon='arrow-down'

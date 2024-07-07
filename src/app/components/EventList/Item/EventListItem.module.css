@@ -1,3 +1,0 @@
-.root:not(:last-child) {
-  border-bottom: 1px solid rgb(var(--rgb-inactive), 0.25);
-}
