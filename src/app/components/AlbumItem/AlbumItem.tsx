@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/Button/Button'
 import { FormattedDuration } from '@/components/ui/FormattedDuration/FormattedDuration'
 import { ITrack } from '@/helpers/types'
-import styles from './AlbumListItem.module.css'
+import styles from './AlbumItem.module.css'
 import { useAudioTrackRefs } from '@/helpers/contexts/AudioTrackRefs.context'
 import { useAlbumInfo } from './hooks/useAlbumInfo'
 import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
@@ -17,7 +17,7 @@ interface IAlbumListItemProps {
   children: React.ReactNode
 }
 
-export const AlbumListItem = ({
+export const AlbumItem = ({
   name,
   type,
   year,
@@ -31,7 +31,7 @@ export const AlbumListItem = ({
   const { duration, trackCount } = useAlbumInfo(tracks, audioTrackRefs)
 
   return (
-    <li className={styles.root}>
+    <div className={styles.root}>
       <div className={styles.imageWrapper}>
         <Image
           className={styles.image}
@@ -73,6 +73,6 @@ export const AlbumListItem = ({
         </Button>
       </div>
       {children}
-    </li>
+    </div>
   )
 }
