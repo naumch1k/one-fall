@@ -1,7 +1,10 @@
-import { PressList } from '../PressList/PressList'
+'use client'
+
+import { List } from '@/components/ui/List/List'
 import { PressCard } from '../PressCard/PressCard'
 import { useSortedPressCards } from './hook/useSortedPressCards'
 import styles from './Press.module.css'
+import stylesPressListItem from '@/app/components/PressCard/PressCard.module.css'
 
 import data from './data.json'
 
@@ -12,13 +15,13 @@ export const Press = () => {
     <section id='press' className={styles.root}>
       <h2 className='visuallyHidden'>Press</h2>
 
-      <PressList>
+      <List type='press-list'>
         {sortedPressCards.slice(0, 3).map(card => (
-          <PressList.Item key={card.id}>
+          <List.Item key={card.id} className={stylesPressListItem.root}>
             <PressCard {...card} />
-          </PressList.Item>
+          </List.Item>
         ))}
-      </PressList>
+      </List>
     </section>
   )
 }
