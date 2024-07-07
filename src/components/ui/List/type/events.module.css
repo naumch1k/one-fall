@@ -1,0 +1,29 @@
+.root {
+  width: calc(100% - 20px * 2);
+  margin: 100px auto 0;
+  list-style: none;
+  border-top: 1px solid rgb(var(--rgb-inactive), 0.25);
+  border-bottom: 1px solid rgb(var(--rgb-inactive), 0.25);
+}
+
+.item:not(:last-child) {
+  border-bottom: 1px solid rgb(var(--rgb-inactive), 0.25);
+}
+
+@media screen and (min-width: 480px) {
+  .root {
+    width: calc(100% - 24px * 2);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .root {
+    width: calc(100% - 48px * 2);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .root {
+    width: 100%;
+  }
+}
