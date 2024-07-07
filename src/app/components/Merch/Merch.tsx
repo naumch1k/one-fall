@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { MerchList } from '../MerchList/MerchList'
+import { List } from '@/components/ui/List/List'
 import { MerchCard } from '../MerchCard/MerchCard'
 import { Modal } from '@/components/ui/Modal/Modal'
 import { useFullscreenImageView } from '@/helpers/hooks/useFullscreenImageView'
@@ -23,9 +23,9 @@ export const Merch = () => {
     <>
       <section id='merch' className={styles.root}>
         <h2 className='visuallyHidden'>Merch</h2>
-        <MerchList>
+        <List type='merch-list'>
           {data.items.map(item => (
-            <MerchList.Item key={item.id}>
+            <List.Item key={item.id}>
               <MerchCard
                 id={item.id}
                 title={item.title}
@@ -35,9 +35,9 @@ export const Merch = () => {
                 image={item.imageUrl}
                 onImageClick={handleImageClick}
               />
-            </MerchList.Item>
+            </List.Item>
           ))}
-        </MerchList>
+        </List>
       </section>
       {currentItem && (
         <Modal
