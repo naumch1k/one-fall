@@ -4,7 +4,6 @@ import { List } from '@/components/ui/List/List'
 import { PressCard } from '../PressCard/PressCard'
 import { useSortedPressCards } from './hook/useSortedPressCards'
 import styles from './Press.module.css'
-import stylesPressListItem from '@/app/components/PressCard/PressCard.module.css'
 
 import data from './data.json'
 
@@ -17,7 +16,7 @@ export const Press = () => {
 
       <List type='press-list'>
         {sortedPressCards.slice(0, 3).map(card => (
-          <List.Item key={card.id} className={stylesPressListItem.root}>
+          <List.Item key={card.id}>
             <PressCard {...card} />
           </List.Item>
         ))}
