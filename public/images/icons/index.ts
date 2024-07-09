@@ -2,8 +2,12 @@ import ArrowDown from './arrow-down.svg'
 import ArrowLeft from './arrow-left.svg'
 import ArrowRight from './arrow-right.svg'
 import ArrowUp from './arrow-up.svg'
+import FacebookLogo from './facebook-logo.svg'
+import InstagramLogo from './instagram-logo.svg'
 import Eye from './eye.svg'
 import Plus from './plus.svg'
+import TikTokLogo from './tiktok-logo.svg'
+import TwitterLogo from './twitter-logo.svg'
 import X from './x.svg'
 
 export default {
@@ -12,6 +16,10 @@ export default {
   'arrow-right': ArrowRight,
   'arrow-up': ArrowUp,
   'eye': Eye,
+  'facebook-logo': FacebookLogo,
+  'instagram-logo': InstagramLogo,
   'plus': Plus,
+  'tiktok-logo': TikTokLogo,
+  'twitter-logo': TwitterLogo,
   'x': X,
 }
