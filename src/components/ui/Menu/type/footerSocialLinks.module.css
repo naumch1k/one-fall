@@ -1,0 +1,43 @@
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+}
+
+.link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  color: rgb(var(--rgb-foreground-secondary));
+  border: 1px solid rgb(var(--rgb-foreground-secondary));
+  border-radius: 50%;
+  outline: none;
+  transition: var(--common-transition);
+}
+
+.link:focus-visible {
+  color: rgb(var(--rgb-foreground));
+  border: 1px solid rgb(var(--rgb-foreground));
+}
+
+@media screen and (min-width: 1272px) {
+  .link {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+  }
+
+  /* Desktop hover effects */
+  .link:hover {
+    color: rgb(var(--rgb-foreground));
+    border: 1px solid rgb(var(--rgb-foreground));
+  }
+
+  .link:active {
+    opacity: 0.7;
+  }
+}
