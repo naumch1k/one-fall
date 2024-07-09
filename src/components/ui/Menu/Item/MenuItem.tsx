@@ -1,9 +1,10 @@
+import { AnchorHTMLAttributes } from 'react'
 import Link from 'next/link'
 import { useMenu } from '../Menu.context'
 import { styles } from '../Menu.styles'
 
-interface IMenuItemProps {
-  id: string
+interface IMenuItemProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  id?: string
   href: string
   text: string
   covert?: boolean
