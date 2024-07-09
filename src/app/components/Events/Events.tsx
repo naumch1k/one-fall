@@ -6,7 +6,6 @@ import { EventLink } from '@/components/ui/EventLink/EventLink'
 import { IconButton } from '@/components/ui/IconButton/IconButton'
 import { useEvents } from './hooks/useEvents'
 import styles from './Events.module.css'
-import stylesEventListItem from '@/components/ui/List/type/events.module.css'
 
 import data from './data.json'
 
@@ -26,7 +25,7 @@ export const Events = () => {
       </div>
       <List type='events-list'>
         {eventsToRender.map(event => (
-          <List.Item key={event.date} className={stylesEventListItem.item}>
+          <List.Item key={event.date}>
             <EventLink
               url={event.url}
               date={event.date}
