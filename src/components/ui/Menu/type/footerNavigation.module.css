@@ -1,0 +1,29 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+}
+
+.link {
+  font-size: 16px;
+  line-height: 1.2;
+  color: rgb(var(--rgb-foreground-secondary));
+  outline: none;
+  transition: var(--common-transition);
+}
+
+.link:focus-visible {
+  color: rgb(var(--rgb-foreground));
+}
+
+/* Desktop hover effects */
+@media screen and (min-width: 1272px) {
+  .link:hover {
+    color: rgb(var(--rgb-foreground));
+  }
+
+  .link:active {
+    opacity: 0.7;
+  }
+}
