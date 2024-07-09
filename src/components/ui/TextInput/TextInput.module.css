@@ -1,0 +1,49 @@
+.root {
+  width: 100%;
+  padding-bottom: 10px;
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  line-height: 1.2;
+  color: rgb(var(--rgb-foreground-secondary));
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid rgb(var(--rgb-foreground-secondary));
+  outline: none;
+  transition: var(--common-transition);
+}
+
+.root::placeholder {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.2;
+  color: rgb(var(--rgb-foreground-secondary));
+  transition: var(--common-transition);
+}
+
+.root:hover,
+.root:focus {
+  color: rgb(var(--rgb-foreground));
+  border-bottom: 1px solid rgb(var(--rgb-foreground));
+}
+
+.root:hover.root::placeholder,
+.root:focus.root::placeholder {
+  color: rgb(var(--rgb-foreground));
+}
+
+.root.invalid {
+  color: rgb(var(--rgb-error));
+  border-bottom: 1px solid rgb(var(--rgb-error));
+}
+
+.root.invalid.root::placeholder {
+  color: rgb(var(--rgb-error));
+}
+
+.error {
+  min-height: 14px;
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1;
+  color: rgb(var(--rgb-error));
+}
