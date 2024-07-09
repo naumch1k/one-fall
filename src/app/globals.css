@@ -1,13 +1,14 @@
 :root {
   --min-content-width: 414px;
   --max-content-width: 1170px;
-  /* --border-radius: 12px; */
+  --border-radius: 4px;
   --rgb-foreground: 248, 247, 240;
   --rgb-foreground-secondary: 170, 160, 120;
   --rgb-background: 27, 24, 28;
   --rgb-background-lighter: 32, 29, 32;
   --rgb-inactive: 125, 114, 97;
   --rgb-accent: 212, 184, 57;
+  --rgb-error: 207, 46, 46;
   --common-transition: all 0.5s ease;
   --image-gallery-desktop-gap: 16px;
 }
