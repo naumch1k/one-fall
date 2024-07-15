@@ -57,6 +57,11 @@ a {
   text-decoration: none;
 }
 
+input::-moz-placeholder,
+textarea::-moz-placeholder  {
+  opacity: 1;
+}
+
 .visuallyHidden {
   position: absolute;
   width: 1px;
