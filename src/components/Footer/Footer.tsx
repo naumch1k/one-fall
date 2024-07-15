@@ -2,10 +2,11 @@
 
 import { ContactForm } from '@/app/components/ContactForm/ContactForm'
 import { Menu } from '../ui/Menu/Menu'
-// TODO: refactor to export thru index.ts
-import { mainNavigationItems } from '@/helpers/constants/mainNavigationItems'
-import { musicStreamingItems } from '@/helpers/constants/musicStreamingItems'
-import { socialLinkItems } from '@/helpers/constants/socialLinkItems'
+import {
+  mainNavigationItems,
+  musicStreamingItems,
+  socialLinkItems,
+} from '@/helpers/constants'
 import styles from './Footer.module.css'
 
 export const Footer = () => {

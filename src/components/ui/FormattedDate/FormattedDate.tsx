@@ -1,4 +1,4 @@
-import { MONTHS } from '@/helpers/constants/months'
+import { MONTHS } from '@/helpers/constants'
 import { getFormatDateParts } from './FormattedDate.utils'
 
 interface IFormattedDateProps {
