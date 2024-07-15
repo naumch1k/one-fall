@@ -19,13 +19,17 @@ export const useMainNavigation = () => {
 
     prevScrollPosition.current = currentScrollPosition
 
-    const sections = document.querySelectorAll('section')
-    sections.forEach(section => {
-      const top = section.offsetTop - 150
-      const bottom = top + section.offsetHeight
+    const sections = Array.from(document.querySelectorAll('section'))
+    const footer = document.querySelector('footer')
+
+    const elements = footer ? [...sections, footer] : sections
+
+    elements.forEach(element => {
+      const top = element.offsetTop - 150
+      const bottom = top + element.offsetHeight
 
       if (currentScrollPosition >= top && currentScrollPosition < bottom) {
-        const id = section.getAttribute('id')
+        const id = element.getAttribute('id')
         setCurrentLink(id || '')
         return
       }
