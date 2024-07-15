@@ -3,7 +3,7 @@
 import { TextInput } from '@/components/ui/TextInput/TextInput'
 import { TextArea } from '@/components/ui/TextArea/TextArea'
 import { Button } from '@/components/ui/Button/Button'
-import { CustomValidationMessages } from '@/helpers/constants/customValidationMessages'
+import { CustomValidationMessages } from '@/helpers/constants'
 import styles from './ContactForm.module.css'
 
 export const ContactForm = () => {
