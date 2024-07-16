@@ -3,23 +3,33 @@
 import { TextInput } from '@/components/ui/TextInput/TextInput'
 import { TextArea } from '@/components/ui/TextArea/TextArea'
 import { Button } from '@/components/ui/Button/Button'
+import { useFormWithValidation } from '@/helpers/hooks/useFormWithValidation'
 import { CustomValidationMessages } from '@/helpers/constants'
 import styles from './ContactForm.module.css'
 
 export const ContactForm = () => {
+  const {
+    values,
+    errors,
+    isValid,
+    isSubmitting,
+    handleChange,
+    handleSubmit,
+  } = useFormWithValidation()
+
   return (
     <form
       className={styles.root}
-      onSubmit={e => e.preventDefault()}
+      onSubmit={handleSubmit}
       noValidate
     >
       <TextInput
         name='name'
-        // value={}
+        value={values.name}
         type='text'
-        error={false}
+        error={!!errors.name}
         errorMessage={CustomValidationMessages.NAME_ERROR}
-        onChange={() => console.log('onChange')}
+        onChange={handleChange}
         placeholder='Your name'
         minLength={2}
         maxLength={50}
@@ -27,33 +37,34 @@ export const ContactForm = () => {
       />
       <TextInput
         name='email'
-        // value={}
+        value={values.email}
         type='email'
-        error={false}
+        error={!!errors.email}
         errorMessage={CustomValidationMessages.EMAIL_ERROR}
-        onChange={() => console.log('onChange')}
+        onChange={handleChange}
         placeholder='Your email'
         required
       />
       <TextArea
         name='message'
-        // value={}
-        error={false}
+        value={values.message}
+        error={!!errors.message}
         errorMessage={CustomValidationMessages.MESSAGE_ERROR}
-        onChange={() => console.log('onChange')}
+        onChange={handleChange}
         placeholder='Your message'
         rows={7}
         minLength={2}
         maxLength={1000}
         required
       />
+      {/* TODO: notify user of form submission status */}
       <Button
         className={styles.submitButton}
         type='submit'
         view='secondary'
-        disabled={true}
+        disabled={!isValid || isSubmitting}
       >
-        Send
+        {isSubmitting ? 'Sending...' : 'Send'}
       </Button>
     </form>
   )
