@@ -5,15 +5,19 @@
   width: 100%;
 }
 
+@media screen and (min-width: 1024px) {
+  .root {
+    max-width: unset;
+  }
+}
+
+.submitButton {
+  position: relative;
+}
+
 @media screen and (min-width: 480px) {
   .submitButton {
     max-width: 450px;
     margin: 0 auto;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .root {
-    max-width: unset;
   }
 }

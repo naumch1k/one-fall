@@ -2,6 +2,7 @@ import ArrowDown from './arrow-down.svg'
 import ArrowLeft from './arrow-left.svg'
 import ArrowRight from './arrow-right.svg'
 import ArrowUp from './arrow-up.svg'
+import Check from './check.svg'
 import FacebookLogo from './facebook-logo.svg'
 import InstagramLogo from './instagram-logo.svg'
 import Eye from './eye.svg'
@@ -15,6 +16,7 @@ export default {
   'arrow-left': ArrowLeft,
   'arrow-right': ArrowRight,
   'arrow-up': ArrowUp,
+  'check': Check,
   'eye': Eye,
   'facebook-logo': FacebookLogo,
   'instagram-logo': InstagramLogo,
