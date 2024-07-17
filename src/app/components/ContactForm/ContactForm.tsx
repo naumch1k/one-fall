@@ -3,6 +3,8 @@
 import { TextInput } from '@/components/ui/TextInput/TextInput'
 import { TextArea } from '@/components/ui/TextArea/TextArea'
 import { Button } from '@/components/ui/Button/Button'
+import { Icon } from '@/components/ui/Icon/Icon'
+import { Loader } from '@/components/ui/Loader/Loader'
 import { useFormWithValidation } from '@/helpers/hooks/useFormWithValidation'
 import { CustomValidationMessages } from '@/helpers/constants'
 import styles from './ContactForm.module.css'
@@ -13,16 +15,13 @@ export const ContactForm = () => {
     errors,
     isValid,
     isSubmitting,
+    formSuccessfullySent,
     handleChange,
     handleSubmit,
   } = useFormWithValidation()
 
   return (
-    <form
-      className={styles.root}
-      onSubmit={handleSubmit}
-      noValidate
-    >
+    <form className={styles.root} onSubmit={handleSubmit} noValidate>
       <TextInput
         name='name'
         value={values.name}
@@ -57,14 +56,17 @@ export const ContactForm = () => {
         maxLength={1000}
         required
       />
-      {/* TODO: notify user of form submission status */}
       <Button
         className={styles.submitButton}
         type='submit'
         view='secondary'
         disabled={!isValid || isSubmitting}
       >
-        {isSubmitting ? 'Sending...' : 'Send'}
+        {formSuccessfullySent 
+          ? <>Message sent <Icon glyph='check' width='15px' height='15px' /></>
+          : 'Send message'
+        }
+        {isSubmitting && <Loader />}
       </Button>
     </form>
   )

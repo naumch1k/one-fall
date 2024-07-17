@@ -1,0 +1,14 @@
+.root {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(var(--rgb-accent));
+  background-color: rgb(var(--rgb-background), 0.5);
+  inset: 0;
+}
+
+.root > svg {
+  width: max-content;
+  height: 100%;
+}

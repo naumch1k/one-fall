@@ -1,6 +1,9 @@
 .root {
   width: max-content;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
   padding: 12px 20px;
   font-family: inherit;
   font-size: 14px;
@@ -30,7 +33,7 @@
 .secondary:disabled {
   color: rgb(var(--rgb-foreground-secondary), 0.5);
   border: 1px solid rgb(var(--rgb-foreground-secondary), 0.5);
-  cursor: not-allowed;
+  cursor: auto;
 }
 
 @media screen and (min-width: 480px) {

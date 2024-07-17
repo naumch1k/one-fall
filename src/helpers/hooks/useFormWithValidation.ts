@@ -6,6 +6,8 @@ interface IContactFormFields {
   message: string
 }
 
+const CONTACT_FORM_RESET_TIMEOUT = 10000
+
 const initialValues: IContactFormFields = {
   name: '',
   email: '',
@@ -17,6 +19,7 @@ export const useFormWithValidation = () => {
   const [errors, setErrors] = useState<Partial<IContactFormFields>>({})
   const [isValid, setIsValid] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formSuccessfullySent, setFormSuccessfullySent] = useState(false)
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -38,6 +41,8 @@ export const useFormWithValidation = () => {
       setValues(initialValues)
       setErrors(newErrors)
       setIsValid(newIsValid)
+
+      setTimeout(() => setFormSuccessfullySent(false), CONTACT_FORM_RESET_TIMEOUT)
     },
     [setValues, setErrors, setIsValid]
   )
@@ -54,7 +59,10 @@ export const useFormWithValidation = () => {
     setIsSubmitting(true)
 
     simulateFormSubmission()
-      .then(() => resetForm())
+      .then(() => {
+        setFormSuccessfullySent(true)
+        resetForm()
+      })
       .catch(error => console.log(error))
       .finally(() => setIsSubmitting(false))
   }
@@ -64,6 +72,7 @@ export const useFormWithValidation = () => {
     errors,
     isValid,
     isSubmitting,
+    formSuccessfullySent,
     handleChange,
     handleSubmit,
   }
