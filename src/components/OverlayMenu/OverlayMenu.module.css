@@ -5,7 +5,7 @@
   left: 0;
   overflow: auto;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-color: rgb(var(--rgb-background));
   opacity: 0;
   transition: var(--common-transition);
@@ -24,3 +24,5 @@
   right: 30px;
   z-index: 3;
 }
+
+.nav { height: 100%; }
