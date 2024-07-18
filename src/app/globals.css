@@ -1,5 +1,4 @@
 :root {
-  --min-content-width: 414px;
   --max-content-width: 1170px;
   --page-side-padding: 16px;
   --border-radius: 4px;
@@ -48,7 +47,6 @@ body {
 
 main {
   flex-grow: 1;
-  min-width: var(--min-content-width);
 }
 
 a {
