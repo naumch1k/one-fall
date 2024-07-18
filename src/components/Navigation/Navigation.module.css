@@ -7,3 +7,7 @@
     display: block;
   }
 }
+
+[data-scroll-lock] .root {
+  margin-right: var(--scrollbar-compensation);
+}
