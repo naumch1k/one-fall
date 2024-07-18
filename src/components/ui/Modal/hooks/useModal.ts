@@ -29,10 +29,38 @@ export const useModal = () => {
   )
 
   useEffect(() => {
-    if (isModalOpen) document.documentElement.style.overflow = 'hidden'
+    const scrollBarCompensation = window.innerWidth - document.body.offsetWidth
+
+    document.documentElement.style.setProperty(
+      '--scrollbar-compensation',
+      `${scrollBarCompensation}px`
+    )
+  }, [])
+
+  useEffect(() => {
+    if (isModalOpen) {
+      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        document.body.style.position = 'fixed'
+        document.body.style.top = `-${window.scrollY}px`
+        document.body.style.width = '100%'
+      } else {
+        document.body.style.overflowY = 'hidden'
+        document.body.style.paddingRight = 'var(--scrollbar-compensation)'
+        document.body.dataset.scrollLock = 'true'
+      }
+    }
 
     return () => {
-      document.documentElement.style.overflow = 'scroll'
+      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        document.body.style.position = ''
+        document.body.style.top = ``
+        document.body.style.width = ''
+        window.scrollTo(0, parseInt(document.body.style.top))
+      } else {
+        document.body.style.overflowY = 'scroll'
+        document.body.style.paddingRight = `0px`
+        delete document.body.dataset.scrollLock
+      }
     }
   }, [isModalOpen])
 

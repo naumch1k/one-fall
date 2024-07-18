@@ -14,10 +14,10 @@ export const useOverlayMenu = () => {
   }, [isMobile])
 
   useEffect(() => {
-    if (isOverlayMenuOpen) document.documentElement.style.overflow = 'hidden'
+    if (isOverlayMenuOpen) document.body.style.overflowY = 'hidden'
 
     return () => {
-      document.documentElement.style.overflow = 'scroll'
+      document.body.style.overflowY = 'scroll'
     }
   }, [isOverlayMenuOpen])
 
