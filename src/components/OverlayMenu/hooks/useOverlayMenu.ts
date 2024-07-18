@@ -14,10 +14,25 @@ export const useOverlayMenu = () => {
   }, [isMobile])
 
   useEffect(() => {
-    if (isOverlayMenuOpen) document.body.style.overflowY = 'hidden'
+    if (isOverlayMenuOpen) {
+      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        document.body.style.position = 'fixed'
+        document.body.style.top = `-${window.scrollY}px`
+        document.body.style.width = '100%'
+      } else {
+        document.body.style.overflowY = 'hidden'
+      }
+    }
 
     return () => {
-      document.body.style.overflowY = 'scroll'
+      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        document.body.style.position = ''
+        document.body.style.top = ``
+        document.body.style.width = ''
+        window.scrollTo(0, parseInt(document.body.style.top))
+      } else {
+        document.body.style.overflowY = 'scroll'
+      }
     }
   }, [isOverlayMenuOpen])
 
