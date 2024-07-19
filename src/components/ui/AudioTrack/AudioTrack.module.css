@@ -90,12 +90,26 @@
 
 /* Desktop hover effects */
 @media screen and (min-width: 1280px) {
+  .root:hover {
+    z-index: 1;
+  }
+
   .root:hover,
   .root:has(.playToggle:focus-visible) {
     width: calc(100% - 38px);
     left: 38px;
     color: rgb(var(--rgb-background));
     background-color: rgb(var(--rgb-accent));
+  }
+
+  .root:hover::after {
+    position: absolute;
+    content: '';
+    width: calc(100% + 38px);
+    height: 100%;
+    top: 0;
+    left: -38px;
+    z-index: -1;
   }
 
   .root:hover .number,
