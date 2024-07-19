@@ -1,4 +1,7 @@
 .root {
+  /* Local Variables */
+  --shift-distance: 38px;
+
   position: relative;
   left: 0;
   display: grid;
@@ -28,8 +31,8 @@
   }
 
   .root.isPlaying {
-    width: calc(100% - 38px);
-    left: 38px;
+    width: calc(100% - var(--shift-distance));
+    left: var(--shift-distance);
   }
 }
 
@@ -96,8 +99,8 @@
 
   .root:hover,
   .root:has(.playToggle:focus-visible) {
-    width: calc(100% - 38px);
-    left: 38px;
+    width: calc(100% - var(--shift-distance));
+    left: var(--shift-distance);
     color: rgb(var(--rgb-background));
     background-color: rgb(var(--rgb-accent));
   }
@@ -105,10 +108,10 @@
   .root:hover::after {
     position: absolute;
     content: '';
-    width: calc(100% + 38px);
+    width: calc(100% + var(--shift-distance));
     height: 100%;
     top: 0;
-    left: -38px;
+    left: calc(-1 * var(--shift-distance));
     z-index: -1;
   }
 
