@@ -16,8 +16,9 @@ export const useOverlayMenu = () => {
   useEffect(() => {
     if (isOverlayMenuOpen) {
       if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        const scrollY = window.scrollY
         document.body.style.position = 'fixed'
-        document.body.style.top = `-${window.scrollY}px`
+        document.body.style.top = `-${scrollY}px`
         document.body.style.width = '100%'
       } else {
         document.body.style.overflowY = 'hidden'
