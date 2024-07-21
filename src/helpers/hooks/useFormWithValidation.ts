@@ -21,12 +21,10 @@ export const useFormWithValidation = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formSuccessfullySent, setFormSuccessfullySent] = useState(false)
 
-  const handleChange = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const target = event.target
-    const name = target.name
-    const value = target.value
+  const handleChange = ({
+    target,
+  }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = target
 
     setValues({ ...values, [name]: value })
     setErrors({ ...errors, [name]: target.validationMessage })
