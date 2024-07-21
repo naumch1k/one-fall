@@ -14,9 +14,11 @@ export const useOverlayMenu = () => {
   }, [isMobile])
 
   useEffect(() => {
+    let scrollY: number = 0
+
     if (isOverlayMenuOpen) {
       if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-        const scrollY = window.scrollY
+        scrollY = window.scrollY
         document.body.style.position = 'fixed'
         document.body.style.top = `-${scrollY}px`
         document.body.style.width = '100%'
@@ -30,7 +32,7 @@ export const useOverlayMenu = () => {
         document.body.style.position = ''
         document.body.style.top = ``
         document.body.style.width = ''
-        window.scrollTo(0, parseInt(document.body.style.top))
+        window.scrollTo(0, scrollY)
       } else {
         document.body.style.overflowY = 'scroll'
       }
