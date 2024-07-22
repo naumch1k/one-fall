@@ -21,10 +21,6 @@
   transition: var(--common-transition);
 }
 
-.root::-webkit-resizer {
-  background-color: transparent;
-}
-
 .root:hover,
 .root:focus {
   color: rgb(var(--rgb-foreground));
@@ -51,4 +47,24 @@
   font-size: 14px;
   line-height: 1;
   color: rgb(var(--rgb-error));
+}
+
+/* Scrollbar */
+.root::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+.root::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--rgb-foreground-secondary), .7);
+  border-radius: 6px;
+}
+.root:hover::-webkit-scrollbar-thumb {
+  cursor: pointer;
+}
+
+.root:hover::-webkit-scrollbar-thumb,
+.root:focus::-webkit-scrollbar-thumb
+{
+  background-color: rgb(var(--rgb-foreground));
 }
