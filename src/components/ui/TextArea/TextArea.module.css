@@ -1,5 +1,6 @@
 .root {
   width: 100%;
+  min-height: 112px;
   padding: 10px;
   font-family: var(--font-montserrat);
   font-size: 16px;
