@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
+import { useScrollLock } from '@/helpers/hooks/useScrollLock'
 
 export const useModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -29,33 +30,12 @@ export const useModal = () => {
   )
 
   useEffect(() => {
-    const scrollBarCompensation = window.innerWidth - document.body.offsetWidth
-
-    document.documentElement.style.setProperty(
-      '--scrollbar-compensation',
-      `${scrollBarCompensation}px`
-    )
-  }, [])
-
-  useEffect(() => {
-    if (isModalOpen) {
-      document.body.style.overflowY = 'hidden'
-      document.body.style.paddingRight = 'var(--scrollbar-compensation)'
-      document.body.dataset.scrollLock = 'true'
-    }
-
-    return () => {
-      document.body.style.overflowY = 'scroll'
-      document.body.style.paddingRight = `0px`
-      delete document.body.dataset.scrollLock
-    }
-  }, [isModalOpen])
-
-  useEffect(() => {
     if (isModalOpen) document.addEventListener('keydown', closeByEsc)
 
     return () => document.removeEventListener('keydown', closeByEsc)
   }, [closeByEsc, isModalOpen])
+
+  useScrollLock(isModalOpen)
 
   return {
     isModalOpen,
