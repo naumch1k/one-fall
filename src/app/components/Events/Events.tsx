@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { List } from '@/components/ui/List/List'
 import { EventLink } from '@/components/ui/EventLink/EventLink'
-import { IconButton } from '@/components/ui/IconButton/IconButton'
+import { ArrowButton } from '@/components/ui/ArrowButton/ArrowButton'
 import { useEvents } from './hooks/useEvents'
 import styles from './Events.module.css'
 
@@ -36,10 +36,10 @@ export const Events = () => {
         ))}
       </List>
       {hasMoreItems && (
-        <IconButton
-          icon='arrow-down'
-          ariaLabel='Show more events'
+        <ArrowButton
           className={styles.button}
+          direction='down'
+          aria-label='Show more events'
           onClick={handleLoadMoreClick}
         />
       )}
