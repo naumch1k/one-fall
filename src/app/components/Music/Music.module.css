@@ -1,12 +1,11 @@
 .root {
   width: 100%;
-  max-width: var(--max-content-width);
   padding-top: 100px;
 }
 
 @media screen and (min-width: 480px) {
   .root {
-    width: calc(100% - 24px * 2);
+    max-width: calc(100% - (var(--page-side-padding) * 2));
     margin: 0 auto;
     padding: 120px 0;
   }
@@ -14,14 +13,13 @@
 
 @media screen and (min-width: 1024px) {
   .root {
-    width: calc(100% - 48px * 2);
     padding: 120px 0 50px;
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1272px) {
   .root {
-    width: 100%;
+    max-width: var(--max-content-width);
   }
 }
 

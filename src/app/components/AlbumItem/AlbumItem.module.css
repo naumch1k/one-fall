@@ -67,7 +67,7 @@
 }
 
 .detailsWrapper {
-  padding: 0 20px;
+  padding: 0 var(--page-side-padding);
 }
 
 @media screen and (min-width: 480px) {
@@ -108,7 +108,7 @@
 
 .buttons {
   grid-area: buttons;
-  padding: 0 20px;
+  padding: 0 var(--page-side-padding);
 }
 
 @media screen and (min-width: 480px) {

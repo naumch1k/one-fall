@@ -1,7 +1,6 @@
 .root {
   display: grid;
   justify-content: center;
-  grid-template-columns: 360px;
   gap: 100px 14px;
   list-style: none;
 }
