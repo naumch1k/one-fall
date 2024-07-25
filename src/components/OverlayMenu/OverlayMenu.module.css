@@ -21,7 +21,7 @@
 .toggle {
   position: fixed;
   top: 40px;
-  right: 30px;
+  right: var(--page-side-padding);
   z-index: 3;
 }
 

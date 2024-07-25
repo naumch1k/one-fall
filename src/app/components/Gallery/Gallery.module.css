@@ -3,15 +3,9 @@
   --desktop-gap: var(--image-gallery-desktop-gap);
 
   width: 100%;
-  max-width: calc(100% - 16px * 2);
+  max-width: calc(100% - (var(--page-side-padding) * 2));
   margin: 0 auto;
   padding-top: 100px;
-}
-
-@media screen and (min-width: 768px) {
-  .root {
-    max-width: calc(100% - 24px * 2);
-  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -22,7 +16,7 @@
 
 @media screen and (min-width: 1272px) {
   .root {
-    max-width: 1184px;
+    max-width: var(--max-content-width);
   }
 }
 
