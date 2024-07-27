@@ -1,0 +1,51 @@
+.menu {
+  list-style-type: none;
+  display: none;
+  position: fixed;
+  top: 307px;
+  right: 0;
+  background-color: rgb(var(--rgb-background));
+  border-radius: 6px 0 0 6px;
+}
+
+.menu > li {
+  transition: var(--common-transition);
+}
+
+.menu > li:first-of-type {
+  border-radius: 6px 0 0 0;
+}
+.menu > li:last-of-type {
+  border-radius: 0 0 0 6px;
+}
+
+.menu > li a {
+  padding: 12px;
+}
+
+.menu > li:first-of-type a {
+  padding: 18px 12px 12px 12px;
+}
+
+.menu > li:last-of-type a {
+  padding: 12px 12px 18px 12px;
+}
+
+.menu > li svg {
+  width: 22px;
+  height: 22px;
+}
+
+.link {
+  display: flex;
+}
+
+@media screen and (min-width: 1172px) {
+  .menu {
+    display: block;
+  }
+
+  .menu > li:hover {
+    background-color: rgb(var(--rgb-accent));
+  }
+}
