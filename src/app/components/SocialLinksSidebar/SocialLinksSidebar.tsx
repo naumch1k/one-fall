@@ -3,9 +3,13 @@
 import { Menu } from '@/components/ui/Menu/Menu'
 import { socialLinkItems } from '@/helpers/constants'
 
-export const SocialLinksSidebar = () => {
+interface SocialLinksSidebarProp {
+  type: 'main' | 'mobile'
+}
+
+export const SocialLinksSidebar = ({ type }: SocialLinksSidebarProp) => {
   return (
-    <Menu type='main-social-links'>
+    <Menu type={`${type}-social-links`}>
       {socialLinkItems.map(item => (
         <Menu.Item
           key={item.text}

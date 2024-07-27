@@ -6,6 +6,7 @@ import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
 import { useOverlayMenu } from './hooks/useOverlayMenu'
 import { mainNavigationItems } from '@/helpers/constants'
 import styles from './OverlayMenu.module.css'
+import { SocialLinksSidebar } from '@/app/components/SocialLinksSidebar/SocialLinksSidebar'
 
 export const OverlayMenu = () => {
   const isMobile = useMediaQuery(`(max-width: 1023px)`)
@@ -30,6 +31,7 @@ export const OverlayMenu = () => {
             ))}
           </Menu>
         </nav>
+       <SocialLinksSidebar type='mobile'/>
       </div>
       <OverlayToggle
         ariaLabel={isOverlayMenuOpen ? 'Close menu' : 'Open menu'}

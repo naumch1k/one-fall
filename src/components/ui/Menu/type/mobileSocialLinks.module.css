@@ -1,0 +1,25 @@
+.menu {
+  list-style-type: none;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  background-color: transparent;
+}
+
+.link {
+  padding: 12px;
+  display: flex;
+}
+
+.menu > li {
+  border: 1px solid rgba(var(--rgb-foreground), 0.6);
+  border-radius: 50px;
+}
+
+.menu > li svg {
+  width: 18px;
+  height: 18px;
+}

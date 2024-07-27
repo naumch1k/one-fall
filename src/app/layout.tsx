@@ -29,7 +29,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <OverlayMenu />
-        <SocialLinksSidebar />
+        <SocialLinksSidebar type='main' />
       </body>
     </html>
   )
