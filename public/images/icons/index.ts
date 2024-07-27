@@ -10,6 +10,8 @@ import Plus from './plus.svg'
 import TikTokLogo from './tiktok-logo.svg'
 import TwitterLogo from './twitter-logo.svg'
 import X from './x.svg'
+import YoutubeLogo from './youtube-logo.svg'
+import BandcampLogo from './bandcamp-logo.svg'
 
 export default {
   'arrow-down': ArrowDown,
@@ -24,4 +26,6 @@ export default {
   'tiktok-logo': TikTokLogo,
   'twitter-logo': TwitterLogo,
   'x': X,
+  'youtube-logo': YoutubeLogo,
+  'bandcamp-logo': BandcampLogo
 }
