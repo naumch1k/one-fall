@@ -40,14 +40,16 @@ export const Footer = () => {
       <div className={styles.socials}>
         <h3 className={styles.heading}>Socials</h3>
         <Menu type='footer-social-links'>
-          {socialLinkItems.map(item => (
-            <Menu.Item
-              key={item.text}
-              {...item}
-              rel='noopener noreferrer'
-              target='_blank'
-            />
-          ))}
+          {socialLinkItems
+            .filter(item => item.position === 'footer')
+            .map(item => (
+              <Menu.Item
+                key={item.text}
+                {...item}
+                rel='noopener noreferrer'
+                target='_blank'
+              />
+            ))}
         </Menu>
       </div>
       <p className={styles.footnote}>@2024, ONE FALL. All Rights Reserved</p>
