@@ -3,6 +3,7 @@ import './globals.css'
 import { Header } from '@/components/Header/Header'
 import { Footer } from '@/components/Footer/Footer'
 import { OverlayMenu } from '@/components/OverlayMenu/OverlayMenu'
+import { SocialLinksSidebar } from '@/app/components/SocialLinksSidebar/SocialLinksSidebar'
 
 const anton = Anton({
   subsets: ['latin'],
@@ -28,6 +29,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <OverlayMenu />
+        <SocialLinksSidebar />
       </body>
     </html>
   )
