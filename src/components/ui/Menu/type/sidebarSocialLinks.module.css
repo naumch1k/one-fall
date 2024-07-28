@@ -7,7 +7,8 @@
     display: block;
     list-style-type: none;
     position: fixed;
-    top: 307px;
+    top: 50vh;
+    transform: translateY(-50%);
     right: 0;
     background-color: rgb(var(--rgb-background));
     border-radius: 6px 0 0 6px;
@@ -16,33 +17,31 @@
   .link {
     padding: 12px;
     display: flex;
-  }
-
-  .menu > li {
     transition: var(--common-transition);
+    color: rgb(var(--rgb-foreground));
+    width: 48px;
+    height: 48px;
   }
 
-  .menu > li:first-of-type {
+  .link:hover {
+    background-color: rgb(var(--rgb-accent));
+    color: rgb(var(--rgb-background));
+  }
+
+  .menu > li:first-of-type,
+  .menu > li:first-of-type a {
     border-radius: 6px 0 0 0;
   }
-  .menu > li:last-of-type {
+  .menu > li:last-of-type,
+  .menu > li:last-of-type a {
     border-radius: 0 0 0 6px;
   }
 
   .menu > li:first-of-type a {
-    padding: 18px 12px 12px 12px;
+    padding-top: 18px;
   }
 
   .menu > li:last-of-type a {
-    padding: 12px 12px 18px 12px;
-  }
-
-  .menu > li svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .menu > li:hover {
-    background-color: rgb(var(--rgb-accent));
+    padding-bottom: 18px;
   }
 }
