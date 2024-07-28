@@ -4,7 +4,7 @@ import { Menu } from '../ui/Menu/Menu'
 import { OverlayToggle } from '../ui/OverlayToggle/OverlayToggle'
 import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
 import { useOverlayMenu } from './hooks/useOverlayMenu'
-import { mainNavigationItems } from '@/helpers/constants'
+import { mainNavigationItems, socialLinkItems } from '@/helpers/constants'
 import styles from './OverlayMenu.module.css'
 import { SocialLinksSidebar } from '@/app/components/SocialLinksSidebar/SocialLinksSidebar'
 
@@ -31,7 +31,16 @@ export const OverlayMenu = () => {
             ))}
           </Menu>
         </nav>
-       <SocialLinksSidebar type='mobile'/>
+       <Menu type='overlay-social-links'>
+      {socialLinkItems.map(item => (
+        <Menu.Item
+          key={item.text}
+          {...item}
+          rel='noopener noreferrer'
+          target='_blank'
+        />
+      ))}
+    </Menu>
       </div>
       <OverlayToggle
         ariaLabel={isOverlayMenuOpen ? 'Close menu' : 'Open menu'}

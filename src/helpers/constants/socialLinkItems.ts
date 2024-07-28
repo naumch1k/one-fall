@@ -16,7 +16,7 @@ export const socialLinkItems = [
   {
     text: 'Bandcamp',
     iconGlyph: 'bandcamp-logo' as keyof typeof icons,
-    href: 'https://onefall.bandcamp.com/album/one-fall',
+    href: 'https://onefall.bandcamp.com/',
     position: null,
   },
   {
