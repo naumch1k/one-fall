@@ -10,6 +10,11 @@
   opacity: 0;
   transition: var(--common-transition);
   visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 50px;
+  padding-bottom: 30px;
 }
 
 .root.isOpen {

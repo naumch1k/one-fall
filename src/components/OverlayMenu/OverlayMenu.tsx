@@ -32,7 +32,7 @@ export const OverlayMenu = () => {
           </Menu>
         </nav>
        <Menu type='overlay-social-links'>
-      {socialLinkItems.map(item => (
+      {socialLinkItems.map(({fullListOnly, ...item}) => (
         <Menu.Item
           key={item.text}
           {...item}

@@ -41,8 +41,8 @@ export const Footer = () => {
         <h3 className={styles.heading}>Socials</h3>
         <Menu type='footer-social-links'>
           {socialLinkItems
-            .filter(item => item.position === 'footer')
-            .map(item => (
+            .filter(({ fullListOnly }) => !fullListOnly)
+            .map(({ fullListOnly, ...item }) => (
               <Menu.Item
                 key={item.text}
                 {...item}
