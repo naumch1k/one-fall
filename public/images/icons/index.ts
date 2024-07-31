@@ -2,6 +2,7 @@ import ArrowDown from './arrow-down.svg'
 import ArrowLeft from './arrow-left.svg'
 import ArrowRight from './arrow-right.svg'
 import ArrowUp from './arrow-up.svg'
+import BandcampLogo from './bandcamp-logo.svg'
 import Check from './check.svg'
 import FacebookLogo from './facebook-logo.svg'
 import InstagramLogo from './instagram-logo.svg'
@@ -11,13 +12,13 @@ import TikTokLogo from './tiktok-logo.svg'
 import TwitterLogo from './twitter-logo.svg'
 import X from './x.svg'
 import YoutubeLogo from './youtube-logo.svg'
-import BandcampLogo from './bandcamp-logo.svg'
 
 export default {
   'arrow-down': ArrowDown,
   'arrow-left': ArrowLeft,
   'arrow-right': ArrowRight,
   'arrow-up': ArrowUp,
+  'bandcamp-logo': BandcampLogo,
   'check': Check,
   'eye': Eye,
   'facebook-logo': FacebookLogo,
@@ -27,5 +28,4 @@ export default {
   'twitter-logo': TwitterLogo,
   'x': X,
   'youtube-logo': YoutubeLogo,
-  'bandcamp-logo': BandcampLogo
 }
