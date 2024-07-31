@@ -2,12 +2,14 @@
 
 import { Menu } from '@/components/ui/Menu/Menu'
 import { socialLinkItems } from '@/helpers/constants'
-import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
+import { useSocialLinksSidebar } from './hooks/useSocialLinksSidebar'
 
 export const SocialLinksSidebar = () => {
-  const isMobile = useMediaQuery(`(max-width: 1023px)`)
+  const isVisible = useSocialLinksSidebar()
 
-  return !isMobile ? (
+  if (!isVisible) return null
+
+  return (
     <Menu type='sidebar-social-links'>
       {socialLinkItems.map(({ fullListOnly, ...item }) => (
         <Menu.Item
@@ -18,5 +20,5 @@ export const SocialLinksSidebar = () => {
         />
       ))}
     </Menu>
-  ) : null
+  )
 }
