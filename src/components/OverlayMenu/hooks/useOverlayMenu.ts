@@ -3,20 +3,22 @@ import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
 import { useScrollLock } from '@/helpers/hooks/useScrollLock'
 
 export const useOverlayMenu = () => {
-  const isMobile = useMediaQuery(`(max-width: 767px)`)
+  const [isVisible, setIsVisible] = useState(false)
   const [isOverlayMenuOpen, setIsOverlayMenuOpen] = useState(false)
+  const isMobile = useMediaQuery(`(max-width: 1023px)`)
 
   const toggleOverlayMenu = useCallback(() => {
-    setIsOverlayMenuOpen(!isOverlayMenuOpen)
-  }, [isOverlayMenuOpen])
+    setIsOverlayMenuOpen(prevState => !prevState)
+  }, [])
 
   useEffect(() => {
-    if (!isMobile) setIsOverlayMenuOpen(false)
+    setIsVisible(isMobile)
   }, [isMobile])
 
   useScrollLock(isOverlayMenuOpen)
 
   return {
+    isVisible,
     isOverlayMenuOpen,
     toggleOverlayMenu,
   }
