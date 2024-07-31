@@ -5,7 +5,6 @@ import { OverlayToggle } from '../ui/OverlayToggle/OverlayToggle'
 import { useOverlayMenu } from './hooks/useOverlayMenu'
 import { mainNavigationItems, socialLinkItems } from '@/helpers/constants'
 import styles from './OverlayMenu.module.css'
-import { SocialLinksSidebar } from '@/app/components/SocialLinksSidebar/SocialLinksSidebar'
 
 export const OverlayMenu = () => {
   const { isVisible, isOverlayMenuOpen, toggleOverlayMenu } = useOverlayMenu()
@@ -14,7 +13,6 @@ export const OverlayMenu = () => {
 
   return (
     <>
-      {/* prettier-ignore */}
       <div className={`${styles.root} ${isOverlayMenuOpen ? `${styles.isOpen}` : ''}`}>
         <nav className={styles.nav}>
           <Menu type='overlay-navigation'>
@@ -29,16 +27,16 @@ export const OverlayMenu = () => {
             ))}
           </Menu>
         </nav>
-       <Menu type='overlay-social-links'>
-      {socialLinkItems.map(({fullListOnly, ...item}) => (
-        <Menu.Item
-          key={item.text}
-          {...item}
-          rel='noopener noreferrer'
-          target='_blank'
-        />
-      ))}
-    </Menu>
+        <Menu type='overlay-social-links'>
+          {socialLinkItems.map(({ fullListOnly, ...item }) => (
+            <Menu.Item
+              key={item.text}
+              {...item}
+              rel='noopener noreferrer'
+              target='_blank'
+            />
+          ))}
+        </Menu>
       </div>
       <OverlayToggle
         ariaLabel={isOverlayMenuOpen ? 'Close menu' : 'Open menu'}
