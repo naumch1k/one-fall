@@ -1,6 +1,6 @@
 'use client'
 
-import { List } from '@/components/ui/List/List'
+import { Slider } from '@/components/ui/Slider/Slider'
 import { PressCard } from '../PressCard/PressCard'
 import { useSortedPressCards } from './hook/useSortedPressCards'
 import styles from './Press.module.css'
@@ -13,14 +13,11 @@ export const Press = () => {
   return (
     <section id='press' className={styles.root}>
       <h2 className='visuallyHidden'>Press</h2>
-
-      <List type='press-list'>
-        {sortedPressCards.slice(0, 3).map(card => (
-          <List.Item key={card.id}>
-            <PressCard {...card} />
-          </List.Item>
-        ))}
-      </List>
+      <Slider
+        border='topBottom'
+        items={sortedPressCards}
+        SlideComponent={PressCard}
+      />
     </section>
   )
 }

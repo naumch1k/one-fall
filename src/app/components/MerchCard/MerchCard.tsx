@@ -10,7 +10,7 @@ interface IMerchCardProps {
   description: string
   price: number
   purchaseUrl: string
-  image: string
+  imageUrl: string
   onImageClick: (id: string) => void
 }
 
@@ -20,7 +20,7 @@ export const MerchCard = ({
   description,
   price,
   purchaseUrl,
-  image,
+  imageUrl,
   onImageClick,
 }: IMerchCardProps) => {
   const isMobile = useMediaQuery(`(max-width: 480px)`)
@@ -30,7 +30,7 @@ export const MerchCard = ({
       <div className={styles.imageWrapper}>
         <Image
           className={styles.image}
-          src={image}
+          src={imageUrl}
           alt={title}
           width={280}
           height={280}

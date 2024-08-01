@@ -2,8 +2,10 @@
 
 import Image from 'next/image'
 import { List } from '@/components/ui/List/List'
+import { Slider } from '@/components/ui/Slider/Slider'
 import { MerchCard } from '../MerchCard/MerchCard'
 import { Modal } from '@/components/ui/Modal/Modal'
+import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
 import { useFullscreenImageView } from '@/helpers/hooks/useFullscreenImageView'
 import { IMerchItem } from '@/helpers/types'
 import styles from './Merch.module.css'
@@ -11,6 +13,7 @@ import styles from './Merch.module.css'
 import data from './data.json'
 
 export const Merch = () => {
+  const isDesktop = useMediaQuery(`(min-width: 1272px)`)
   const {
     isModalOpen,
     closeModal,
@@ -23,21 +26,30 @@ export const Merch = () => {
     <>
       <section id='merch' className={styles.root}>
         <h2 className='visuallyHidden'>Merch</h2>
-        <List type='merch-list'>
-          {data.items.map(item => (
-            <List.Item key={item.id}>
-              <MerchCard
-                id={item.id}
-                title={item.title}
-                description={item.description}
-                price={item.price}
-                purchaseUrl={item.purchaseInfo.purchaseUrl}
-                image={item.imageUrl}
-                onImageClick={handleImageClick}
-              />
-            </List.Item>
-          ))}
-        </List>
+        {isDesktop ? (
+          <List type='merch-list'>
+            {data.items.map(item => (
+              <List.Item key={item.id}>
+                <MerchCard
+                  id={item.id}
+                  title={item.title}
+                  description={item.description}
+                  price={item.price}
+                  purchaseUrl={item.purchaseUrl}
+                  imageUrl={item.imageUrl}
+                  onImageClick={handleImageClick}
+                />
+              </List.Item>
+            ))}
+          </List>
+        ) : (
+          <Slider
+            border='topBottom'
+            items={data.items}
+            SlideComponent={MerchCard}
+            dataProps={{ onImageClick: handleImageClick }}
+          />
+        )}
       </section>
       {currentItem && (
         <Modal
