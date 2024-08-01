@@ -39,19 +39,13 @@
 
 .closeButton {
   position: absolute;
-  top: 16px;
-  right: 24px;
-  width: 30px;
-  height: 30px;
-  color: rgb(var(--rgb-foreground));
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
+  top: var(--page-side-padding);
+  right: var(--page-side-padding);
 }
 
-.closeButton:hover,
-.closeButton:focus {
-  transform: rotate(90deg);
-  transition: all 0.2s linear;
+@media screen and (min-width: 1024px) {
+  .closeButton {
+    top: 16px;
+    right: 24px;
+  }
 }

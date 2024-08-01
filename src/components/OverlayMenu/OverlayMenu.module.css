@@ -44,12 +44,11 @@
   position: absolute;
   top: var(--page-side-padding);
   right: var(--page-side-padding);
-  width: 30px;
-  height: 30px;
-  color: rgb(var(--rgb-foreground));
-  background-color: transparent;
-  border: none;
-  outline: none;
-  z-index: 3;
-  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .closeButton {
+    top: 16px;
+    right: 24px;
+  }
 }

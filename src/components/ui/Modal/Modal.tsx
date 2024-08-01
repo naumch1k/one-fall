@@ -2,6 +2,7 @@ import FocusLock from 'react-focus-lock'
 import { Portal } from '../Portal/Portal'
 import { Icon } from '../Icon/Icon'
 import styles from './Modal.module.css'
+import { CloseButton } from '../CloseButton/CloseButton'
 
 interface IModalProps {
   variant: 'lightbox' | 'dialog'
@@ -29,15 +30,12 @@ export const Modal = ({
         }}
       >
         <div className={styles.root} onClick={onBackdropClick}>
-          <button
-            className={styles.closeButton}
-            type='button'
-            aria-label='Close Modal'
-            onClick={onClose}
-          >
-            <Icon glyph='x' width='100%' height='100%' />
-          </button>
           <div className={styles[variant]}>{children}</div>
+          <CloseButton
+            className={styles.closeButton}
+            ariaLabel='Close modal'
+            onClick={onClose}
+          />
         </div>
       </FocusLock>
     </Portal>
