@@ -1,6 +1,7 @@
 'use client'
 
 import { Menu } from '../ui/Menu/Menu'
+import { Icon } from '../ui/Icon/Icon'
 import { OverlayToggle } from '../ui/OverlayToggle/OverlayToggle'
 import { useOverlayMenu } from './hooks/useOverlayMenu'
 import { mainNavigationItems, socialLinkItems } from '@/helpers/constants'
@@ -14,37 +15,52 @@ export const OverlayMenu = () => {
   return (
     <>
       <div className={`${styles.root} ${isOverlayMenuOpen ? `${styles.isOpen}` : ''}`}>
-        <nav className={styles.nav}>
-          <Menu type='overlay-navigation'>
-            {mainNavigationItems.map(({ id, text, href }) => (
+        <div className={styles.content}>
+          <nav>
+            <Menu type='overlay-navigation'>
+              {mainNavigationItems.map(({ id, text, href }) => (
+                <Menu.Item
+                  key={id}
+                  id={id}
+                  href={href}
+                  text={text}
+                  onClick={toggleOverlayMenu}
+                />
+              ))}
+            </Menu>
+          </nav>
+          <Menu type='overlay-social-links'>
+            {socialLinkItems.map(({ fullListOnly, ...item }) => (
               <Menu.Item
-                key={id}
-                id={id}
-                href={href}
-                text={text}
-                onClick={toggleOverlayMenu}
+                key={item.text}
+                {...item}
+                rel='noopener noreferrer'
+                target='_blank'
               />
             ))}
           </Menu>
-        </nav>
-        <Menu type='overlay-social-links'>
-          {socialLinkItems.map(({ fullListOnly, ...item }) => (
-            <Menu.Item
-              key={item.text}
-              {...item}
-              rel='noopener noreferrer'
-              target='_blank'
-            />
-          ))}
-        </Menu>
+        </div>
+        {isOverlayMenuOpen && (
+        <button
+          className={styles.closeButton}
+          type='button'
+          aria-label='Close Modal'
+          onClick={toggleOverlayMenu}
+        >
+          <Icon glyph='x' width='100%' height='100%' />
+        </button>
+      )}
       </div>
-      <OverlayToggle
-        ariaLabel={isOverlayMenuOpen ? 'Close menu' : 'Open menu'}
-        className={styles.toggle}
-        onClick={toggleOverlayMenu}
-      >
-        {isOverlayMenuOpen ? 'Close' : 'Menu'}
-      </OverlayToggle>
+      {!isOverlayMenuOpen && (
+        // TODO: restyle OverlayToggle
+        <OverlayToggle
+          ariaLabel='Open menu'
+          className={styles.toggle}
+          onClick={toggleOverlayMenu}
+        >
+          Menu
+        </OverlayToggle>
+      )}
     </>
   )
 }
