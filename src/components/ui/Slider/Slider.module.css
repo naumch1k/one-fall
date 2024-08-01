@@ -1,0 +1,63 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 48px;
+}
+
+@media screen and (min-width: 1024px) {
+  .root {
+    gap: 24px;
+  }
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.list.topBottom {
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(var(--rgb-foreground-secondary), 0.25);
+  border-top: 1px solid rgba(var(--rgb-foreground-secondary), 0.25);
+}
+
+.slide { transition: opacity 0.3s ease }
+
+@media screen and (min-width: 768px) {
+  .slide:not(.current) { opacity: .5; }
+  .slide:not(.current) a,
+  .slide:not(.current) button {
+    cursor: auto;
+    pointer-events: none;
+  }
+  .slide:not(.current) > * { transform: scale(0.9); }
+}
+
+.controls {
+  display: flex;
+  gap: 30px;
+}
+
+:global(#music):has(.controls) .controls {
+  padding: 0 16px;
+}
+
+@media screen and (min-width: 480px) {
+  :global(#music):has(.controls) .controls {
+    padding: 0;
+  }
+}
+
+.arrows {
+  display: flex;
+  gap: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+  .arrows {
+    gap: 30px;
+  }
+}
