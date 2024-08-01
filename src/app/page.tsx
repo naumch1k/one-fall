@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function Main() {
   return (
-    <main>
+    <>
       <Hero />
       <About />
       <Music />
@@ -23,6 +23,6 @@ export default function Main() {
       <Merch />
       <Gallery />
       <Press />
-    </main>
+    </>
   )
 }

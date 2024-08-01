@@ -1,24 +1,25 @@
 .menu {
-  display: block;
-  list-style-type: none;
-  position: fixed;
+  position: sticky;
   top: 50vh;
   transform: translateY(-50%);
-  right: 0;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
   background-color: rgb(var(--rgb-background-lighter));
   border: 1px solid rgb(31, 31, 31);
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   overflow: hidden;
+  list-style: none;
 }
 
 .link {
-  padding: 12px;
-  display: flex;
+  padding: 10px;
+  display: inline-block;
   transition: var(--common-transition);
   color: rgb(var(--rgb-foreground));
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
 }
 
 .link:hover {
