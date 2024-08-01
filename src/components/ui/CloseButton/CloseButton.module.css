@@ -1,0 +1,18 @@
+.root {
+  width: 30px;
+  height: 30px;
+  color: rgb(var(--rgb-foreground));
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Desktop hover effects */
+@media screen and (min-width: 1272px) {
+  .root:hover,
+  .root:focus-visible {
+    transform: rotate(90deg);
+    transition: all 0.2s linear;
+  }
+}

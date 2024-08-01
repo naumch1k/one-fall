@@ -1,8 +1,8 @@
 'use client'
 
 import { Menu } from '../ui/Menu/Menu'
-import { Icon } from '../ui/Icon/Icon'
 import { OverlayToggle } from '../ui/OverlayToggle/OverlayToggle'
+import { CloseButton } from '../ui/CloseButton/CloseButton'
 import { useOverlayMenu } from './hooks/useOverlayMenu'
 import { mainNavigationItems, socialLinkItems } from '@/helpers/constants'
 import styles from './OverlayMenu.module.css'
@@ -41,15 +41,12 @@ export const OverlayMenu = () => {
           </Menu>
         </div>
         {isOverlayMenuOpen && (
-        <button
-          className={styles.closeButton}
-          type='button'
-          aria-label='Close Modal'
-          onClick={toggleOverlayMenu}
-        >
-          <Icon glyph='x' width='100%' height='100%' />
-        </button>
-      )}
+          <CloseButton
+            className={styles.closeButton}
+            ariaLabel='Close menu'
+            onClick={toggleOverlayMenu}
+          />
+        )}
       </div>
       {!isOverlayMenuOpen && (
         // TODO: restyle OverlayToggle
