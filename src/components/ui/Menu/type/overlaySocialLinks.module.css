@@ -1,17 +1,29 @@
 .menu {
-  list-style-type: none;
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   background-color: transparent;
+  list-style: none;
 }
 
 .link {
   color: rgb(var(--rgb-foreground));
-  padding: 11px;
+  padding: 8px;
   display: flex;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border: 1px solid rgba(var(--rgb-foreground), 0.6);
   border-radius: 50px;
+}
+
+@media screen and (min-width: 375px) {
+  .menu {
+    gap: 16px;
+  }
+
+  .link {
+    width: 40px;
+    height: 40px;
+    padding: 11px;
+  }
 }
