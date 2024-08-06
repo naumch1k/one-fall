@@ -4,22 +4,23 @@ import { useSlider } from './hooks/useSlider'
 import 'keen-slider/keen-slider.min.css'
 import styles from './Slider.module.css'
 
-interface ISliderProps {
+interface ISliderProps<T extends { id: string }> {
   border?: 'topBottom' | ''
   mode?: 'single' | 'multiple'
-  items: any[]
-  SlideComponent: (item: any, tabIndex: number, dataProps?: object) => JSX.Element
+  items: T[]
+  SlideComponent: (item: T, tabIndex: number, dataProps?: object) => JSX.Element
+  dataProps?: object
 }
 
-export const Slider = ({
+export const Slider = <T extends { id: string }>({
   border = '',
   mode = 'multiple',
   items,
   SlideComponent,
-}: ISliderProps) => {
+}: ISliderProps<T>) => {
   const { sliderRef, instanceRef, currentSlideIndex, isSliderCreated } = useSlider(mode)
 
-  const sliderListClasses = `${styles.list} ${styles[border]} keen-slider`
+  const sliderListClasses = `${styles.list} ${border && styles[border]} keen-slider`
 
   return (
     <div className={styles.root} aria-label='Slider'>

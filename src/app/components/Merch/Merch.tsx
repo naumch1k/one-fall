@@ -18,7 +18,7 @@ export const Merch = () => {
     isModalOpen,
     closeModal,
     closeByBackdropClick,
-    currentItem,
+    currentItemIndex,
     handleImageClick,
   } = useFullscreenImageView<IMerchItem>(data)
 
@@ -30,15 +30,7 @@ export const Merch = () => {
           <List type='merch-list'>
             {data.items.map(item => (
               <List.Item key={item.id}>
-                <MerchCard
-                  id={item.id}
-                  title={item.title}
-                  description={item.description}
-                  price={item.price}
-                  purchaseUrl={item.purchaseUrl}
-                  imageUrl={item.imageUrl}
-                  onImageClick={handleImageClick}
-                />
+                <MerchCard {...item} onImageClick={handleImageClick} />
               </List.Item>
             ))}
           </List>
@@ -52,7 +44,7 @@ export const Merch = () => {
           />
         )}
       </section>
-      {currentItem && (
+      {currentItemIndex !== undefined && (
         <Modal
           variant='dialog'
           isOpen={isModalOpen}
@@ -61,8 +53,8 @@ export const Merch = () => {
         >
           <Image
             className={styles.modalImage}
-            src={currentItem.imageUrl}
-            alt={currentItem.title}
+            src={data.items[currentItemIndex].imageUrl}
+            alt={data.items[currentItemIndex].title}
             width={500}
             height={500}
           />

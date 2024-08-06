@@ -1,8 +1,8 @@
 import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
-import { IGalleryImage } from '@/helpers/types'
+import { TImage } from '@/helpers/types'
 
 export const useGalleryImages = (
-  data: { items: IGalleryImage[] },
+  data: { items: TImage[] },
   maxItemCount = 9,
   defaultItemCount = 8,
 ) => {

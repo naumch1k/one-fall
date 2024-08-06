@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
-import { IGalleryImage } from '@/helpers/types'
+import { TImage } from '@/helpers/types'
 
 export const useGalleryImagePreview = () => {
   const [isPreviewing, setIsPreviewing] = useState(false)
-  const [previewedItem, setPreviewedItem] = useState<IGalleryImage | null>(null)
-  const prevPreviewedItem = useRef<IGalleryImage | null>(null)
+  const [previewedItem, setPreviewedItem] = useState<TImage | null>(null)
+  const prevPreviewedItem = useRef<TImage | null>(null)
 
-  const handleMouseEnter = (item: IGalleryImage) => {
+  const handleMouseEnter = (item: TImage) => {
     prevPreviewedItem.current = previewedItem
     setPreviewedItem(item)
   }

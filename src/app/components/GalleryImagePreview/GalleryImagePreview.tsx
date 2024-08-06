@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import { IGalleryImage } from '@/helpers/types'
+import { TImage } from '@/helpers/types'
 import styles from './GalleryImagePreview.module.css'
 
 interface IGalleryImagePreviewProps {
-  currentItem: IGalleryImage
+  currentItem: TImage
   isVisible: boolean
 }
 
