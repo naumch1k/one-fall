@@ -12,16 +12,12 @@ const renderSettings = {
   desktop: { total: 7, add: 5 },
 }
 
-export const useEvents = (data: { items: IEvent[] }) => {
+export const useEvents = (items: IEvent[]) => {
   const windowSize = useWindowSize()
-  const renderSettingsRef = useRef<IEventListRenderSettings>(
-    renderSettings.tablet
-  ).current
+  const renderSettingsRef = useRef<IEventListRenderSettings>(renderSettings.tablet).current
   const [sortedData, setSortedData] = useState<IEvent[]>([])
   const [eventsToRender, setEventsToRender] = useState<IEvent[]>([])
-  const [numberOfEventsToRender, setNumberOfEventsToRender] = useState(
-    renderSettings.tablet.total
-  )
+  const [numberOfEventsToRender, setNumberOfEventsToRender] = useState(renderSettings.tablet.total)
   const [hasMoreItems, setHasMoreItems] = useState(false)
 
   useEffect(() => {
@@ -48,9 +44,9 @@ export const useEvents = (data: { items: IEvent[] }) => {
       return aDate.getTime() - bDate.getTime()
     }
 
-    const sortedEventsData = [...data.items].sort(sortEvents)
+    const sortedEventsData = items.sort(sortEvents)
     setSortedData(sortedEventsData)
-  }, [data])
+  }, [items])
 
   useEffect(() => {
     if (windowSize.width >= 1280) {

@@ -13,6 +13,7 @@ import styles from './Merch.module.css'
 import data from './data.json'
 
 export const Merch = () => {
+  const { items } = data
   const isDesktop = useMediaQuery(`(min-width: 1272px)`)
   const {
     isModalOpen,
@@ -20,7 +21,7 @@ export const Merch = () => {
     closeByBackdropClick,
     currentItemIndex,
     handleImageClick,
-  } = useFullscreenImageView<IMerchItem>(data)
+  } = useFullscreenImageView<IMerchItem>(items)
 
   return (
     <>
@@ -28,7 +29,7 @@ export const Merch = () => {
         <h2 className='visuallyHidden'>Merch</h2>
         {isDesktop ? (
           <List type='merch-list'>
-            {data.items.map(item => (
+            {items.map(item => (
               <List.Item key={item.id}>
                 <MerchCard {...item} onImageClick={handleImageClick} />
               </List.Item>
@@ -37,7 +38,7 @@ export const Merch = () => {
         ) : (
           <Carousel
             border='topBottom'
-            items={data.items}
+            items={items}
             SlideComponent={item => (
               <MerchCard {...item} onImageClick={handleImageClick} />
             )}
@@ -53,8 +54,8 @@ export const Merch = () => {
         >
           <Image
             className={styles.modalImage}
-            src={data.items[currentItemIndex].imageUrl}
-            alt={data.items[currentItemIndex].title}
+            src={items[currentItemIndex].imageUrl}
+            alt={items[currentItemIndex].title}
             width={500}
             height={500}
           />
