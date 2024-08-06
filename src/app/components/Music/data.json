@@ -1,6 +1,7 @@
 {
   "items": [
     {
+      "id": "1",
       "name": "Spine First!",
       "type": "EP",
       "date": {
@@ -77,6 +78,7 @@
       }
     },
     {
+      "id": "2",
       "name": "One Fall",
       "type": "EP",
       "date": {
