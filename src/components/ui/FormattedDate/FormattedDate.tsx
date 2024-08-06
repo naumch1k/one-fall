@@ -16,9 +16,9 @@ export const FormattedDate = ({
 
   if (outputFormat === 'month dd, yyyy') {
     return (
-      <span className={className}>{`${MONTHS[Month]}  ${Day}, ${Year}`}</span>
+      <span className={className} suppressHydrationWarning>{`${MONTHS[Month]}  ${Day}, ${Year}`}</span>
     )
   }
 
-  return <span className={className}>{`${MONTHS[Month]} ${Day}`}</span>
+  return <span className={className} suppressHydrationWarning>{`${MONTHS[Month]} ${Day}`}</span>
 }
