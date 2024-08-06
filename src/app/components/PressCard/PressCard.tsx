@@ -13,7 +13,7 @@ export const PressCard = ({
   imageUrl,
 }: IPressCard) => {
   return (
-    <>
+    <article className={styles.root}>
       <div className={styles.header}>
         <FormattedDate
           dateString={publishDate}
@@ -40,6 +40,6 @@ export const PressCard = ({
           />
         </div>
       </div>
-    </>
+    </article>
   )
 }
