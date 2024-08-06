@@ -1,0 +1,1 @@
+export const ALBUM_SLIDER_THRESHOLD = 2
