@@ -9,7 +9,6 @@ interface ISliderProps {
   mode?: 'single' | 'multiple'
   items: any[]
   SlideComponent: (item: any, tabIndex: number, dataProps?: object) => JSX.Element
-  dataProps?: object
 }
 
 export const Slider = ({
@@ -17,7 +16,6 @@ export const Slider = ({
   mode = 'multiple',
   items,
   SlideComponent,
-  dataProps = {},
 }: ISliderProps) => {
   const { sliderRef, instanceRef, currentSlideIndex, isSliderCreated } = useSlider(mode)
 
@@ -53,7 +51,7 @@ export const Slider = ({
 
           return (
             <li key={item.id} className={classes} aria-hidden={!isCurrent}>
-              {SlideComponent(item, isCurrent ? 0 : -1, dataProps)}
+              {SlideComponent(item, isCurrent ? 0 : -1)}
             </li>
           )
         })}
