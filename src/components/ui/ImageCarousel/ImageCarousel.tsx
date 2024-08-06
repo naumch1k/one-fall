@@ -13,15 +13,15 @@ export const ImageCarousel = <T extends TImage>({
   SlideComponent,
 }: IImageCarouselProps<T>) => {
   const {
-    sliderRef,
+    carouselRef,
     instanceRef,
-    isSliderCreated,
+    isCarouselCreated,
     opacities,
   } = useImageCarousel({ images, currentImageIndex })
 
   return (
     <div className={styles.root} aria-label='Image Slider'>
-      <ul ref={sliderRef} className={`${styles.slides}`}>
+      <ul ref={carouselRef} className={`${styles.list}`}>
         {images.map((image, index) => (
           <li
             key={image.id}
@@ -32,7 +32,7 @@ export const ImageCarousel = <T extends TImage>({
           </li>
         ))}
       </ul>
-      {isSliderCreated && instanceRef.current && (
+      {isCarouselCreated && instanceRef.current && (
         <>
           <ArrowButton
             className={`${styles.arrowButton} ${styles.left}`}

@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { List } from '@/components/ui/List/List'
-import { Slider } from '@/components/ui/Slider/Slider'
+import { Carousel } from '@/components/ui/Carousel/Carousel'
 import { MerchCard } from '../MerchCard/MerchCard'
 import { Modal } from '@/components/ui/Modal/Modal'
 import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
@@ -35,7 +35,7 @@ export const Merch = () => {
             ))}
           </List>
         ) : (
-          <Slider
+          <Carousel
             border='topBottom'
             items={data.items}
             SlideComponent={item => (

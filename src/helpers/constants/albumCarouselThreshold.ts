@@ -1,0 +1,1 @@
+export const ALBUM_CAROUSEL_THRESHOLD = 2

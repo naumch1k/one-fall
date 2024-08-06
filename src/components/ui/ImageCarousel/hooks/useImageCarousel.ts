@@ -7,14 +7,14 @@ export const useImageCarousel = <T extends TImage>({
   currentImageIndex,
 }: TImageCarousel<T>) => {
   const [opacities, setOpacities] = useState<number[]>([])
-  const [isSliderCreated, setIsSliderCreated] = useState(false)
+  const [isCarouselCreated, setIsisCarouselCreated] = useState(false)
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLUListElement>({
     loop: true,
     initial: currentImageIndex,
     slides: images.length,
     created() {
-      setIsSliderCreated(true)
+      setIsisCarouselCreated(true)
     },
     detailsChanged(slider) {
       const new_opacities = slider.track.details.slides.map(
@@ -25,9 +25,9 @@ export const useImageCarousel = <T extends TImage>({
   })
 
   return {
-    sliderRef,
+    carouselRef: sliderRef,
     instanceRef,
-    isSliderCreated,
+    isCarouselCreated,
     opacities,
   }
 }

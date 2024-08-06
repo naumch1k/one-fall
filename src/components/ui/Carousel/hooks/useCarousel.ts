@@ -3,31 +3,31 @@ import { useKeenSlider } from 'keen-slider/react'
 import { useWindowSize } from '@/helpers/hooks/useWindowSize'
 import { Breakpoints } from '@/helpers/constants/breakpoints'
 
-const sliderSettings = {
+const carouselSettings = {
   initialSlide: 0,
   mobile: { slidesPerView: 1, spacing: 16 },
   tablet: { slidesPerView: 2, spacing: 24 },
   tabletLandscape: { slidesPerView: 3, spacing: 32 },
 }
 
-export const useSlider = (mode: 'single' | 'multiple') => {
-  const [isSliderCreated, setIsSliderCreated] = useState(false)
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(sliderSettings.initialSlide)
-  const [sliderConfig, setSliderConfig] = useState(sliderSettings.mobile)
+export const useCarousel = (mode: 'single' | 'multiple') => {
+  const [isCarouselCreated, setIsCarouselCreated] = useState(false)
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(carouselSettings.initialSlide)
+  const [carouselConfig, setCarouselConfig] = useState(carouselSettings.mobile)
 
   const windowSize = useWindowSize()
 
   const [sliderRef, instanceRef] = useKeenSlider({
     mode: 'free-snap',
     loop: true,
-    initial: sliderSettings.initialSlide,
+    initial: carouselSettings.initialSlide,
     slides: {
       origin: mode === 'multiple' ? 'center' : 'auto',
-      perView: mode === 'multiple' ? sliderConfig.slidesPerView : 1,
-      spacing: sliderConfig.spacing,
+      perView: mode === 'multiple' ? carouselConfig.slidesPerView : 1,
+      spacing: carouselConfig.spacing,
     },
     created() {
-      setIsSliderCreated(true)
+      setIsCarouselCreated(true)
     },
     slideChanged(slider) {
       setCurrentSlideIndex(slider.track.details.rel)
@@ -42,20 +42,20 @@ export const useSlider = (mode: 'single' | 'multiple') => {
   useEffect(() => {
     switch (true) {
       case windowSize.width >= Breakpoints.TABLET_LANDSCAPE:
-        setSliderConfig(sliderSettings.tabletLandscape)
+        setCarouselConfig(carouselSettings.tabletLandscape)
         break
       case windowSize.width >= Breakpoints.TABLET:
-        setSliderConfig(sliderSettings.tablet)
+        setCarouselConfig(carouselSettings.tablet)
         break
       default:
-        setSliderConfig(sliderSettings.mobile)
+        setCarouselConfig(carouselSettings.mobile)
     }
   }, [windowSize.width])
 
   return {
-    sliderRef,
+    carouselRef: sliderRef,
     instanceRef,
     currentSlideIndex,
-    isSliderCreated,
+    isCarouselCreated,
   }
 }

@@ -1,19 +1,19 @@
-import styles from './SliderDots.module.css'
+import styles from './CarouselDots.module.css'
 
-interface ISliderDotsProps {
+interface ICarouselDotsProps {
   className?: string
   count: number
   currentSlideIndex: number
   onClick: (index: number) => void
 }
 
-export const SliderDots = ({
+export const CarouselDots = ({
   className = '',
   count,
   currentSlideIndex,
   onClick,
-}: ISliderDotsProps) => {
-  const renderSliderDot = (index: number) => {
+}: ICarouselDotsProps) => {
+  const renderCarouselDot = (index: number) => {
     return (
       <button
         className={`${styles.dot} ${className}`}
@@ -27,7 +27,7 @@ export const SliderDots = ({
 
   return (
     <div className={styles.root}>
-      {Array.from(Array(count).keys()).map(index => renderSliderDot(index))}
+      {Array.from(Array(count).keys()).map(index => renderCarouselDot(index))}
     </div>
   )
 }
