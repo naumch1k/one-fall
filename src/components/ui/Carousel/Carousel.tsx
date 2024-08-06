@@ -1,10 +1,10 @@
-import { SliderDots } from '../SliderDots/SliderDots'
+import { CarouselDots } from '../CarouselDots/CarouselDots'
 import { ArrowButton } from '../ArrowButton/ArrowButton'
-import { useSlider } from './hooks/useSlider'
+import { useCarousel } from './hooks/useCarousel'
 import 'keen-slider/keen-slider.min.css'
-import styles from './Slider.module.css'
+import styles from './Carousel.module.css'
 
-interface ISliderProps<T extends { id: string }> {
+interface ICarouselProps<T extends { id: string }> {
   border?: 'topBottom' | ''
   mode?: 'single' | 'multiple'
   items: T[]
@@ -12,21 +12,21 @@ interface ISliderProps<T extends { id: string }> {
   dataProps?: object
 }
 
-export const Slider = <T extends { id: string }>({
+export const Carousel = <T extends { id: string }>({
   border = '',
   mode = 'multiple',
   items,
   SlideComponent,
-}: ISliderProps<T>) => {
-  const { sliderRef, instanceRef, currentSlideIndex, isSliderCreated } = useSlider(mode)
+}: ICarouselProps<T>) => {
+  const { carouselRef, instanceRef, currentSlideIndex, isCarouselCreated } = useCarousel(mode)
 
-  const sliderListClasses = `${styles.list} ${border && styles[border]} keen-slider`
+  const carouselListClasses = `${styles.list} ${border && styles[border]} keen-slider`
 
   return (
     <div className={styles.root} aria-label='Slider'>
-      {isSliderCreated && instanceRef.current && (
+      {isCarouselCreated && instanceRef.current && (
         <div className={styles.controls}>
-          <SliderDots
+          <CarouselDots
             count={items.length}
             currentSlideIndex={currentSlideIndex}
             onClick={index => instanceRef.current?.moveToIdx(index)}
@@ -45,7 +45,7 @@ export const Slider = <T extends { id: string }>({
           </div>
         </div>
       )}
-      <ul ref={sliderRef} className={sliderListClasses}>
+      <ul ref={carouselRef} className={carouselListClasses}>
         {items.map((item, index) => {
           const isCurrent = currentSlideIndex === index
           const classes = `${styles.slide} ${isCurrent ? styles.current : ''} keen-slider__slide`

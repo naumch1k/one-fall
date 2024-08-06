@@ -1,4 +1,4 @@
-export * from './albumSliderThreshold'
+export * from './albumCarouselThreshold'
 export * from './customValidationMessages'
 export * from './mainNavigationItems'
 export * from './months'

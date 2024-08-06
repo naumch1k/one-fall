@@ -1,13 +1,13 @@
 'use client'
 
 import { List } from '@/components/ui/List/List'
-import { Slider } from '@/components/ui/Slider/Slider'
+import { Carousel } from '@/components/ui/Carousel/Carousel'
 import { AlbumItem } from '../AlbumItem/AlbumItem'
 import { AudioTrack } from '@/components/ui/AudioTrack/AudioTrack'
 import { useInitAudioTrackRefs } from './hooks/useInitAudioTrackRefs'
 import { useMusicPlayer } from './hooks/useMusicPlayer'
 import { AudioTrackRefsProvider } from '@/helpers/contexts/AudioTrackRefs.context'
-import { ALBUM_SLIDER_THRESHOLD } from '@/helpers/constants'
+import { ALBUM_CAROUSEL_THRESHOLD } from '@/helpers/constants'
 import { IAlbum } from '@/helpers/types'
 import styles from './Music.module.css'
 
@@ -50,8 +50,8 @@ export const Music = () => {
     <section id='music' className={styles.root}>
       <h2 className='visuallyHidden'>Music</h2>
       <AudioTrackRefsProvider value={audioTrackRefs}>
-        {data.items.length > ALBUM_SLIDER_THRESHOLD ? (
-          <Slider
+        {data.items.length > ALBUM_CAROUSEL_THRESHOLD ? (
+          <Carousel
             mode='single'
             items={data.items}
             SlideComponent={renderAlbumItem}

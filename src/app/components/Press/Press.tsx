@@ -1,6 +1,6 @@
 'use client'
 
-import { Slider } from '@/components/ui/Slider/Slider'
+import { Carousel } from '@/components/ui/Carousel/Carousel'
 import { PressCard } from '../PressCard/PressCard'
 import { useSortedPressCards } from './hook/useSortedPressCards'
 import { IPressCard } from '@/helpers/types'
@@ -14,7 +14,7 @@ export const Press = () => {
   return (
     <section id='press' className={styles.root}>
       <h2 className='visuallyHidden'>Press</h2>
-      <Slider
+      <Carousel
         border='topBottom'
         items={sortedPressCards}
         SlideComponent={(item: IPressCard, tabIndex: number = 0) => (
