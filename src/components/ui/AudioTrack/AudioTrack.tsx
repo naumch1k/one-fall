@@ -11,6 +11,7 @@ interface IAudioTrackProps {
   dataFileUrl: string
   isPlaying: boolean
   onPlayPauseClick: (name: string) => void
+  tabIndex: number
 }
 
 export const AudioTrack = ({
@@ -19,6 +20,7 @@ export const AudioTrack = ({
   dataFileUrl,
   isPlaying,
   onPlayPauseClick,
+  tabIndex,
 }: IAudioTrackProps) => {
   const audioTrackRefs = useAudioTrackRefs()
   const { duration, timeProgress } = useAudioTrackDuration(audioTrackRefs[name])
@@ -38,6 +40,7 @@ export const AudioTrack = ({
             className={styles.playToggle}
             onClick={() => onPlayPauseClick(name)}
             aria-label={isPlaying ? `Pause ${name} preview` : `Play ${name} preview` }
+            tabIndex={tabIndex}
           >
             {isPlaying ? <FaPause /> : <FaPlay />}
           </button>

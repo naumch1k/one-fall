@@ -4,6 +4,10 @@ import { ArrowLink } from '@/components/ui/ArrowLink/ArrowLink'
 import { IPressCard } from '@/helpers/types'
 import styles from './PressCard.module.css'
 
+interface IPressCardProps extends IPressCard {
+  tabIndex: number
+}
+
 export const PressCard = ({
   title,
   outline,
@@ -11,7 +15,8 @@ export const PressCard = ({
   publishDate,
   publishUrl,
   imageUrl,
-}: IPressCard) => {
+  tabIndex,
+}: IPressCardProps) => {
   return (
     <article className={styles.root}>
       <div className={styles.header}>
@@ -28,8 +33,8 @@ export const PressCard = ({
           href={publishUrl}
           text={`Read on ${publisher}`}
           className={styles.link}
+          tabIndex={tabIndex}
         />
-
         <div className={styles.imgWrapper}>
           <Image
             fill

@@ -14,13 +14,15 @@ export const ArrowLink = ({
   href,
   target = '_blank',
   text,
+  ...props
 }: IArrowLinkProps) => (
   <a
     className={`${styles.root} ${className}`}
     href={href}
     target={target}
     rel='noopener noreferrer'
-  >
+    { ...props}
+    >
     <span className={styles.text}>{text}</span>
     <div className={styles.arrows} aria-hidden>
       <span className={styles.arrow}>➞</span>
