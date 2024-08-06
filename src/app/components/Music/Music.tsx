@@ -7,6 +7,7 @@ import { AudioTrack } from '@/components/ui/AudioTrack/AudioTrack'
 import { useInitAudioTrackRefs } from './hooks/useInitAudioTrackRefs'
 import { useMusicPlayer } from './hooks/useMusicPlayer'
 import { AudioTrackRefsProvider } from '@/helpers/contexts/AudioTrackRefs.context'
+import { ALBUM_SLIDER_THRESHOLD } from '@/helpers/constants'
 import { IAlbum } from '@/helpers/types'
 import styles from './Music.module.css'
 
@@ -47,7 +48,7 @@ export const Music = () => {
     <section id='music' className={styles.root}>
       <h2 className='visuallyHidden'>Music</h2>
       <AudioTrackRefsProvider value={audioTrackRefs}>
-        {data.items.length > 2 ? (
+        {data.items.length > ALBUM_SLIDER_THRESHOLD ? (
           <Slider
             mode='single'
             items={data.items}
