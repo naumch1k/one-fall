@@ -7,6 +7,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLink?: boolean
   href?: string
   target?: '_blank' | '_self' | '_parent' | '_top'
+  tabIndex?: number
   className?: string
 }
 
@@ -18,6 +19,7 @@ export const Button = ({
   target,
   disabled = false,
   className = '',
+  tabIndex = 0,
   children,
   ...restButtonProps
 }: IButtonProps) => {
@@ -33,7 +35,7 @@ export const Button = ({
       {children}
     </button>
   ) : (
-    <a className={classes} href={href} target={target}>
+    <a className={classes} href={href} target={target} tabIndex={tabIndex}>
       {children}
     </a>
   )

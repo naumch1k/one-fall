@@ -14,6 +14,7 @@ interface IAlbumListItemProps {
   bandCampUrl: string
   tracks: ITrack[]
   coverArt: string
+  tabIndex: number
   children: React.ReactNode
 }
 
@@ -24,6 +25,7 @@ export const AlbumItem = ({
   bandCampUrl,
   tracks,
   coverArt,
+  tabIndex,
   children,
 }: IAlbumListItemProps) => {
   const isMobile = useMediaQuery(`(max-width: 767px)`)
@@ -68,6 +70,7 @@ export const AlbumItem = ({
           href={bandCampUrl}
           rel='noopener noreferrer'
           target='_blank'
+          tabIndex={tabIndex}
         >
           Buy Digital Album
         </Button>

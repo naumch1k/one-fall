@@ -17,7 +17,7 @@ export const Music = () => {
   const audioTrackRefs = useInitAudioTrackRefs(data)
   const { trackPlaying, handlePlayPauseClick } = useMusicPlayer(audioTrackRefs)
 
-  const renderAlbumItem = (album: IAlbum) => {
+  const renderAlbumItem = (album: IAlbum, tabIndex: number = 0) => {
     return (
       <AlbumItem
         name={album.name}
@@ -26,6 +26,7 @@ export const Music = () => {
         bandCampUrl={album.purchaseInfo.purchaseUrl}
         tracks={album.tracks.items}
         coverArt={album.coverArt.sources[0].url}
+        tabIndex={tabIndex}
       >
         <List type='track-list'>
           {album.tracks.items.map(track => (
@@ -36,6 +37,7 @@ export const Music = () => {
                 dataFileUrl={track.dataFileUrl}
                 isPlaying={trackPlaying === track.name}
                 onPlayPauseClick={handlePlayPauseClick}
+                tabIndex={tabIndex}
               />
             </List.Item>
           ))}

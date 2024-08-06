@@ -19,7 +19,7 @@ export const SliderDots = ({
         className={`${styles.dot} ${className}`}
         key={index}
         onClick={() => onClick(index)}
-        aria-label={`Slide ${index + 1}`}
+        aria-label={`View Slide ${index + 1}`}
         disabled={currentSlideIndex === index}
       />
     )
