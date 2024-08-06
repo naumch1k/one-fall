@@ -46,8 +46,9 @@ export const Merch = () => {
           <Slider
             border='topBottom'
             items={data.items}
-            SlideComponent={MerchCard}
-            dataProps={{ onImageClick: handleImageClick }}
+            SlideComponent={item => (
+              <MerchCard {...item} onImageClick={handleImageClick} />
+            )}
           />
         )}
       </section>
