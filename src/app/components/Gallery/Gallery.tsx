@@ -16,7 +16,7 @@ import data from './data.json'
 
 export const Gallery = () => {
   const isDesktop = useMediaQuery(`(min-width: 1272px)`)
-  const imagesToRender = useGalleryImages(data)
+  const imagesToRender = useGalleryImages(data.items)
   const {
     previewedItem,
     handleMouseEnter,
@@ -29,7 +29,7 @@ export const Gallery = () => {
     closeByBackdropClick,
     currentItemIndex,
     handleImageClick,
-  } = useFullscreenImageView<TImage>(data)
+  } = useFullscreenImageView<TImage>(data.items)
 
   return (
     <>

@@ -10,7 +10,7 @@ import styles from './Events.module.css'
 import data from './data.json'
 
 export const Events = () => {
-  const { eventsToRender, handleLoadMoreClick, hasMoreItems } = useEvents(data)
+  const { eventsToRender, handleLoadMoreClick, hasMoreItems } = useEvents(data.items)
 
   return (
     <section id='dates' className={styles.root}>
@@ -26,12 +26,7 @@ export const Events = () => {
       <List type='events-list'>
         {eventsToRender.map(event => (
           <List.Item key={event.date}>
-            <EventLink
-              url={event.url}
-              date={event.date}
-              city={event.city}
-              venue={event.venue}
-            />
+            <EventLink {...event} />
           </List.Item>
         ))}
       </List>

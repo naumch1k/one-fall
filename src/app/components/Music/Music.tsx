@@ -14,7 +14,8 @@ import styles from './Music.module.css'
 import data from './data.json'
 
 export const Music = () => {
-  const audioTrackRefs = useInitAudioTrackRefs(data)
+  const { items } = data
+  const audioTrackRefs = useInitAudioTrackRefs(items)
   const { trackPlaying, handlePlayPauseClick } = useMusicPlayer(audioTrackRefs)
 
   const renderAlbumItem = (album: IAlbum, tabIndex: number = 0) => {
@@ -50,15 +51,15 @@ export const Music = () => {
     <section id='music' className={styles.root}>
       <h2 className='visuallyHidden'>Music</h2>
       <AudioTrackRefsProvider value={audioTrackRefs}>
-        {data.items.length > ALBUM_CAROUSEL_THRESHOLD ? (
+        {items.length > ALBUM_CAROUSEL_THRESHOLD ? (
           <Carousel
             mode='single'
-            items={data.items}
+            items={items}
             SlideComponent={renderAlbumItem}
           />
         ) : (
           <List type='music-list'>
-            {data.items.map(album => (
+            {items.map(album => (
               <List.Item key={album.name}>{renderAlbumItem(album)}</List.Item>
             ))}
           </List>
