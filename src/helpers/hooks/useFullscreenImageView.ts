@@ -1,15 +1,9 @@
 import { useCallback, useState } from 'react'
 import { useModal } from '@/components/ui/Modal/hooks/useModal'
+import { TImage } from '../types'
 
-type FullscreenViewItem = {
-  id: string
-  imageUrl: string
-}
-
-export const useFullscreenImageView = <T extends FullscreenViewItem>(data: { items: T[] }) => {
-  /* prettier-ignore */
-  const [currentItem, setCurrentItem] = useState<T | undefined>(undefined)
-  /* prettier-ignore */
+export const useFullscreenImageView = <T extends TImage>(data: { items: T[] }) => {
+  const [currentItemIndex, setCurrentItemIndex] = useState<number | undefined>(undefined)
   const {
     isModalOpen, 
     openModal,
@@ -20,9 +14,10 @@ export const useFullscreenImageView = <T extends FullscreenViewItem>(data: { ite
   const handleImageClick = useCallback(
     (id: string) => {
       const item = data.items.find(item => item.id === id)
+      const index = data.items.findIndex(item => item.id === id)
 
       if (item) {
-        setCurrentItem(item)
+        setCurrentItemIndex(index !== -1 ? index : 0)
         openModal()
       }
     },
@@ -30,7 +25,7 @@ export const useFullscreenImageView = <T extends FullscreenViewItem>(data: { ite
   )
 
   return {
-    currentItem,
+    currentItemIndex,
     isModalOpen,
     closeModal,
     closeByBackdropClick,

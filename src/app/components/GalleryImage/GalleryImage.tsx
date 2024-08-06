@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import { LightboxButton } from '@/components/ui/LightboxButton/LightboxButton'
 import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
-import { IGalleryImage } from '@/helpers/types'
+import { TImage } from '@/helpers/types'
 import styles from './GalleryImage.module.css'
 
 interface IGalleryImageProps {
-  item: IGalleryImage
-  onMouseEnter: (item: IGalleryImage) => void
+  item: TImage
+  onMouseEnter: (item: TImage) => void
   onMouseLeave: () => void
   onImageClick: (id: string) => void
   buttonClassName?: string
