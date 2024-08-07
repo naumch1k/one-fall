@@ -24,7 +24,13 @@ export const EventLink = ({ url, date, city, venue }: IEvent) => {
   }
 
   return (
-    <a className={classes} href={url} rel='noopener noreferrer' target='_blank'>
+    <a
+      className={classes}
+      href={url}
+      tabIndex={isPast ? -1 : 0}
+      rel='noopener noreferrer'
+      target='_blank'
+    >
       <FormattedDate
         dateString={date}
         outputFormat='month dd'
