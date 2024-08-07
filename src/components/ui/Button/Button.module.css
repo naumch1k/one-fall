@@ -49,7 +49,7 @@
 }
 
 /* Desktop hover effects */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1272px) {
   .primary:not(:disabled):hover {
     color: rgb(var(--rgb-background));
     background-color: rgb(var(--rgb-accent));
