@@ -1,19 +1,19 @@
 {
   "items": [
     {
-      "date": "2024-04-26T20:00:00.199Z",
+      "date": "2025-04-26T20:00:00.199Z",
       "city": "Lowell, MA",
       "venue": "The Town and City Festival",
       "url": "https://www.thetownandthecityfestival.com/"
     },
     {
-      "date": "2024-04-27T20:00:00.199Z",
+      "date": "2025-04-27T20:00:00.199Z",
       "city": "Queens, NY",
       "venue": "Bar Freda",
       "url": "https://www.barfreda.com/events"
     },
     {
-      "date": "2024-03-08T20:00:00.199Z",
+      "date": "2025-03-08T20:00:00.199Z",
       "city": "Medford, MA",
       "venue": "Deep Cuts",
       "url": "https://www.deepcuts.rocks/events"
@@ -31,7 +31,7 @@
       "url": "https://www.deepcuts.rocks/events"
     },
     {
-      "date": "2024-06-28T20:00:00.199Z",
+      "date": "2025-06-28T20:00:00.199Z",
       "city": "Oxford, UK",
       "venue": "The Library"
     },
