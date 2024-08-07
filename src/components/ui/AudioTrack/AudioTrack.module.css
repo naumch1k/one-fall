@@ -24,7 +24,7 @@
   background-color: rgb(var(--rgb-accent));
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1272px) {
   .root {
     grid-template-columns: 16px 8fr 1fr;
     padding: 17px 70px 17px 37px;
@@ -44,7 +44,7 @@
   width: 100%;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1272px) {
   .innerWrapper {
     position: relative;
     display: inline-block;
@@ -73,7 +73,7 @@
   padding-left: 16px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1272px) {
   .playToggle {
     padding-left: 0;
     opacity: 0;
@@ -92,7 +92,7 @@
 }
 
 /* Desktop hover effects */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1272px) {
   .root:hover {
     z-index: 1;
   }

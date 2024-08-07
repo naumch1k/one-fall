@@ -15,10 +15,12 @@
   letter-spacing: 0.015em;
   text-transform: uppercase;
   text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground), 0.4);
+  outline: none;
   transition: var(--common-transition);
 }
 
-.link:hover {
+.link:hover,
+.link:focus-visible {
   color: rgb(var(--rgb-inactive));
   text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-inactive), 0.4);
 }
@@ -34,6 +36,7 @@
 }
 
 .link.covert:hover,
+.link.covert:focus-visible,
 .link.current {
   top: 0;
   color: rgb(var(--rgb-foreground));

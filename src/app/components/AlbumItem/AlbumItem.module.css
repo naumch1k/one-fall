@@ -41,7 +41,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1272px) {
   .root {
     grid-template-columns: 360px 1fr;
     gap: 40px 35px;

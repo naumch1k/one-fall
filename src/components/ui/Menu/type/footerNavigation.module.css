@@ -13,13 +13,10 @@
   transition: var(--common-transition);
 }
 
-.link:focus-visible {
-  color: rgb(var(--rgb-foreground));
-}
-
 /* Desktop hover effects */
 @media screen and (min-width: 1272px) {
-  .link:hover {
+  .link:hover,
+  .link:focus-visible  {
     color: rgb(var(--rgb-foreground));
   }
 

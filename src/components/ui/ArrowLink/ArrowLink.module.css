@@ -33,7 +33,7 @@
 }
 
 /* Desktop hover effects */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1272px) {
   .root:hover .text,
   .root:focus-within .text {
     color: rgb(var(--rgb-accent));

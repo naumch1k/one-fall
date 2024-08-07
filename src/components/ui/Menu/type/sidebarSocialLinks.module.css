@@ -20,9 +20,11 @@
   color: rgb(var(--rgb-foreground));
   width: 40px;
   height: 40px;
+  outline: none;
 }
 
-.link:hover {
+.link:hover,
+.link:focus-visible  {
   background-color: rgb(var(--rgb-accent));
   color: rgb(var(--rgb-background));
 }
