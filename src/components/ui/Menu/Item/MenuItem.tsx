@@ -47,7 +47,13 @@ export const MenuItem = ({
       {iconGlyph ? (
         iconLinkElement
       ) : (
-        <Link className={classes} href={href} onClick={onClick} {...restProps}>
+        <Link
+          className={classes}
+          href={href}
+          tabIndex={current ? -1 : 0}
+          onClick={onClick}
+          {...restProps}
+        >
           {text}
         </Link>
       )}
