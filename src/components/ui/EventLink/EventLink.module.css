@@ -90,14 +90,14 @@
 
 /* Desktop hover effects */
 @media screen and (min-width: 1272px) {
-  .root:not(.isPast):hover,
-  .root:not(.isPast):focus-visible {
+  .root[href]:not(.isPast):hover,
+  .root[href]:not(.isPast):focus-visible {
     color: rgb(var(--rgb-background));
     background-color: rgb(var(--rgb-accent));
   }
 
-  .root:not(.isPast):hover .date,
-  .root:not(.isPast):focus-visible .date {
+  .root[href]:not(.isPast):hover .date,
+  .root[href]:not(.isPast):focus-visible .date {
     color: rgb(var(--rgb-background));
   }
 }
