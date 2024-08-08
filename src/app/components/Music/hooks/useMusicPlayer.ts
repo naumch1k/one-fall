@@ -1,33 +1,64 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { TAudioRef } from '@/helpers/types'
 
 export const useMusicPlayer = (audioTrackRefs: Record<string, TAudioRef>) => {
-  const [trackPlaying, setTrackPlaying] = useState<string>('')
+  const [prevTrackName, setPrevTrackName] = useState('')
+  const [currentTrackName, setCurrentTrackName] = useState<string>('')
+  const [currentTrackTimeProgress, setCurrentTrackTimeProgress] = useState(0)
   const [isPlaying, setIsPlaying] = useState<boolean>(false)
 
-  const handlePlayPauseClick = (trackName: string) => {
-    const selectedTrackRef = audioTrackRefs[trackName]
+  useEffect(() => {
+    const updateProgress = () => {
+      const currentTrackElement = audioTrackRefs[currentTrackName].current
 
-    if (selectedTrackRef.current) {
+      if (currentTrackElement) setCurrentTrackTimeProgress(currentTrackElement.currentTime)
+    }
+
+    if (isPlaying) {
+      const intervalId = setInterval(updateProgress, 500)
+      return () => clearInterval(intervalId)
+    }
+  }, [isPlaying, currentTrackName, audioTrackRefs])
+
+  const handlePlayPauseClick = (newTrackName: string) => {
+    const newTrackElement = audioTrackRefs[newTrackName].current
+
+    if (newTrackElement) {
       if (isPlaying) {
-        if (trackPlaying !== trackName) {
+        if (currentTrackName !== newTrackName) {
           Object.values(audioTrackRefs).forEach(ref => {
             if (ref.current) ref.current.pause()
           })
-          setTrackPlaying(trackName)
-          selectedTrackRef.current.play()
+
+          setCurrentTrackName(newTrackName)
+          setCurrentTrackTimeProgress(0)
+          newTrackElement.currentTime = 0
+          newTrackElement.play()
         } else {
-          setTrackPlaying('')
+          setPrevTrackName(currentTrackName)
+          setCurrentTrackName('')
           setIsPlaying(false)
-          selectedTrackRef.current.pause()
+          newTrackElement.pause()
         }
       } else {
-        setTrackPlaying(trackName)
-        setIsPlaying(true)
-        selectedTrackRef.current.play()
+        if (prevTrackName !== newTrackName) {
+          setCurrentTrackName(newTrackName)
+          setIsPlaying(true)
+          setCurrentTrackTimeProgress(0)
+          newTrackElement.currentTime = 0
+          newTrackElement.play()
+        } else {
+          setCurrentTrackName(newTrackName)
+          setIsPlaying(true)
+          newTrackElement.play()
+        }
       }
     }
   }
 
-  return { trackPlaying, handlePlayPauseClick }
+  return {
+    currentTrackName,
+    currentTrackTimeProgress,
+    handlePlayPauseClick,
+  }
 }
