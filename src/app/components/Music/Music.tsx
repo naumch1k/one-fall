@@ -16,7 +16,11 @@ import data from './data.json'
 export const Music = () => {
   const { items } = data
   const audioTrackRefs = useInitAudioTrackRefs(items)
-  const { trackPlaying, handlePlayPauseClick } = useMusicPlayer(audioTrackRefs)
+  const {
+    currentTrackName,
+    currentTrackTimeProgress,
+    handlePlayPauseClick,
+  } = useMusicPlayer(audioTrackRefs)
 
   const renderAlbumItem = (album: IAlbum, tabIndex: number = 0) => {
     return (
@@ -33,10 +37,9 @@ export const Music = () => {
           {album.tracks.items.map(track => (
             <List.Item key={track.name}>
               <AudioTrack
-                number={track.number}
-                name={track.name}
-                dataFileUrl={track.dataFileUrl}
-                isPlaying={trackPlaying === track.name}
+                {...track}
+                timeProgress={currentTrackTimeProgress}
+                isPlaying={currentTrackName === track.name}
                 onPlayPauseClick={handlePlayPauseClick}
                 tabIndex={tabIndex}
               />

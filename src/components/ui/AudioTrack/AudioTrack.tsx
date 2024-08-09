@@ -9,6 +9,7 @@ interface IAudioTrackProps {
   number: number
   name: string
   dataFileUrl: string
+  timeProgress: number
   isPlaying: boolean
   onPlayPauseClick: (name: string) => void
   tabIndex: number
@@ -17,13 +18,14 @@ interface IAudioTrackProps {
 export const AudioTrack = ({
   number,
   name,
+  timeProgress = 0,
   dataFileUrl,
   isPlaying,
   onPlayPauseClick,
   tabIndex,
 }: IAudioTrackProps) => {
   const audioTrackRefs = useAudioTrackRefs()
-  const { duration, timeProgress } = useAudioTrackDuration(audioTrackRefs[name])
+  const duration = useAudioTrackDuration(audioTrackRefs[name])
 
   return (
     <>
