@@ -28,8 +28,8 @@
 }
 
 .link:hover {
-  color: rgb(var(--rgb-inactive));
-  text-shadow: 0.2vh 0.2vh 0.2vh rgba(var(--rgb-inactive), 0.4);
+  color: rgb(var(--rgb-foreground-secondary));
+  text-shadow: 0.2vh 0.2vh 0.2vh rgba(var(--rgb-foreground-secondary), 0.4);
 }
 
 .link:active {

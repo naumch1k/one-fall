@@ -21,8 +21,8 @@
 
 .link:hover,
 .link:focus-visible {
-  color: rgb(var(--rgb-inactive));
-  text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-inactive), 0.4);
+  color: rgb(var(--rgb-foreground-secondary));
+  text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground-secondary), 0.4);
 }
 
 .link:active {
@@ -31,8 +31,8 @@
 
 .link.covert {
   top: calc(-40px - 4.3vw / 2);
-  color: rgb(var(--rgb-inactive));
-  text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-inactive), 0.4);
+  color: rgb(var(--rgb-foreground-secondary));
+  text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground-secondary), 0.4);
 }
 
 .link.covert:hover,

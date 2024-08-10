@@ -10,8 +10,8 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(var(--rgb-background-lighter));
-  border: 1px solid rgb(var(--rgb-accent), 0.1);
-  border-radius: 15px;
+  border: 1px solid rgb(var(--rgb-border));
+  border-radius: var(--border-radius);
   cursor: pointer;
 }
 
@@ -44,7 +44,7 @@
 .description {
   line-height: 19.5px;
   letter-spacing: -0.5%;
-  color: rgb(var(--rgb-inactive));
+  color: rgb(var(--rgb-foreground), 0.9);
 }
 
 .price {
@@ -53,6 +53,6 @@
 }
 
 .lightboxButton {
-  border: 1px solid rgb(var(--rgb-accent), 0.1);
-  border-radius: 15px;
+  border: 1px solid rgb(var(--rgb-border));
+  border-radius: var(--border-radius);
 }

@@ -26,8 +26,8 @@
     gap: 40px 20px;
     padding: 50px;
     background-color: rgb(var(--rgb-background-lighter));
-    border: 1px solid rgb(var(--rgb-accent), 0.1);
-    border-radius: 18px;
+    border: 1px solid rgb(var(--rgb-border));
+    border-radius: var(--border-radius);
   }
 }
 
