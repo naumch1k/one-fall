@@ -25,7 +25,7 @@
             "duration": {
               "totalMilliseconds": 170072
             },
-            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153035/01-Long-Drive.mp3"
+            "dataFileUrl": "audios/spine-first/rage​-​quit.mp3"
           },
           {
             "number": 2,
@@ -33,7 +33,7 @@
             "duration": {
               "totalMilliseconds": 211379
             },
-            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153041/02-New-Brand.mp3"
+            "dataFileUrl": "audios/spine-first/surrounder.mp3"
           },
           {
             "number": 3,
@@ -41,7 +41,7 @@
             "duration": {
               "totalMilliseconds": 206815
             },
-            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153044/03-Hell-Radio.mp3"
+            "dataFileUrl": "audios/spine-first/raleigh.mp3"
           },
           {
             "number": 4,
@@ -49,7 +49,7 @@
             "duration": {
               "totalMilliseconds": 169603
             },
-            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153049/04-My-Pills.mp3"
+            "dataFileUrl": "audios/spine-first/back-to-the-wall.mp3"
           },
           {
             "number": 5,
@@ -57,7 +57,7 @@
             "duration": {
               "totalMilliseconds": 247223
             },
-            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153124/05-King-of-Everything.mp3"
+            "dataFileUrl": "audios/spine-first/born-to-run.mp3"
           }
         ],
         "totalCount": 5
@@ -102,7 +102,7 @@
             "duration": {
               "totalMilliseconds": 161099
             },
-            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153124/05-King-of-Everything.mp3"
+            "dataFileUrl": "/audios/one-fall/slingshot.mp3"
           },
           {
             "number": 2,
@@ -110,7 +110,7 @@
             "duration": {
               "totalMilliseconds": 206173
             },
-            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153124/05-King-of-Everything.mp3"
+            "dataFileUrl": "/audios/one-fall/rats-abandon-ship.mp3"
           },
           {
             "number": 3,
@@ -118,7 +118,7 @@
             "duration": {
               "totalMilliseconds": 208300
             },
-            "dataFileUrl": "https://blackyears.s3.amazonaws.com/wp-content/uploads/2016/04/29153124/05-King-of-Everything.mp3"
+            "dataFileUrl": "audios/one-fall/shoot-straight.mp3"
           }
         ],
         "totalCount": 3
