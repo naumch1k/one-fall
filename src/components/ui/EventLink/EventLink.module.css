@@ -72,7 +72,7 @@
 
 .date {
   grid-area: date;
-  color: rgb(var(--rgb-inactive));
+  color: rgb(var(--rgb-foreground-secondary));
 }
 
 .root.isPast .date {

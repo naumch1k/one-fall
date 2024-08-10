@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(14, 12, 14, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 100;
 }
 
@@ -20,8 +20,8 @@
   width: 780px;
   padding: 68px 56px;
   background-color: rgb(var(--rgb-background-lighter));
-  border: 1px solid rgb(var(--rgb-accent), 0.1);
-  border-radius: 10px;
+  border: 1px solid rgb(var(--rgb-border));
+  border-radius: var(--border-radius);
 }
 
 .lightbox {

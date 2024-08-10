@@ -3,9 +3,10 @@
   --page-side-padding: 16px;
   --border-radius: 4px;
   --rgb-foreground: 248, 247, 240;
-  --rgb-foreground-secondary: 170, 160, 120;
-  --rgb-background: 27, 24, 28;
-  --rgb-background-lighter: 32, 29, 32;
+  --rgb-foreground-secondary: 139, 127, 108;
+  --rgb-background: 16, 14, 17;
+  --rgb-background-lighter: 21, 19, 22;
+  --rgb-border: 30, 30, 30;
   --rgb-inactive: 125, 114, 97;
   --rgb-accent: 212, 184, 57;
   --rgb-error: 207, 46, 46;
@@ -57,7 +58,7 @@ a {
 }
 
 input::-moz-placeholder,
-textarea::-moz-placeholder  {
+textarea::-moz-placeholder {
   opacity: 1;
 }
 

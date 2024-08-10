@@ -32,6 +32,10 @@
   color: rgb(var(--rgb-foreground));
 }
 
+.outline {
+  color: rgb(var(--rgb-foreground), 0.9);
+}
+
 .imgWrapper {
   width: 100%;
   aspect-ratio: 3/2;
