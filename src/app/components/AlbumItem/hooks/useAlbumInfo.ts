@@ -20,7 +20,7 @@ export const useAlbumInfo = (
           const audioElement = audioTrackRef.current
 
           const handleLoadedMetadata = () => {
-            if (!isNaN(audioElement.duration)) {
+            if (!Number.isNaN(audioElement.duration)) {
               totalDuration += audioElement.duration
               totalTrackCount += 1
             }
