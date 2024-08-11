@@ -79,6 +79,7 @@ export const useMusicPlayer = (audioTrackRefs: Record<string, TAudioRef>) => {
       }
     }
 
+    // TODO: Ensure only one timer
     if (isPlaying) {
       const intervalId = setInterval(updateProgress, 1000)
       return () => clearInterval(intervalId)
