@@ -1,18 +1,6 @@
 .root {
   display: grid;
-  justify-content: center;
-  gap: 100px 14px;
+  grid-template-columns: repeat(auto-fill, minmax(352px, 1fr));
+  gap: 12px;
   list-style: none;
-}
-
-@media screen and (min-width: 768px) {
-  .root {
-    grid-template-columns: repeat(auto-fill, minmax(352px, 1fr));
-  }
-}
-
-@media screen and (min-width: 1272px) {
-  .root {
-    gap: 100px 30px;
-  }
 }

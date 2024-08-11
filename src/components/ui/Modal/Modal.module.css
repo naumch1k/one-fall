@@ -13,28 +13,24 @@
   z-index: 100;
 }
 
+.lightbox,
 .dialog {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 780px;
-  padding: 68px 56px;
-  background-color: rgb(var(--rgb-background-lighter));
-  border: 1px solid rgb(var(--rgb-border));
-  border-radius: var(--border-radius);
-}
-
-.lightbox {
-  position: relative;
   width: 100%;
   max-width: 900px;
   aspect-ratio: 3/2;
 }
 
+.dialog {
+  background-color: rgb(var(--rgb-background));
+  border: 1px solid rgb(var(--rgb-border));
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.lightbox { position: relative; }
+
 @media screen and (min-width: 2560px) {
-  .lightbox {
-    max-width: 1200px;
-  }
+  .lightbox, .dialog { max-width: 1200px; }
 }
 
 .closeButton {
