@@ -6,6 +6,7 @@ import styles from './MerchCard.module.css'
 
 interface IMerchCardProps {
   id: string
+  type: string
   title: string
   description: string
   price: number
@@ -17,37 +18,49 @@ interface IMerchCardProps {
 export const MerchCard = ({
   id,
   title,
+  type,
   description,
   price,
   purchaseUrl,
   imageUrl,
   onImageClick,
 }: IMerchCardProps) => {
-  const isMobile = useMediaQuery(`(max-width: 480px)`)
+  const isTablet = useMediaQuery(`(max-width: 768px)`)
 
   return (
     <div className={styles.root}>
+      <span className={styles.type}>{type}</span>
       <div className={styles.imageWrapper}>
         <Image
           className={styles.image}
           src={imageUrl}
           alt={title}
-          width={280}
-          height={280}
+          fill
+          sizes='(max-width: 768px) 100vw, (max-width: 1272px) 50vw, 33vw'
         />
-        {!isMobile && (
-          <LightboxButton
-            className={styles.lightboxButton}
-            onClick={() => onImageClick(id)}
-          />
-        )}
       </div>
       <div className={styles.detailsWrapper}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
-        <span className={styles.price}>{`${price} USD`}</span>
-        <ArrowLink href={purchaseUrl} text='Buy on Bandcamp' />
+        {isTablet && (
+          <>
+            <p className={styles.description}>
+              Price: <span className={styles.price}>{price} USD</span>
+            </p>
+            <ArrowLink
+              className={styles.link}
+              href={purchaseUrl}
+              text='Buy on Bandcamp'
+            />
+          </>
+        )}
       </div>
+      {!isTablet && (
+        <LightboxButton
+          className={styles.lightboxButton}
+          onClick={() => onImageClick(id)}
+        />
+      )}
     </div>
   )
 }

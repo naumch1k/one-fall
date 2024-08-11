@@ -28,9 +28,3 @@
     padding: 250px 0 0;
   }
 }
-
-.modalImage {
-  max-width: 400px;
-  max-height: 400px;
-  object-fit: contain;
-}
