@@ -22,6 +22,7 @@ export const Music = () => {
     handlePlayPauseClick,
   } = useMusicPlayer(audioTrackRefs)
 
+  // TODO: Try to move somewhere else
   const renderAlbumItem = (album: IAlbum, tabIndex: number = 0) => {
     return (
       <AlbumItem

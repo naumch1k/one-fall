@@ -9,6 +9,7 @@ export const useAlbumInfo = (
   const [trackCount, setTrackCount] = useState<number>(0)
 
   useEffect(() => {
+    // TODO: Try to utilize refs
     let totalDuration = 0
     let totalTrackCount = 0
 
