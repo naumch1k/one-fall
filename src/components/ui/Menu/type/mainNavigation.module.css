@@ -19,7 +19,6 @@
   transition: var(--common-transition);
 }
 
-.link:hover,
 .link:focus-visible {
   color: rgb(var(--rgb-foreground-secondary));
   text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground-secondary), 0.4);
@@ -35,7 +34,6 @@
   text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground-secondary), 0.4);
 }
 
-.link.covert:hover,
 .link.covert:focus-visible,
 .link.current {
   top: 0;
@@ -45,4 +43,18 @@
 
 .link.current {
   pointer-events: none;
+}
+
+/* Apply styles if user has an input device capable of hovering (e.g., mouse, touchpad, or stylus) */
+@media (any-hover: hover) {
+  .link:hover {
+    color: rgb(var(--rgb-foreground-secondary));
+    text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground-secondary), 0.4);
+  }
+
+  .link.covert:hover {
+    top: 0;
+    color: rgb(var(--rgb-foreground));
+    text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground), 0.4);
+  }
 }

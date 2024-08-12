@@ -23,7 +23,6 @@
   outline: none;
 }
 
-.link:hover,
 .link:focus-visible  {
   background-color: rgb(var(--rgb-accent));
   color: rgb(var(--rgb-background));
@@ -31,4 +30,12 @@
 
 .link:active {
   opacity: 0.7;
+}
+
+/* Apply styles if user has an input device capable of hovering(e.g., mouse, touchpad, or stylus) */
+@media (any-hover: hover) {
+  .link:hover {
+    background-color: rgb(var(--rgb-accent));
+    color: rgb(var(--rgb-background));
+  }
 }
