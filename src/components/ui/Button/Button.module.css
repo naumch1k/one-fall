@@ -36,16 +36,14 @@
   cursor: auto;
 }
 
-@media screen and (min-width: 480px) {
-  .primary:focus {
-    color: rgb(var(--rgb-background));
-    background-color: rgb(var(--rgb-accent));
-  }
+.primary:focus-visible {
+  color: rgb(var(--rgb-background));
+  background-color: rgb(var(--rgb-accent));
+}
 
-  .secondary:focus {
-    color: rgb(var(--rgb-foreground));
-    border-color: rgb(var(--rgb-foreground));
-  }
+ .secondary:focus-visible {
+  color: rgb(var(--rgb-foreground));
+  border-color: rgb(var(--rgb-foreground));
 }
 
 /* Desktop hover effects */

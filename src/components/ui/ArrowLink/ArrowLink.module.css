@@ -35,18 +35,18 @@
 /* Desktop hover effects */
 @media screen and (min-width: 1272px) {
   .root:hover .text,
-  .root:focus-within .text {
+  .root:focus-visible .text {
     color: rgb(var(--rgb-accent));
   }
 
   .root:hover .arrow:first-of-type,
-  .root:focus-within .arrow:first-of-type {
+  .root:focus-visible .arrow:first-of-type {
     transform: translateX(0);
     color: rgb(var(--rgb-accent));
   }
 
   .root:hover .arrow,
-  .root:focus-within .arrow:nth-child(2) {
+  .root:focus-visible .arrow:nth-child(2) {
     transform: translateX(45px);
   }
 }
