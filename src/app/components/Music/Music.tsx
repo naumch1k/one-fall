@@ -17,8 +17,10 @@ export const Music = () => {
   const { items } = data
   const audioTrackRefs = useInitAudioTrackRefs(items)
   const {
+    prevTrackName,
     currentTrackName,
     currentTrackTimeProgress,
+    playbackPaused,
     handlePlayPauseClick,
   } = useMusicPlayer(audioTrackRefs)
 
@@ -42,6 +44,7 @@ export const Music = () => {
                 {...track}
                 timeProgress={currentTrackTimeProgress}
                 isPlaying={currentTrackName === track.name}
+                isPaused={prevTrackName === track.name && playbackPaused}
                 onPlayPauseClick={handlePlayPauseClick}
                 tabIndex={tabIndex}
               />

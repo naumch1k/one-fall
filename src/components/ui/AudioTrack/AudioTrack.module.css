@@ -20,7 +20,8 @@
   transition: all 0.7s ease;
 }
 
-.root.isPlaying {
+.root.isPlaying,
+.root.isPaused {
   color: rgb(var(--rgb-background));
   background-color: rgb(var(--rgb-accent));
 }
@@ -99,7 +100,8 @@
   }
 
   .root:hover,
-  .root:has(.playToggle:focus-visible) {
+  .root:has(.playToggle:focus-visible),
+  .root.isPaused {
     width: calc(100% - var(--shift-distance));
     left: var(--shift-distance);
     color: rgb(var(--rgb-background));
@@ -117,12 +119,14 @@
   }
 
   .root:hover .number,
-  .root:has(.playToggle:focus-visible) .number {
+  .root:has(.playToggle:focus-visible) .number,
+  .root.isPaused .number {
     display: none;
   }
 
   .root:hover .playToggle,
-  .root:has(.playToggle:focus-visible) .playToggle {
+  .root:has(.playToggle:focus-visible) .playToggle,
+  .root.isPaused .playToggle {
     opacity: 1;
   }
 }
