@@ -11,6 +11,7 @@ interface IAudioTrackProps {
   dataFileUrl: string
   timeProgress: number
   isPlaying: boolean
+  isPaused: boolean
   onPlayPauseClick: (name: string) => void
   tabIndex: number
 }
@@ -21,15 +22,18 @@ export const AudioTrack = ({
   timeProgress = 0,
   dataFileUrl,
   isPlaying,
+  isPaused,
   onPlayPauseClick,
   tabIndex,
 }: IAudioTrackProps) => {
   const audioTrackRefs = useAudioTrackRefs()
   const duration = useAudioTrackDuration(audioTrackRefs[name])
 
+  const classes = `${styles.root} ${isPlaying ? styles.isPlaying : ''} ${isPaused ? styles.isPaused : ''}`
+
   return (
     <>
-      <div className={`${styles.root} ${isPlaying ? styles.isPlaying : ''}`}>
+      <div className={classes}>
         <div className={styles.innerWrapper}>
           <span className={styles.number}>
             {isPlaying ? (
@@ -49,7 +53,7 @@ export const AudioTrack = ({
         </div>
         <span className={styles.name}>{name}</span>
         <FormattedDuration
-          durationInSeconds={isPlaying ? timeProgress : duration}
+          durationInSeconds={isPlaying || isPaused ? timeProgress : duration}
           outputFormat='colon-separated'
           className={styles.duration}
         />

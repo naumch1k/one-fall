@@ -5,6 +5,7 @@ type TMusicPlayerState = {
   prevTrackName: string
   currentTrackName: string
   isPlaying: boolean
+  playbackPaused: boolean
   currentTrackTimeProgress: number
 }
 
@@ -27,6 +28,7 @@ const initialState: TMusicPlayerState = {
   prevTrackName: '',
   currentTrackName: '',
   isPlaying: false,
+  playbackPaused: false,
   currentTrackTimeProgress: 0,
 }
 
@@ -36,12 +38,14 @@ const reducer = (state: TMusicPlayerState, action: MusicPlayerAction) => {
       return {
         ...state,
         isPlaying: true,
+        playbackPaused: false,
         currentTrackName: action.payload.trackName,
       }
     case Pause:
       return {
         ...state,
         isPlaying: false,
+        playbackPaused: true,
         prevTrackName: state.currentTrackName,
         currentTrackName: '',
       }
@@ -63,7 +67,7 @@ const reducer = (state: TMusicPlayerState, action: MusicPlayerAction) => {
 
 export const useMusicPlayer = (audioTrackRefs: Record<string, TAudioRef>) => {
   const [
-    { prevTrackName, currentTrackName, isPlaying, currentTrackTimeProgress },
+    { prevTrackName, currentTrackName, isPlaying, playbackPaused, currentTrackTimeProgress },
     dispatch,
   ] = useReducer(reducer, initialState)
 
@@ -123,8 +127,10 @@ export const useMusicPlayer = (audioTrackRefs: Record<string, TAudioRef>) => {
   }
 
   return {
-    currentTrackName: currentTrackName,
-    currentTrackTimeProgress: currentTrackTimeProgress,
+    prevTrackName,
+    currentTrackName,
+    currentTrackTimeProgress,
+    playbackPaused,
     handlePlayPauseClick,
   }
 }
