@@ -72,9 +72,9 @@ export const useMusicPlayer = (audioTrackRefs: Record<string, TAudioRef>) => {
   ] = useReducer(reducer, initialState)
 
   useEffect(() => {
-    const updateProgress = () => {
-      const currentTrackElement = audioTrackRefs[currentTrackName]?.current
+    const currentTrackElement = audioTrackRefs[currentTrackName]?.current
 
+    const updateProgress = () => {
       if (currentTrackElement) {
         dispatch({
           type: UpdateProgress,
@@ -83,9 +83,24 @@ export const useMusicPlayer = (audioTrackRefs: Record<string, TAudioRef>) => {
       }
     }
 
-    if (isPlaying) {
-      const intervalId = setInterval(updateProgress, 1000)
-      return () => clearInterval(intervalId)
+    const handleTrackEnded = () => {
+      dispatch({ type: Pause })
+      updateProgress()
+    }
+
+    if (currentTrackElement) {
+      currentTrackElement.addEventListener('ended', handleTrackEnded)
+
+      if (isPlaying) {
+        const intervalId = setInterval(updateProgress, 500)
+
+        return () => {
+          clearInterval(intervalId)
+          currentTrackElement.removeEventListener('ended', handleTrackEnded)
+        }
+      }
+
+      return () => currentTrackElement.removeEventListener('ended', handleTrackEnded)
     }
   }, [isPlaying, currentTrackName, audioTrackRefs])
 
@@ -95,6 +110,7 @@ export const useMusicPlayer = (audioTrackRefs: Record<string, TAudioRef>) => {
     if (newTrackElement) {
       if (isPlaying) {
         if (currentTrackName !== newTrackName) {
+          // Pause all tracks and reset progress if switching tracks
           Object.values(audioTrackRefs).forEach(ref => ref.current?.pause())
 
           dispatch({ type: ResetProgress })
@@ -106,16 +122,18 @@ export const useMusicPlayer = (audioTrackRefs: Record<string, TAudioRef>) => {
           newTrackElement.currentTime = 0
           newTrackElement.play()
         } else {
+          // Pause the current track if it's already playing
           dispatch({ type: Pause })
-
           newTrackElement.pause()
         }
       } else {
+        // Reset progress if playing a new track
         if (prevTrackName !== newTrackName) {
           dispatch({ type: ResetProgress })
           newTrackElement.currentTime = 0
         }
 
+        // Play the new track
         dispatch({
           type: Play,
           payload: { trackName: newTrackName },
