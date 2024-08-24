@@ -8,6 +8,7 @@ import FacebookLogo from './facebook-logo.svg'
 import InstagramLogo from './instagram-logo.svg'
 import Eye from './eye.svg'
 import Plus from './plus.svg'
+import SpotifyLogo from './spotify-logo.svg'
 import TikTokLogo from './tiktok-logo.svg'
 import TwitterLogo from './twitter-logo.svg'
 import X from './x.svg'
@@ -24,6 +25,7 @@ export default {
   'facebook-logo': FacebookLogo,
   'instagram-logo': InstagramLogo,
   'plus': Plus,
+  'spotify-logo': SpotifyLogo,
   'tiktok-logo': TikTokLogo,
   'twitter-logo': TwitterLogo,
   'x': X,
