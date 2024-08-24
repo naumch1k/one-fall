@@ -7,27 +7,26 @@
   padding: 12px 20px;
   font-family: inherit;
   font-size: 14px;
-  line-height: 1;
+  line-height: 1.2;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   background-color: transparent;
+  border-radius: var(--border-radius);
   outline: none;
   transition: var(--common-transition);
   cursor: pointer;
 }
 
 .primary {
-  color: rgb(var(--rgb-accent));
-  border: 1px solid rgb(var(--rgb-accent));
-  border-radius: 64px;
+  color: rgb(var(--rgb-background));
+  background-color: rgb(var(--rgb-accent));
 }
 
 .secondary {
   width: 100%;
   color: rgb(var(--rgb-foreground-secondary));
   border: 1px solid rgb(var(--rgb-foreground-secondary));
-  border-radius: var(--border-radius);
 }
 
 .secondary:disabled {
@@ -36,24 +35,20 @@
   cursor: auto;
 }
 
-.primary:focus-visible {
-  color: rgb(var(--rgb-background));
-  background-color: rgb(var(--rgb-accent));
-}
-
- .secondary:focus-visible {
-  color: rgb(var(--rgb-foreground));
-  border-color: rgb(var(--rgb-foreground));
-}
-
 /* Desktop hover effects */
 @media screen and (min-width: 1272px) {
-  .primary:not(:disabled):hover {
-    color: rgb(var(--rgb-background));
-    background-color: rgb(var(--rgb-accent));
+  .primary:not(:disabled):hover,
+  .primary:not(:disabled):focus-visible {
+    color: rgb(var(--rgb-accent));
+    background-color: rgb(var(--rgb-background));
+    box-shadow: 
+      0px 0px 0px 2px rgb(var(--rgb-background)),
+      0px 0px 0px 3px rgb(var(--rgb-accent));
+
   }
 
-  .secondary:not(:disabled):hover {
+  .secondary:not(:disabled):hover,
+  .secondary:not(:disabled):focus-visible {
     color: rgb(var(--rgb-foreground));
     border-color: rgb(var(--rgb-foreground));
   }
