@@ -3,28 +3,24 @@
   grid-template-areas:
     'coverArt '
     'details  '
-    'buttons  '
     'trackList';
   grid-template-columns: 1fr;
-  gap: 50px 20px;
+  gap: 64px 24px;
 }
 
 @media screen and (min-width: 480px) {
   .root {
     grid-template-areas:
       'coverArt  details  '
-      'coverArt  buttons  '
       'trackList trackList';
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: max-content min-content max-content;
+    grid-template-columns: 232px 1fr;
+    grid-template-rows: max-content min-content;
   }
 }
 
 @media screen and (min-width: 768px) {
   .root {
-    grid-template-columns: 232px 1fr;
-    gap: 40px 20px;
-    padding: 50px;
+    padding: 36px 24px;
     background-color: rgb(var(--rgb-background-lighter));
     border: 1px solid rgb(var(--rgb-border));
     border-radius: var(--border-radius);
@@ -33,18 +29,17 @@
 
 @media screen and (min-width: 1024px) {
   .root {
-    grid-template-columns: 300px 1fr;
     grid-template-areas:
       'coverArt details  '
-      'coverArt buttons  '
       'coverArt trackList';
+    grid-template-columns: 300px 1fr;
+    gap: 40px 35px;
   }
 }
 
 @media screen and (min-width: 1272px) {
   .root {
     grid-template-columns: 360px 1fr;
-    gap: 40px 35px;
     padding: 70px;
   }
 }
@@ -67,26 +62,35 @@
 }
 
 .detailsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 0 var(--page-side-padding);
 }
 
 @media screen and (min-width: 480px) {
   .detailsWrapper {
-    align-self: end;
+    align-self: center;
+    align-items: flex-start;
     padding: 0;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1272px) {
   .detailsWrapper {
     margin-left: 38px;
   }
 }
 
 .name {
-  margin-top: 12px;
   font-size: 36px;
   font-weight: 700;
+}
+
+@media screen and (min-width: 1024px) {
+  .name {
+    margin-top: 12px;
+  }
 }
 
 .details {
@@ -108,17 +112,28 @@
 
 .buttons {
   grid-area: buttons;
-  padding: 0 var(--page-side-padding);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 48px;
 }
 
 @media screen and (min-width: 480px) {
   .buttons {
-    padding: 0;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .buttons {
+    gap: 36px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .buttons {
-    margin-left: 38px;
+    gap: 48px;
   }
 }

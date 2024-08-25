@@ -30,8 +30,9 @@ export const Music = () => {
         type={album.type}
         year={album.date.year}
         bandCampUrl={album.purchaseInfo.purchaseUrl}
+        spotifyUrl={album.sharingInfo.shareUrl}
         tracks={album.tracks.items}
-        coverArt={album.coverArt.sources[0].url}
+        coverArt={album.coverArtUrl}
         tabIndex={tabIndex}
       >
         <List type='track-list'>

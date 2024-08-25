@@ -1,17 +1,18 @@
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button/Button'
+import { SpotifyLink } from '@/components/ui/SpotifyLink/SpotifyLink'
 import { FormattedDuration } from '@/components/ui/FormattedDuration/FormattedDuration'
-import { ITrack } from '@/helpers/types'
-import styles from './AlbumItem.module.css'
 import { useAudioTrackRefs } from '@/helpers/contexts/AudioTrackRefs.context'
 import { useAlbumInfo } from './hooks/useAlbumInfo'
-import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
+import { ITrack } from '@/helpers/types'
+import styles from './AlbumItem.module.css'
 
 interface IAlbumListItemProps {
   name: string
   type: string
   year: number
   bandCampUrl: string
+  spotifyUrl: string
   tracks: ITrack[]
   coverArt: string
   tabIndex: number
@@ -23,12 +24,12 @@ export const AlbumItem = ({
   type,
   year,
   bandCampUrl,
+  spotifyUrl,
   tracks,
   coverArt,
   tabIndex,
   children,
 }: IAlbumListItemProps) => {
-  const isMobile = useMediaQuery(`(max-width: 767px)`)
   const audioTrackRefs = useAudioTrackRefs()
   const { duration, trackCount } = useAlbumInfo(tracks, audioTrackRefs)
 
@@ -40,17 +41,14 @@ export const AlbumItem = ({
           src={coverArt}
           alt={`${name} Cover Art`}
           fill
+          sizes='(max-width: 480px) 100vw, (max-width: 1024px) 232px, 360px'
         />
       </div>
       <div className={styles.detailsWrapper}>
         <h3 className={styles.name}>{name}</h3>
         <dl className={styles.details}>
-          {!isMobile && (
-            <>
-              <dt className='visuallyHidden'>Type</dt>
-              <dd>{type}</dd>
-            </>
-          )}
+          <dt className='visuallyHidden'>Type</dt>
+          <dd>{type}</dd>
           <dt className='visuallyHidden'>Year</dt>
           <dd>{year}</dd>
           <dt className='visuallyHidden'>Tracks Count</dt>
@@ -63,17 +61,18 @@ export const AlbumItem = ({
             />
           </dd>
         </dl>
-      </div>
-      <div className={styles.buttons}>
-        <Button
-          isLink
-          href={bandCampUrl}
-          rel='noopener noreferrer'
-          target='_blank'
-          tabIndex={tabIndex}
-        >
-          Buy Digital Album
-        </Button>
+        <div className={styles.buttons}>
+          <Button
+            isLink
+            href={bandCampUrl}
+            rel='noopener noreferrer'
+            target='_blank'
+            tabIndex={tabIndex}
+          >
+            Buy Digital Album
+          </Button>
+          <SpotifyLink href={spotifyUrl} />
+        </div>
       </div>
       {children}
     </div>
