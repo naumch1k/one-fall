@@ -20,11 +20,5 @@ export interface IAlbum {
     items: ITrack[]
     totalCount: number
   }
-  coverArt: {
-    sources: {
-      height: number
-      url: string
-      width: number
-    }[]
-  }
+  coverArtUrl: string
 }

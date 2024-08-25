@@ -62,20 +62,7 @@
         ],
         "totalCount": 5
       },
-      "coverArt": {
-        "sources": [
-          {
-            "height": 300,
-            "url": "https://raw.githubusercontent.com/naumch1k/misc/main/images/one-fall/cover-art-spine-first-300.jpeg",
-            "width": 300
-          },
-          {
-            "height": 640,
-            "url": "https://raw.githubusercontent.com/naumch1k/misc/main/images/one-fall/cover-art-spine-first-640.jpeg",
-            "width": 640
-          }
-        ]
-      }
+      "coverArtUrl": "https://raw.githubusercontent.com/naumch1k/misc/main/images/one-fall/cover-art-spine-first-640.jpeg"
     },
     {
       "id": "2",
@@ -123,20 +110,7 @@
         ],
         "totalCount": 3
       },
-      "coverArt": {
-        "sources": [
-          {
-            "height": 300,
-            "url": "https://raw.githubusercontent.com/naumch1k/misc/main/images/one-fall/cover-art-one-fall-300.jpeg",
-            "width": 300
-          },
-          {
-            "height": 640,
-            "url": "https://raw.githubusercontent.com/naumch1k/misc/main/images/one-fall/cover-art-one-fall-640.jpeg",
-            "width": 640
-          }
-        ]
-      }
+      "coverArtUrl": "https://raw.githubusercontent.com/naumch1k/misc/main/images/one-fall/cover-art-one-fall-640.jpeg"
     }
   ]
 }
