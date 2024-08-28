@@ -1,0 +1,43 @@
+.root {
+  position: relative;
+}
+
+.ribbon1,
+.ribbon2 {
+  pointer-events: none;
+  position: absolute;
+}
+
+.ribbon1 {
+  top: 33px;
+  left: -20px;
+}
+
+.ribbon2 {
+  top: 100px;
+  left: -50px;
+}
+
+@media screen and (min-width: 768px) {
+  .ribbon1 {
+    top: -30px;
+    left: -20px;
+  }
+
+  .ribbon2 {
+    top: 178px;
+    left: -10px;
+  }
+}
+
+@media screen and (min-width: 1272px) {
+  .ribbon1 {
+    top: -155px;
+    left: 0;
+  }
+
+  .ribbon2 {
+    top: 100px;
+    left: 0;
+  }
+}
