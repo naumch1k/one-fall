@@ -1,12 +1,22 @@
 .root {
   width: 100%;
-  max-width: calc(100% - (var(--page-side-padding) * 2));
-  margin: 0 auto;
+  height: 100vh;
   padding-top: 150px;
   padding-bottom: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: calc(100% - (var(--page-side-padding) * 2));
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+}
+
+.badge {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .header {
@@ -25,45 +35,12 @@
   font-size: 20px;
 }
 
-.decorWrapper {
-  max-width: 100%;
-  min-height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.decorLine1,
-.decorLine2 {
-  overflow: hidden;
-  width: 130vw;
-  height: 42px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: var(--font-anton);
-  border: 1px solid #100e11;
-  background-color: #f0cd30;
-  color: #242424;
-  font-size: 32px;
-  transition: var(--common-transition);
-}
-
-.decorLine1 {
-  transform: translateY(25px) rotate(17deg);
-  gap: 77px;
-}
-
-.decorLine2 {
-  transform: rotate(4deg);
-  gap: 60px;
-}
-
 @media screen and (min-width: 768px) {
+  .root {
+    padding-top: 306px;
+  }
   .mainWrapper {
-    padding-left: 115px;
+    padding-left: 119px;
   }
   .badge {
     font-size: 20px;
@@ -78,28 +55,16 @@
   .description {
     max-width: 556px;
   }
-  .decorWrapper {
-    min-height: 430px;
-  }
-  .decorLine1,
-  .decorLine2 {
-    font-size: 40px;
-    height: 59px;
-  }
-
-  .decorLine1 {
-    gap: 140px;
-    transform: translateY(40px) rotate(17deg);
-  }
-
-  .decorLine2 {
-    gap: 120px;
-    transform: translateX(-5px) rotate(4deg);
-  }
 }
 
 @media screen and (min-width: 1272px) {
   .root {
+    padding-top: 137px;
+  }
+  .container {
+    max-width: calc(
+      (var(--max-content-width)) - (var(--page-side-padding) * 2)
+    );
     align-items: flex-end;
   }
   .mainWrapper {
@@ -113,14 +78,5 @@
   }
   .description {
     max-width: 590px;
-  }
-
-  .decorWrapper {
-    position: absolute;
-    bottom: -150px;
-    left: 0;
-  }
-  .decorLine1 {
-    transform: translateY(40px) rotate(14deg);
   }
 }
