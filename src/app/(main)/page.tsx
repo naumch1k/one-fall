@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 import { Hero } from '@/app/components/Hero/Hero'
 import { About } from '@/app/components/About/About'
 import { Music } from '@/app/components/Music/Music'
-import { Events } from './components/Events/Events'
-import { Merch } from './components/Merch/Merch'
-import { Gallery } from './components/Gallery/Gallery'
-import { Press } from './components/Press/Press'
+import { Events } from '@/app/components/Events/Events'
+import { Merch } from '@/app/components/Merch/Merch'
+import { Gallery } from '@/app/components/Gallery/Gallery'
+import { Press } from '@/app/components/Press/Press'
 
 export const metadata: Metadata = {
   title: 'One Fall',
