@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { Menu } from '../ui/Menu/Menu'
 import { OverlayToggle } from '../ui/OverlayToggle/OverlayToggle'
 import { CloseButton } from '../ui/CloseButton/CloseButton'
@@ -17,17 +18,18 @@ export const OverlayMenu = () => {
       <div className={`${styles.root} ${isOverlayMenuOpen ? `${styles.isOpen}` : ''}`}>
         <div className={styles.content}>
           <nav>
-            <Menu type='overlay-navigation'>
+            <ul className={styles.navList}>
               {mainNavigationItems.map(({ id, text, href }) => (
-                <Menu.Item
+                <Link 
                   key={id}
-                  id={id}
+                  className={styles.navLink}
                   href={href}
-                  text={text}
                   onClick={toggleOverlayMenu}
-                />
+                >
+                  {text}
+                </Link>
               ))}
-            </Menu>
+            </ul>
           </nav>
           <Menu type='overlay-social-links'>
             {socialLinkItems.map(({ fullListOnly, ...item }) => (

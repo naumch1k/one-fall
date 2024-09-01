@@ -33,6 +33,36 @@
   }
 }
 
+.navList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  list-style: none;
+}
+
+@media screen and (min-width: 414px) {
+  .navList {
+    gap: 32px;
+  }
+}
+
+.navLink {
+  position: relative;
+  top: 0;
+  display: inline-block;
+  font-family: var(--font-anton);
+  font-size: 5.6vh;
+  line-height: 0.9;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgb(var(--rgb-foreground));
+  text-shadow: 0.2vh 0.2vh 0.2vh rgba(var(--rgb-foreground), 0.4);
+  transition: var(--common-transition);
+}
+
 .toggle {
   position: fixed;
   top: 40px;
