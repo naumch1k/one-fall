@@ -1,43 +1,47 @@
 .root {
-  position: relative;
+  position: absolute;
+  bottom: 0;
 }
 
 .ribbon1,
 .ribbon2 {
-  pointer-events: none;
-  position: absolute;
+  position: relative;
 }
 
 .ribbon1 {
-  top: 33px;
-  left: -20px;
+  transform: rotate(18deg);
+  left: -47px;
 }
 
 .ribbon2 {
-  top: 100px;
+  transform: rotate(4deg);
+  top: -120px;
   left: -50px;
 }
 
 @media screen and (min-width: 768px) {
   .ribbon1 {
-    top: -30px;
-    left: -20px;
+    top: -54px;
+    left: -208px;
   }
 
   .ribbon2 {
-    top: 178px;
-    left: -10px;
+    top: -170px;
+    left: -128px;
   }
 }
 
 @media screen and (min-width: 1272px) {
+  .root {
+    min-height: 300px;
+  }
+
   .ribbon1 {
-    top: -155px;
-    left: 0;
+    left: -189px;
   }
 
   .ribbon2 {
-    top: 100px;
-    left: 0;
+    top: -122px;
+    left: -117px;
   }
 }
