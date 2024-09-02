@@ -2,13 +2,7 @@
   width: 100%;
   max-width: calc(100% - (var(--page-side-padding) * 2));
   margin: 0 auto;
-  padding-top: 100px;
-}
-
-@media screen and (min-width: 480px) {
-  .root {
-    padding-top: 120px;
-  }
+  padding-top: 120px;
 }
 
 @media screen and (min-width: 1272px) {

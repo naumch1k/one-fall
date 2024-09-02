@@ -63,6 +63,11 @@
   transition: var(--common-transition);
 }
 
+.navLink.active {
+  color: rgb(var(--rgb-foreground-secondary));
+  text-shadow: 0.2vh 0.2vh 0.2vh rgba(var(--rgb-foreground-secondary), 0.4);
+}
+
 .toggle {
   position: fixed;
   top: 40px;

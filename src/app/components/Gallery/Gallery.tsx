@@ -34,7 +34,10 @@ export const Gallery = () => {
   return (
     <>
       <section id='gallery' className={styles.root}>
-        <h2 className='visuallyHidden'>Gallery</h2>
+      <h2>
+        <span className='scrollTracker' data-toc-idx='4'></span>
+        <span className='visuallyHidden'>Gallery</span>
+      </h2>
         <div className={styles.innerWrapper}>
           <ul className={styles.list}>
             {imagesToRender.map(item => (

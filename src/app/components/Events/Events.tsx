@@ -14,7 +14,10 @@ export const Events = () => {
 
   return (
     <section id='dates' className={styles.root}>
-      <h2 className='visuallyHidden'>Events</h2>
+      <h2>
+        <span className='scrollTracker' data-toc-idx='2'></span>
+        <span className='visuallyHidden'>Events</span>
+      </h2>
       <div className={styles.imageWrapper}>
         <Image
           className={styles.image}

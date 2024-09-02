@@ -1,12 +1,17 @@
 .root {
   width: 100%;
-  padding-top: 100px;
+  padding: 120px 0 80px;
 }
 
 @media screen and (min-width: 480px) {
   .root {
     max-width: calc(100% - (var(--page-side-padding) * 2));
     margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .root {
     padding: 120px 0;
   }
 }

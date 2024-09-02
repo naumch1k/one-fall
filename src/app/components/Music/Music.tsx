@@ -57,7 +57,10 @@ export const Music = () => {
 
   return (
     <section id='music' className={styles.root}>
-      <h2 className='visuallyHidden'>Music</h2>
+      <h2>
+        <span className='scrollTracker' data-toc-idx='1'></span>
+        <span className='visuallyHidden'>Music</span>
+      </h2>
       <AudioTrackRefsProvider value={audioTrackRefs}>
         {items.length > ALBUM_CAROUSEL_THRESHOLD ? (
           <Carousel
