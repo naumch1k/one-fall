@@ -1,10 +1,14 @@
 .root {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   max-width: var(--max-content-width);
   margin: 0 auto;
-  padding-top: 100px;
+  padding: 120px 0 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .root {
+    padding: 120px 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {

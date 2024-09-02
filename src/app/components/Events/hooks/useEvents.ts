@@ -8,7 +8,8 @@ interface IEventListRenderSettings {
 }
 
 const renderSettings = {
-  tablet: { total: 4, add: 4 },
+  mobile: { total: 4, add: 4 },
+  tablet: { total: 6, add: 4 },
   desktop: { total: 7, add: 5 },
 }
 
@@ -49,12 +50,15 @@ export const useEvents = (items: IEvent[]) => {
   }, [items])
 
   useEffect(() => {
-    if (windowSize.width >= 1280) {
-      renderSettingsRef.total = renderSettings.desktop.total
-      renderSettingsRef.add = renderSettings.desktop.add
-    } else {
+    if (windowSize.width >= 1272) {
       renderSettingsRef.total = renderSettings.tablet.total
       renderSettingsRef.add = renderSettings.tablet.add
+    } else if (windowSize.width >= 768) {
+      renderSettingsRef.total = renderSettings.tablet.total
+      renderSettingsRef.add = renderSettings.tablet.add
+    } else {
+      renderSettingsRef.total = renderSettings.mobile.total
+      renderSettingsRef.add = renderSettings.mobile.add
     }
   }, [windowSize.width, renderSettingsRef])
 

@@ -9,7 +9,13 @@ import { mainNavigationItems, socialLinkItems } from '@/helpers/constants'
 import styles from './OverlayMenu.module.css'
 
 export const OverlayMenu = () => {
-  const { isVisible, isOverlayMenuOpen, toggleOverlayMenu } = useOverlayMenu()
+  const {
+    isVisible,
+    isOverlayMenuOpen,
+    activeIndex,
+    onNavLinkClick,
+    toggleOverlayMenu,
+  } = useOverlayMenu()
 
   if (!isVisible) return null
 
@@ -19,15 +25,16 @@ export const OverlayMenu = () => {
         <div className={styles.content}>
           <nav>
             <ul className={styles.navList}>
-              {mainNavigationItems.map(({ id, text, href }) => (
-                <Link 
-                  key={id}
-                  className={styles.navLink}
-                  href={href}
-                  onClick={toggleOverlayMenu}
-                >
-                  {text}
-                </Link>
+              {mainNavigationItems.map(({ index, text, href }) => (
+                <li key={index}>
+                  <Link
+                    className={`${styles.navLink} ${activeIndex === index ? styles.active : ''}`}
+                    href={href}
+                    onClick={event => onNavLinkClick(event, index)}
+                  >
+                    {text}
+                  </Link>
+                </li>
               ))}
             </ul>
           </nav>
