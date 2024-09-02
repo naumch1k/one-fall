@@ -1,10 +1,10 @@
 .root {
   width: 100%;
-  height: 100vh;
+  min-height: 830px;
   padding-top: 150px;
   padding-bottom: 20px;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .container {
@@ -14,12 +14,13 @@
   flex-direction: column;
 }
 
-.badge {
+.title {
   font-size: 20px;
   font-weight: 500;
 }
 
-.header {
+.subTitle {
+  letter-spacing: -0.01em;
   margin: 16px 0 24px 0;
 }
 
@@ -32,25 +33,26 @@
 }
 
 .description {
+  letter-spacing: -0.01em;
   font-size: 20px;
 }
 
 @media screen and (min-width: 768px) {
   .root {
+    min-height: 1100px;
     padding-top: 306px;
   }
-  .mainWrapper {
-    padding-left: 119px;
+  .container {
+    padding-left: 120px;
   }
-  .badge {
+  .title {
     font-size: 20px;
   }
-  .header {
+  .subTitle {
     font-size: 36px;
-    max-width: 600px;
   }
   .infoWrapper {
-    padding-left: 50px;
+    padding-left: 44px;
   }
   .description {
     max-width: 556px;
@@ -59,22 +61,20 @@
 
 @media screen and (min-width: 1272px) {
   .root {
+    min-height: 1041px;
     padding-top: 137px;
   }
   .container {
-    max-width: calc(
-      (var(--max-content-width)) - (var(--page-side-padding) * 2)
-    );
-    align-items: flex-end;
+    padding-left: 413px;
   }
-  .mainWrapper {
-    padding-left: 0;
-    max-width: 775px;
-  }
-  .header {
+
+  .subTitle {
     margin: 29px 0 24px 0;
-    max-width: 100%;
+    max-width: 770px;
     font-size: 56px;
+  }
+  .infoWrapper {
+    padding-left: 62px;
   }
   .description {
     max-width: 590px;
