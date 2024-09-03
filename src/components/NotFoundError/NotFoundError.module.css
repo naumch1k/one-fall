@@ -1,9 +1,10 @@
 .root {
-  width: 100%;
-  min-height: 830px;
-  padding-top: 150px;
-  padding-bottom: 20px;
   position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100dvh;
+  padding-bottom: 100px;
   overflow: hidden;
 }
 
@@ -38,10 +39,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .root {
-    min-height: 1100px;
-    padding-top: 306px;
-  }
   .container {
     padding-left: 120px;
   }
@@ -60,10 +57,6 @@
 }
 
 @media screen and (min-width: 1272px) {
-  .root {
-    min-height: 1041px;
-    padding-top: 137px;
-  }
   .container {
     padding-left: 413px;
   }
@@ -79,4 +72,32 @@
   .description {
     max-width: 590px;
   }
+}
+
+.ribbon { position: absolute; }
+
+.ribbon:nth-of-type(1) {
+  left: calc(50% - 27px);
+  bottom: 52px;
+  transform: translate(-50%) rotate(4deg);
+}
+
+.ribbon:nth-of-type(2) {
+  left: calc(50% - 71px);
+  bottom: 83px;
+  transform: translate(-50%) rotate(18deg);
+}
+
+@media screen and (min-width: 768px) {
+  .ribbon:nth-of-type(1) { bottom: 133px; }
+  .ribbon:nth-of-type(2) { bottom: 154px; }
+}
+
+@media screen and (min-width: 1272px) {
+  .ribbon:nth-of-type(1) { bottom: 52px;}
+  .ribbon:nth-of-type(2) { bottom: 83px; }
+}
+
+@media screen and (min-width: 2560px) {
+  .ribbon { display: none; }
 }

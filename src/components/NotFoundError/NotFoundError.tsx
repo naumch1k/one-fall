@@ -1,5 +1,5 @@
 import { ArrowLink } from '../ui/ArrowLink/ArrowLink'
-import { Ribbon } from '../ui/Ribbon/Ribbon'
+import { RibbonSvg } from '../ui/RibbonSvg/RibbonSvg'
 import styles from './NotFoundError.module.css'
 
 export const NotFoundError = () => (
@@ -18,6 +18,7 @@ export const NotFoundError = () => (
         <ArrowLink href='/' target='_self' text='Go to Homepage' />
       </div>
     </div>
-    <Ribbon />
+    <RibbonSvg className={styles.ribbon} />
+    <RibbonSvg className={styles.ribbon} />
   </section>
 )
