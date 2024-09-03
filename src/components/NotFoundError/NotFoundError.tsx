@@ -6,14 +6,13 @@ export const NotFoundError = () => (
   <section className={styles.root}>
     <div className={styles.container}>
       <h1 className={styles.title}>404 error</h1>
-      <h2 className={styles.subTitle}>
-        We couldn’t find the page you’re looking for
-      </h2>
-      <div className={styles.infoWrapper}>
-        <p className={styles.description}>
-          Some things just don’t go the way you want. Like the page you’re
-          looking for is gone. Or the link is broken. Check the URL and try
-          reloading the page. Or go back to home page to find other good stuff.
+      <h2 className={styles.subtitle}>We couldn’t find the page you’re&nbsp;looking for</h2>
+      <div className={styles.innerWrapper}>
+        <p className={styles.text}>
+          Some things just don&rsquo;t go&nbsp;the way you want. Like the page
+          you&rsquo;re looking for is&nbsp;gone. Or&nbsp;the link
+          is&nbsp;broken. Check the URL and try reloading the page.
+          Or&nbsp;go&nbsp;back to&nbsp;home page to&nbsp;find other good stuff.
         </p>
         <ArrowLink href='/' target='_self' text='Go to Homepage' />
       </div>
