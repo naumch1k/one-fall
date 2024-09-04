@@ -1,10 +1,24 @@
-.menu {
+.root {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .root {
+    display: block;
+  }
+}
+
+[data-scroll-lock] .root {
+  margin-right: var(--scrollbar-compensation);
+}
+
+.navList {
   display: flex;
   justify-content: space-between;
   list-style: none;
 }
 
-.link {
+.navLink {
   position: relative;
   top: 0;
   display: inline-block;
@@ -19,40 +33,40 @@
   transition: var(--common-transition);
 }
 
-.link:focus-visible {
+.navLink:focus-visible {
   color: rgb(var(--rgb-foreground-secondary));
   text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground-secondary), 0.4);
 }
 
-.link:active {
+.navLink:active {
   opacity: 0.7;
 }
 
-.link.covert {
+.navLink.covert {
   top: calc(-40px - 4.3vw / 2);
   color: rgb(var(--rgb-foreground-secondary));
   text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground-secondary), 0.4);
 }
 
-.link.covert:focus-visible,
-.link.current {
+.navLink.covert:focus-visible,
+.navLink.current {
   top: 0;
   color: rgb(var(--rgb-foreground));
   text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground), 0.4);
 }
 
-.link.current {
+.navLink.current {
   pointer-events: none;
 }
 
 /* Apply styles if user has an input device capable of hovering (e.g., mouse, touchpad, or stylus) */
 @media (any-hover: hover) {
-  .link:hover {
+  .navLink:hover {
     color: rgb(var(--rgb-foreground-secondary));
     text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground-secondary), 0.4);
   }
 
-  .link.covert:hover {
+  .navLink.covert:hover {
     top: 0;
     color: rgb(var(--rgb-foreground));
     text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground), 0.4);

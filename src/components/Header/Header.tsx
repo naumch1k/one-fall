@@ -1,10 +1,8 @@
-import { Navigation } from '../Navigation/Navigation'
+import { MainNavigation } from '../MainNavigation/MainNavigation'
 import styles from './Header.module.css'
 
-export const Header = () => {
-  return (
-    <header className={styles.root}>
-      <Navigation />
-    </header>
-  )
-}
+export const Header = () => (
+  <header className={styles.root}>
+    <MainNavigation />
+  </header>
+)

@@ -10,7 +10,6 @@ interface IMenuItemProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string
   text: string
   iconGlyph?: keyof typeof icons
-  covert?: boolean
   current?: boolean
   className?: string
   onClick?: () => void
@@ -21,15 +20,14 @@ export const MenuItem = ({
   href,
   text,
   iconGlyph,
-  covert,
   current,
-  className,
+  className = '',
   onClick,
   ...restProps
 }: IMenuItemProps) => {
   const { type } = useMenu()
 
-  const classes = `${styles[type].link} ${covert ? styles[type].covert : ''} ${current ? styles[type].current : ''} ${className || ''}`
+  const classes = `${styles[type].link} ${current ? styles[type].current : ''} ${className}`
 
   const iconLinkElement = (
     <Link
