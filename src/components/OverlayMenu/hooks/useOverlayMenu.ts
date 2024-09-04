@@ -1,6 +1,5 @@
 import { useState, useCallback, useEffect, SyntheticEvent } from 'react'
 import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
-import { useScrollLock } from '@/helpers/hooks/useScrollLock'
 
 export const useOverlayMenu = () => {
   const isMobile = useMediaQuery(`(max-width: 1023px)`)
@@ -89,7 +88,19 @@ export const useOverlayMenu = () => {
     setIsVisible(isMobile)
   }, [isMobile])
 
-  useScrollLock(isOverlayMenuOpen)
+  useEffect(() => {
+    const handleTouchMove = (e: TouchEvent) =>  e.preventDefault()
+
+    if (isOverlayMenuOpen) {
+      document.body.style.overflow = 'hidden'
+      document.addEventListener('touchmove', handleTouchMove, { passive: false })
+    } else {
+      document.body.style.overflow = 'scroll'
+      document.removeEventListener('touchmove', handleTouchMove)
+    }
+
+    return () => document.removeEventListener('touchmove', handleTouchMove)
+  }, [isOverlayMenuOpen])
 
   return {
     isVisible,
