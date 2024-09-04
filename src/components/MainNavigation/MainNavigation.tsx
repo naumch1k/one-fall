@@ -9,16 +9,13 @@ export const MainNavigation = () => {
   const { isCovert, currentLink } = useMainNavigation()
 
   return (
-    <nav className={styles.root}>
+    <nav className={`${styles.root} ${isCovert ? styles.isCovert : ''}`}>
       <ul className={styles.navList}>
         {mainNavigationItems.map(({ index, id, text, href }) => {
           return (
             <li key={index}>
               <Link
-                className={`
-                ${styles.navLink} 
-                ${isCovert ? styles.covert : ''}
-                ${currentLink === id ? styles.current : ''}`}
+                className={`${styles.navLink} ${currentLink === id ? styles.active : ''}`}
                 href={href}
                 tabIndex={currentLink === id ? -1 : 0}
               >
