@@ -28,35 +28,28 @@
   line-height: 0.9;
   letter-spacing: 0.015em;
   text-transform: uppercase;
+  color: rgb(var(--rgb-foreground));
   text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground), 0.4);
   outline: none;
   transition: var(--common-transition);
 }
 
-.navLink:focus-visible {
+.root.isCovert .navLink,
+.root:has(.active) .navLink,
+.root.isCovert:has(.active) .navLink {
   color: rgb(var(--rgb-foreground-secondary));
   text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground-secondary), 0.4);
 }
 
-.navLink:active {
-  opacity: 0.7;
-}
-
-.navLink.covert {
-  top: calc(-40px - 4.3vw / 2);
-  color: rgb(var(--rgb-foreground-secondary));
-  text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground-secondary), 0.4);
-}
-
-.navLink.covert:focus-visible,
-.navLink.current {
-  top: 0;
+.root .navLink.active,
+.root.isCovert .navLink.active {
   color: rgb(var(--rgb-foreground));
   text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground), 0.4);
+  pointer-events: none;
 }
 
-.navLink.current {
-  pointer-events: none;
+.root.isCovert .navLink:not(.active) {
+  top: calc(-40px - 4.3vw / 2);
 }
 
 /* Apply styles if user has an input device capable of hovering (e.g., mouse, touchpad, or stylus) */
@@ -66,9 +59,25 @@
     text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground-secondary), 0.4);
   }
 
-  .navLink.covert:hover {
+  .root.isCovert .navLink:hover,
+  .root:has(.active) .navLink:hover,
+  .root.isCovert:has(.active) .navLink:hover {
     top: 0;
     color: rgb(var(--rgb-foreground));
     text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground), 0.4);
-  }
+  } 
 }
+
+.navLink:focus-visible {
+  color: rgb(var(--rgb-foreground-secondary));
+  text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground-secondary), 0.4);
+}
+
+.root:has(.active) .navLink:focus-visible,
+.root.isCovert:has(.active) .navLink:focus-visible {
+  top: 0;
+  color: rgb(var(--rgb-foreground));
+  text-shadow: 0.15vw 0.15vw 0.15vw rgba(var(--rgb-foreground), 0.4);
+}
+
+.navLink:active { opacity: 0.7; }
