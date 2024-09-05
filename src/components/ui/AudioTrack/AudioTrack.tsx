@@ -1,5 +1,5 @@
-import { FaPlay, FaPause } from 'react-icons/fa'
 import { Equalizer } from '../Equalizer/Equalizer'
+import { Icon } from '../Icon/Icon'
 import { FormattedDuration } from '../FormattedDuration/FormattedDuration'
 import { useAudioTrackRefs } from '@/helpers/contexts/AudioTrackRefs.context'
 import { useAudioTrackDuration } from './hooks/useAudioTrackDuration'
@@ -45,10 +45,13 @@ export const AudioTrack = ({
           <button
             className={styles.playToggle}
             onClick={() => onPlayPauseClick(name)}
-            aria-label={isPlaying ? `Pause ${name} preview` : `Play ${name} preview` }
+            aria-label={isPlaying ? `Pause ${name} preview` : `Play ${name} preview`}
             tabIndex={tabIndex}
           >
-            {isPlaying ? <FaPause /> : <FaPlay />}
+            <Icon
+              className={styles.playIcon}
+              glyph={isPlaying ? 'pause' : 'play'}
+            />
           </button>
         </div>
         <span className={styles.name}>{name}</span>
