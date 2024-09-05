@@ -6,6 +6,8 @@ import BandcampLogo from './bandcamp-logo.svg'
 import Check from './check.svg'
 import FacebookLogo from './facebook-logo.svg'
 import InstagramLogo from './instagram-logo.svg'
+import Pause from './pause.svg'
+import Play from './play.svg'
 import Eye from './eye.svg'
 import Plus from './plus.svg'
 import SpotifyLogo from './spotify-logo.svg'
@@ -24,6 +26,8 @@ export default {
   'eye': Eye,
   'facebook-logo': FacebookLogo,
   'instagram-logo': InstagramLogo,
+  'pause': Pause,
+  'play': Play,
   'plus': Plus,
   'spotify-logo': SpotifyLogo,
   'tiktok-logo': TikTokLogo,
