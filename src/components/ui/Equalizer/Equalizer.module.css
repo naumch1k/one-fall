@@ -19,14 +19,15 @@
   --thirteen: calc(var(--equalizer-size) / 1.076923077);
   --fourteen: var(--equalizer-size);
 
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: var(--equalizer-size);
+  height: var(--equalizer-size);
 }
 
 .item {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: calc((100% - var(--equalizer-size)) / 2);
+  position: relative;
   display: block;
   width: var(--equalizer-item-width);
   height: var(--equalizer-size);
