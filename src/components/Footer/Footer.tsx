@@ -13,7 +13,7 @@ export const Footer = () => {
   return (
     <footer className={styles.root}>
       <div className={styles.content}>
-        <span className='scrollTracker' data-toc-idx='6'></span>
+        <span className='scrollTracker' data-toc-idx='7'></span>
         <div className={styles.form}>
           <h3 className={styles.heading}>Message Us</h3>
           <ContactForm />
@@ -22,7 +22,7 @@ export const Footer = () => {
           <h3 className={styles.heading}>Website</h3>
           <Menu type='footer-navigation'>
             {mainNavigationItems.map(item => (
-              <Menu.Item key={item.id} {...item} />
+              <Menu.Item key={item.index} {...item} />
             ))}
           </Menu>
         </div>

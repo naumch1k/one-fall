@@ -1,37 +1,31 @@
 export const mainNavigationItems = [
   {
-    index: 0,
-    id: 'about',
+    index: 1,
     text: 'About',
     href: '#about',
   },
   {
-    index: 1,
-    id: 'music',
+    index: 2,
     text: 'Music',
     href: '#music',
   },
   {
-    index: 2,
-    id: 'dates',
+    index: 3,
     text: 'Dates',
     href: '#dates',
   },
   {
-    index: 3,
-    id: 'merch',
+    index: 4,
     text: 'Merch',
     href: '#merch',
   },
   {
-    index: 4,
-    id: 'gallery',
+    index: 5,
     text: 'Gallery',
     href: '#gallery',
   },
   {
-    index: 5,
-    id: 'press',
+    index: 6,
     text: 'Press',
     href: '#press',
   },

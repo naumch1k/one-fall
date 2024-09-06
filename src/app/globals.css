@@ -84,3 +84,9 @@ section:has(.scrollTracker) { position: relative; }
   position: absolute;
   top: 1px;
 }
+
+@media screen and (min-width: 1272px) {
+  .scrollTracker {
+    top: -150px;
+  }
+}

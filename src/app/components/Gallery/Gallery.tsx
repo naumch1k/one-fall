@@ -35,7 +35,7 @@ export const Gallery = () => {
     <>
       <section id='gallery' className={styles.root}>
       <h2>
-        <span className='scrollTracker' data-toc-idx='4'></span>
+        <span className='scrollTracker' data-toc-idx='5'></span>
         <span className='visuallyHidden'>Gallery</span>
       </h2>
         <div className={styles.innerWrapper}>

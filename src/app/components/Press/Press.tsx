@@ -14,7 +14,7 @@ export const Press = () => {
   return (
     <section id='press' className={styles.root}>
       <h2>
-        <span className='scrollTracker' data-toc-idx='5'></span>
+        <span className='scrollTracker' data-toc-idx='6'></span>
         <span className='visuallyHidden'>Press</span>
       </h2>
       <Carousel
