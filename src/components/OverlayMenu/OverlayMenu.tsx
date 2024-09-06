@@ -12,7 +12,7 @@ export const OverlayMenu = () => {
   const {
     isVisible,
     isOverlayMenuOpen,
-    activeIndex,
+    activeSectionIndex,
     onNavLinkClick,
     toggleOverlayMenu,
   } = useOverlayMenu()
@@ -28,7 +28,7 @@ export const OverlayMenu = () => {
               {mainNavigationItems.map(({ index, text, href }) => (
                 <li key={index}>
                   <Link
-                    className={`${styles.navLink} ${activeIndex === index ? styles.active : ''}`}
+                    className={`${styles.navLink} ${activeSectionIndex === index ? styles.active : ''}`}
                     href={href}
                     onClick={event => onNavLinkClick(event, index)}
                   >
