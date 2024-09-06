@@ -6,7 +6,7 @@ import { mainNavigationItems } from '@/helpers/constants'
 import styles from './MainNavigation.module.css'
 
 export const MainNavigation = () => {
-  const { isCovert, activeIndex, handleNavLinkClick } = useMainNavigation()
+  const { isCovert, activeSectionIndex, onNavLinkClick } = useMainNavigation()
 
   return (
     <nav className={`${styles.root} ${isCovert ? styles.isCovert : ''}`}>
@@ -15,10 +15,10 @@ export const MainNavigation = () => {
           return (
             <li key={index}>
               <Link
-                className={`${styles.navLink} ${activeIndex === index ? styles.active : ''}`}
+                className={`${styles.navLink} ${activeSectionIndex === index ? styles.active : ''}`}
                 href={href}
-                tabIndex={activeIndex === index ? -1 : 0}
-                onClick={event => handleNavLinkClick(event, index)}
+                tabIndex={activeSectionIndex === index ? -1 : 0}
+                onClick={event => onNavLinkClick(event, index)}
               >
                 {text}
               </Link>
