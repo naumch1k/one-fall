@@ -27,7 +27,7 @@ export const Merch = () => {
     <>
       <section id='merch' className={styles.root}>
       <h2>
-        <span className='scrollTracker' data-toc-idx='3'></span>
+        <span className='scrollTracker' data-toc-idx='4'></span>
         <span className='visuallyHidden'>Merch</span>
       </h2>
         {isDesktop ? (

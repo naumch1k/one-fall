@@ -6,7 +6,7 @@ export const About = () => {
   return (
     <section id='about' className={styles.root}>
       <h2>
-        <span className='scrollTracker' data-toc-idx='0'></span>
+        <span className='scrollTracker' data-toc-idx='1'></span>
         <span className='visuallyHidden'>About</span>
       </h2>
       <div className={styles.imageWrapper}>
