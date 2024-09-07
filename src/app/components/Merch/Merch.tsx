@@ -1,10 +1,10 @@
 'use client'
 
-import Image from 'next/image'
 import { List } from '@/components/ui/List/List'
 import { Carousel } from '@/components/ui/Carousel/Carousel'
 import { MerchCard } from '../MerchCard/MerchCard'
 import { Modal } from '@/components/ui/Modal/Modal'
+import { MerchItemPreview } from '../MerchItemPreview/MerchItemPreview'
 import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
 import { useFullscreenImageView } from '@/helpers/hooks/useFullscreenImageView'
 import { IMerchItem } from '@/helpers/types'
@@ -52,13 +52,7 @@ export const Merch = () => {
           onClose={closeModal}
           onBackdropClick={closeByBackdropClick}
         >
-          <Image
-            className={styles.modalImage}
-            src={items[currentItemIndex].imageUrl}
-            alt={items[currentItemIndex].title}
-            width={500}
-            height={500}
-          />
+          <MerchItemPreview {...items[currentItemIndex]} />
         </Modal>
       )}
     </>

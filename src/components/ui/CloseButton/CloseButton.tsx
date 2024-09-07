@@ -19,6 +19,7 @@ export const CloseButton = ({
     type='button'
     aria-label={ariaLabel}
     onClick={onClick}
+    tabIndex={1}
     {...buttonProps}
   >
     <Icon glyph='x' width='100%' height='100%' />
