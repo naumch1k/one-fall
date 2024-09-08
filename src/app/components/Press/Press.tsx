@@ -12,7 +12,7 @@ export const Press = () => {
   const sortedPressCards = useSortedPressCards(data.items)
 
   return (
-    <section id='press' className={styles.root}>
+    <section id='press'  data-toc-idx='6' className={styles.root}>
       <h2>
         <span className='scrollTracker' data-toc-idx='6'></span>
         <span className='visuallyHidden'>Press</span>

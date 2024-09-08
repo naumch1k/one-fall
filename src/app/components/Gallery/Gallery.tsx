@@ -33,7 +33,7 @@ export const Gallery = () => {
 
   return (
     <>
-      <section id='gallery' className={styles.root}>
+      <section id='gallery' data-toc-idx='5' className={styles.root}>
       <h2>
         <span className='scrollTracker' data-toc-idx='5'></span>
         <span className='visuallyHidden'>Gallery</span>

@@ -56,7 +56,7 @@ export const Music = () => {
   }
 
   return (
-    <section id='music' className={styles.root}>
+    <section id='music' data-toc-idx='2' className={styles.root}>
       <h2>
         <span className='scrollTracker' data-toc-idx='2'></span>
         <span className='visuallyHidden'>Music</span>

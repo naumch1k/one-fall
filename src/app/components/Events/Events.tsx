@@ -13,7 +13,7 @@ export const Events = () => {
   const { eventsToRender, handleLoadMoreClick, hasMoreItems } = useEvents(data.items)
 
   return (
-    <section id='dates' className={styles.root}>
+    <section id='dates' data-toc-idx='3' className={styles.root}>
       <h2>
         <span className='scrollTracker' data-toc-idx='3'></span>
         <span className='visuallyHidden'>Events</span>
