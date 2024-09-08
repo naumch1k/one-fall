@@ -4,7 +4,7 @@ import styles from './About.module.css'
 
 export const About = () => {
   return (
-    <section id='about' className={styles.root}>
+    <section id='about' data-toc-idx='1' className={styles.root}>
       <h2>
         <span className='scrollTracker' data-toc-idx='1'></span>
         <span className='visuallyHidden'>About</span>
