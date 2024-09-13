@@ -5,11 +5,8 @@ import styles from './Hero.module.css'
 
 export const Hero = () => {
   return (
-    <section id='hero' className={styles.root}>
-      <h1>
-        <span className='scrollTracker' data-toc-idx='0'></span>
-        <span className='visuallyHidden'>One Fall</span>
-      </h1>
+    <section data-toc-idx='0' className={styles.root}>
+      <h1 className='visuallyHidden'>One Fall</h1>
       <Image
         className={styles.logo}
         src='/images/logo.png'

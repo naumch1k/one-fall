@@ -1,13 +1,33 @@
-import { SyntheticEvent, useEffect, useState } from 'react'
+import { SyntheticEvent, useCallback, useEffect, useState } from 'react'
+import { useWindowSize } from './useWindowSize'
+import { useMediaQuery } from './useMediaQuery'
+import { useDebounce } from './useDebounce'
+import { Breakpoints, ScrollTrackerOffsets } from '@/helpers/constants'
 
 export const usePageNavigation = () => {
-  const [activeSectionIndex, setActiveIndex] = useState<number>(-1)
+  const isMobile = useMediaQuery(`(max-width: 1023px)`)
+  const { width, height } = useWindowSize()
+  const [scrollTrackerOffset, setScrollTrackerOffset] = useState<number>(ScrollTrackerOffsets.MOBILE)
+  const [activeSectionIndex, setActiveSectionIndex] = useState<number>(-1)
+
+  useEffect(() => {
+    switch (true) {
+      case width >= Breakpoints.LARGE_DESKTOP:
+        setScrollTrackerOffset(ScrollTrackerOffsets.LARGE_DESKTOP)
+        break
+      case width >= Breakpoints.DESKTOP:
+        setScrollTrackerOffset(ScrollTrackerOffsets.DESKTOP)
+        break
+      default:
+        setScrollTrackerOffset(ScrollTrackerOffsets.MOBILE)
+        break
+    }
+  }, [width])
 
   const handleNavLinkClick = (
     event: SyntheticEvent,
     index: number,
-    scrollOffset: number,
-    callback?: () => void
+    callback?: () => void,
   ) => {
     event?.preventDefault()
 
@@ -15,7 +35,7 @@ export const usePageNavigation = () => {
 
     if (element) {
       const boundingClientRect = element.getBoundingClientRect()
-      const elementY = boundingClientRect.top + window.scrollY + scrollOffset
+      const elementY = boundingClientRect.top + window.scrollY
 
       window.scrollTo({ top: elementY, behavior: 'smooth' })
     }
@@ -23,67 +43,40 @@ export const usePageNavigation = () => {
     if (callback) callback()
   }
 
-  const handleObserverIntersection = (entries: IntersectionObserverEntry[]) => {
-    let localActiveIndex: number | null = activeSectionIndex
+  const handleScroll = useCallback(() => {
+    const currentScrollPosition = window.scrollY
 
-    // Track which elements register above or below the document's current position
-    const aboveIndeces: number[] = []
-    const belowIndeces: number[] = []
+    // Calculate the comparison point
+    const comparePoint = isMobile
+      ? currentScrollPosition + height / 2
+      : currentScrollPosition
 
-    // Loop through each intersecting element
-    entries.forEach(({
-      isIntersecting,
-      boundingClientRect,
-      rootBounds,
-      target,
-    }: IntersectionObserverEntry) => {
-      if (!isIntersecting) setActiveIndex(-1)
+    const elements = Array.from(document.querySelectorAll<HTMLElement>('section, footer'))
 
-      // Detect if intersecting element is above the browser viewport; include cross browser logic
-      const boundingClientRectY =
-        typeof boundingClientRect.y !== 'undefined'
-          ? boundingClientRect.y
-          : boundingClientRect.top
+    for (const element of elements) {
+      const top = element.offsetTop - scrollTrackerOffset
+      const bottom = top + element.offsetHeight
 
-      const rootBoundsY = rootBounds
-        ? typeof rootBounds.y !== 'undefined'
-          ? rootBounds.y
-          : rootBounds.top
-        : window.innerHeight
+      if (comparePoint >= top && comparePoint < bottom) {
+        const intersectingElementIndex = parseInt(element.getAttribute('data-toc-idx') || '-1')
 
-      const isAbove = boundingClientRectY < rootBoundsY
-
-      // Get index of intersecting element from DOM attribute
-      const intersectingElementIndex = parseInt(target.getAttribute('data-toc-idx') || '-1')
-
-      // Record index as either above or below current index
-      if (isAbove) aboveIndeces.push(intersectingElementIndex)
-      else belowIndeces.push(intersectingElementIndex)
-    })
-
-    // Determine min and max fired indeces values (support for multiple elements firing at once)
-    const minIndex = belowIndeces.length > 0 ? Math.min(...belowIndeces) : -1
-    const maxIndex = aboveIndeces.length > 0 ? Math.max(...aboveIndeces) : -1
-
-    // Determine how to adjust localActiveIndex based on scroll direction
-    if (aboveIndeces.length > 0) {
-      // Scrolling down - set to max of fired indeces
-      localActiveIndex = maxIndex
-    } else {
-      // Scrolling up - set to minimum of fired indeces
-      localActiveIndex = minIndex - 1 >= 0 ? minIndex - 1 : -1
+        setActiveSectionIndex(intersectingElementIndex)
+        break
+      }
     }
+  }, [scrollTrackerOffset, height, isMobile])
 
-    if (localActiveIndex !== activeSectionIndex) setActiveIndex(localActiveIndex)
-  }
+  // Debounced handleScroll for mobile devices
+  const debouncedHandleScroll = useDebounce(handleScroll)
 
+  // Set up the scroll event listener
   useEffect(() => {
-    const scrollTrackers = document.querySelectorAll('.scrollTracker')
+    const scrollHandler = isMobile ? debouncedHandleScroll : handleScroll
 
-    const observer = new IntersectionObserver(handleObserverIntersection)
+    window.addEventListener('scroll', scrollHandler)
 
-    scrollTrackers.forEach(scrollTracker => observer.observe(scrollTracker))
-  }, [])
+    return () => window.removeEventListener('scroll', scrollHandler)
+  }, [handleScroll, debouncedHandleScroll, width, isMobile])
 
   return { activeSectionIndex, handleNavLinkClick }
 }

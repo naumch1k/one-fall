@@ -12,11 +12,8 @@ export const Press = () => {
   const sortedPressCards = useSortedPressCards(data.items)
 
   return (
-    <section id='press'  data-toc-idx='6' className={styles.root}>
-      <h2>
-        <span className='scrollTracker' data-toc-idx='6'></span>
-        <span className='visuallyHidden'>Press</span>
-      </h2>
+    <section data-toc-idx='6' className={styles.root}>
+      <h2 className='visuallyHidden'>Press</h2>
       <Carousel
         border='topBottom'
         items={sortedPressCards}
