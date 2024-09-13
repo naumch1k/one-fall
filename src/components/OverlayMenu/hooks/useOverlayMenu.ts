@@ -1,6 +1,5 @@
 import { useState, useCallback, useEffect, SyntheticEvent } from 'react'
-import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
-import { usePageNavigation } from '@/helpers/hooks/usePageNavigation'
+import { useMediaQuery, usePageNavigation } from '@/helpers/hooks'
 
 export const useOverlayMenu = () => {
   const isMobile = useMediaQuery(`(max-width: 1023px)`)

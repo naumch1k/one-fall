@@ -1,8 +1,6 @@
 import { SyntheticEvent, useCallback, useEffect, useState } from 'react'
-import { useWindowSize } from './useWindowSize'
-import { useMediaQuery } from './useMediaQuery'
-import { useDebounce } from './useDebounce'
 import { Breakpoints, ScrollTrackerOffsets } from '@/helpers/constants'
+import { useDebounce, useMediaQuery, useWindowSize } from '@/helpers/hooks'
 
 export const usePageNavigation = () => {
   const isMobile = useMediaQuery(`(max-width: 1023px)`)

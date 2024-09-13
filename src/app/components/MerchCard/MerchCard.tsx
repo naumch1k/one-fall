@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { LightboxButton } from '@/components/ui/LightboxButton/LightboxButton'
 import { ArrowLink } from '@/components/ui/ArrowLink/ArrowLink'
-import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
+import { useMediaQuery } from '@/helpers/hooks'
 import styles from './MerchCard.module.css'
 
 interface IMerchCardProps {

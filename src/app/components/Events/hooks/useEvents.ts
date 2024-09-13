@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
-import { useWindowSize } from '@/helpers/hooks/useWindowSize'
+import { useWindowSize } from '@/helpers/hooks'
 import { IEvent } from '@/helpers/types'
 
 interface IEventListRenderSettings {
