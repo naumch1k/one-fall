@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useMediaQuery } from '@/helpers/hooks/useMediaQuery'
+import { useMediaQuery } from '@/helpers/hooks'
 
 export const useSocialLinksSidebar = () => {
   const [isVisible, setIsVisible] = useState(false)

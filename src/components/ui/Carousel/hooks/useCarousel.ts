@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
-import { useWindowSize } from '@/helpers/hooks/useWindowSize'
-import { Breakpoints } from '@/helpers/constants/breakpoints'
+import { useWindowSize } from '@/helpers/hooks'
+import { Breakpoints } from '@/helpers/constants'
 
 const carouselSettings = {
   initialSlide: 0,

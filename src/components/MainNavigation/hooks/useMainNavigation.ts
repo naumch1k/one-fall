@@ -1,5 +1,5 @@
 import { useRef, useCallback, useState, useEffect, SyntheticEvent } from 'react'
-import { usePageNavigation } from '@/helpers/hooks/usePageNavigation'
+import { usePageNavigation } from '@/helpers/hooks'
 
 export const useMainNavigation = () => {
   const prevScrollPosition = useRef(0)

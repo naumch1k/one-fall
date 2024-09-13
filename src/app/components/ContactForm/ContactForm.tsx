@@ -5,7 +5,7 @@ import { TextArea } from '@/components/ui/TextArea/TextArea'
 import { Button } from '@/components/ui/Button/Button'
 import { Icon } from '@/components/ui/Icon/Icon'
 import { Loader } from '@/components/ui/Loader/Loader'
-import { useFormWithValidation } from '@/helpers/hooks/useFormWithValidation'
+import { useFormWithValidation } from '@/helpers/hooks'
 import { CustomValidationMessages } from '@/helpers/constants'
 import styles from './ContactForm.module.css'
 

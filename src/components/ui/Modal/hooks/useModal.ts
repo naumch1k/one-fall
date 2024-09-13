@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { useScrollLock } from '@/helpers/hooks/useScrollLock'
+import { useScrollLock } from '@/helpers/hooks'
 
 export const useModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
