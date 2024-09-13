@@ -13,11 +13,8 @@ export const Events = () => {
   const { eventsToRender, handleLoadMoreClick, hasMoreItems } = useEvents(data.items)
 
   return (
-    <section id='dates' data-toc-idx='3' className={styles.root}>
-      <h2>
-        <span className='scrollTracker' data-toc-idx='3'></span>
-        <span className='visuallyHidden'>Events</span>
-      </h2>
+    <section data-toc-idx='3' className={styles.root}>
+      <h2 className='visuallyHidden'>Events</h2>
       <div className={styles.imageWrapper}>
         <Image
           className={styles.image}

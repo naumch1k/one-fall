@@ -76,17 +76,3 @@ textarea::-moz-placeholder {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-section:has(.scrollTracker) { position: relative; }
-
-.scrollTracker {
-  pointer-events: none;
-  position: absolute;
-  top: 1px;
-}
-
-@media screen and (min-width: 1272px) {
-  .scrollTracker {
-    top: -150px;
-  }
-}

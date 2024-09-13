@@ -4,11 +4,8 @@ import styles from './About.module.css'
 
 export const About = () => {
   return (
-    <section id='about' data-toc-idx='1' className={styles.root}>
-      <h2>
-        <span className='scrollTracker' data-toc-idx='1'></span>
-        <span className='visuallyHidden'>About</span>
-      </h2>
+    <section data-toc-idx='1' className={styles.root}>
+      <h2 className='visuallyHidden'>About</h2>
       <div className={styles.imageWrapper}>
         <Image
           className={styles.image}

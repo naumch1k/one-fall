@@ -25,11 +25,8 @@ export const Merch = () => {
 
   return (
     <>
-      <section id='merch' data-toc-idx='4' className={styles.root}>
-      <h2>
-        <span className='scrollTracker' data-toc-idx='4'></span>
-        <span className='visuallyHidden'>Merch</span>
-      </h2>
+      <section data-toc-idx='4' className={styles.root}>
+      <h2 className='visuallyHidden'>Merch</h2>
         {isDesktop ? (
           <List type='merch-list'>
             {items.map(item => (

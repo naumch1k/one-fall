@@ -11,9 +11,8 @@ import styles from './Footer.module.css'
 
 export const Footer = () => {
   return (
-    <footer className={styles.root}>
+    <footer data-toc-idx='7' className={styles.root}>
       <div className={styles.content}>
-        <span className='scrollTracker' data-toc-idx='7'></span>
         <div className={styles.form}>
           <h3 className={styles.heading}>Message Us</h3>
           <ContactForm />
