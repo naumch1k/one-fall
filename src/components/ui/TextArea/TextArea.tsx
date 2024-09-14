@@ -3,7 +3,7 @@ import styles from './TextArea.module.css'
 
 interface ITextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   error: boolean
-  errorMessage: string
+  errorMessage: string | undefined
 }
 
 export const TextArea = ({
@@ -16,8 +16,6 @@ export const TextArea = ({
       className={`${styles.root} ${error ? styles.invalid : ''}`}
       {...restProps}
     />
-    <p className={styles.error}>
-      {error && errorMessage}
-      </p>
+    <p className={styles.error}>{error && errorMessage}</p>
   </div>
 )
