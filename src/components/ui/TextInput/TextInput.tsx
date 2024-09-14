@@ -1,10 +1,10 @@
 import { InputHTMLAttributes } from 'react'
 import styles from './TextInput.module.css'
 
-interface ITextInputProps extends InputHTMLAttributes<HTMLInputElement>{
+interface ITextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   type: 'text' | 'email'
   error: boolean
-  errorMessage: string
+  errorMessage: string | undefined
 }
 
 export const TextInput = ({
@@ -19,8 +19,6 @@ export const TextInput = ({
       type={type}
       {...restProps}
     />
-    <p className={styles.error}>
-      {error && errorMessage}
-    </p>
+    <p className={styles.error}>{error && errorMessage}</p>
   </div>
 )

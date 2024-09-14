@@ -5,8 +5,7 @@ import { TextArea } from '@/components/ui/TextArea/TextArea'
 import { Button } from '@/components/ui/Button/Button'
 import { Icon } from '@/components/ui/Icon/Icon'
 import { Loader } from '@/components/ui/Loader/Loader'
-import { useFormWithValidation } from '@/helpers/hooks'
-import { CustomValidationMessages } from '@/helpers/constants'
+import { useFormWithValidation } from '@/helpers/hooks/useFormWithValidation'
 import styles from './ContactForm.module.css'
 
 export const ContactForm = () => {
@@ -27,7 +26,7 @@ export const ContactForm = () => {
         value={values.name}
         type='text'
         error={!!errors.name}
-        errorMessage={CustomValidationMessages.NAME_ERROR}
+        errorMessage={errors.name}
         onChange={handleChange}
         placeholder='Your name'
         minLength={2}
@@ -39,16 +38,17 @@ export const ContactForm = () => {
         value={values.email}
         type='email'
         error={!!errors.email}
-        errorMessage={CustomValidationMessages.EMAIL_ERROR}
+        errorMessage={errors.email}
         onChange={handleChange}
         placeholder='Your email'
+        maxLength={50}
         required
       />
       <TextArea
         name='message'
         value={values.message}
         error={!!errors.message}
-        errorMessage={CustomValidationMessages.MESSAGE_ERROR}
+        errorMessage={errors.message}
         onChange={handleChange}
         placeholder='Your message'
         rows={7}
@@ -62,10 +62,13 @@ export const ContactForm = () => {
         view='secondary'
         disabled={!isValid || isSubmitting}
       >
-        {formSuccessfullySent 
-          ? <>Message sent <Icon glyph='check' width='15px' height='15px' /></>
-          : 'Send message'
-        }
+        {formSuccessfullySent ? (
+          <>
+            Message sent <Icon glyph='check' width='15px' height='15px' />
+          </>
+        ) : (
+          'Send message'
+        )}
         {isSubmitting && <Loader />}
       </Button>
     </form>
