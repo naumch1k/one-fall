@@ -3,22 +3,20 @@ import styles from './TextInput.module.css'
 
 interface ITextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   type: 'text' | 'email'
-  error: boolean
-  errorMessage: string | undefined
+  errorMessage?: string
 }
 
 export const TextInput = ({
   type,
-  error,
   errorMessage,
-  ...restProps
+  ...props
 }: ITextInputProps) => (
   <div>
     <input
-      className={`${styles.root} ${error ? styles.invalid : ''}`}
+      className={`${styles.root} ${errorMessage ? styles.invalid : ''}`}
       type={type}
-      {...restProps}
+      {...props}
     />
-    <p className={styles.error}>{error && errorMessage}</p>
+    <p className={styles.error}>{errorMessage}</p>
   </div>
 )

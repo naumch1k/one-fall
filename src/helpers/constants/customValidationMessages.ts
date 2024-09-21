@@ -1,12 +1,18 @@
 export const CustomValidationMessages = {
-  NAME_ERROR: 'Please include your name',
-  NAME_ERROR_MIN: 'Name should have 2 letters at least',
-  NAME_ERROR_MAX: 'Name should have 50 letters max',
-  EMAIL_ERROR: 'Please include your email',
-  EMAIL_ERROR_MAX: 'Email should be less than 50 letters',
-  EMAIL_ERROR_MATCH: 'Please match requested format: john@gmail.com',
-  MESSAGE_ERROR: 'Please include your message',
-  MESSAGE_ERROR_MIN: 'Message should have 2 letters at least',
-  MESSAGE_ERROR_MAX: 'Please provide message less than 1000 letters',
+  name: {
+    VALUE_MISSING: 'Please include your name',
+    TOO_SHORT: 'Name should have at least 2 letters',
+    TOO_LONG: 'Name should have a maximum of 50 letters',
+  },
+  email: {
+    VALUE_MISSING: 'Please include your email',
+    PATTERN_MISMATCH: 'Please enter a valid email address',
+  },
+  message: {
+    VALUE_MISSING: 'Please include your message',
+    TOO_SHORT: 'Message should have at least 2 letters',
+    TOO_LONG: 'Message cannot exceed 1000 letters',
+  },
   SUBMIT_SUCCESS: 'Your message successfully sent!',
+  SUBMIT_FAILURE: 'Oops! Something went wrong. We\'re working to resolve the issue.',
 }

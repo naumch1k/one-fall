@@ -4,56 +4,47 @@ import { TextInput } from '@/components/ui/TextInput/TextInput'
 import { TextArea } from '@/components/ui/TextArea/TextArea'
 import { Button } from '@/components/ui/Button/Button'
 import { Icon } from '@/components/ui/Icon/Icon'
-import { Loader } from '@/components/ui/Loader/Loader'
 import { useFormWithValidation } from '@/helpers/hooks/useFormWithValidation'
 import styles from './ContactForm.module.css'
 
 export const ContactForm = () => {
   const {
-    values,
-    errors,
+    fields,
     isValid,
     isSubmitting,
     formSuccessfullySent,
-    handleChange,
+    handleFieldChange,
     handleSubmit,
   } = useFormWithValidation()
+  const { name, email, message } = fields
 
   return (
     <form className={styles.root} onSubmit={handleSubmit} noValidate>
       <TextInput
         name='name'
-        value={values.name}
+        value={name.value}
         type='text'
-        error={!!errors.name}
-        errorMessage={errors.name}
-        onChange={handleChange}
+        errorMessage={name.error}
+        onChange={handleFieldChange('name')}
         placeholder='Your name'
-        minLength={2}
-        maxLength={50}
         required
       />
       <TextInput
         name='email'
-        value={values.email}
+        value={email.value}
         type='email'
-        error={!!errors.email}
-        errorMessage={errors.email}
-        onChange={handleChange}
+        errorMessage={email.error}
+        onChange={handleFieldChange('email')}
         placeholder='Your email'
-        maxLength={50}
         required
       />
       <TextArea
         name='message'
-        value={values.message}
-        error={!!errors.message}
-        errorMessage={errors.message}
-        onChange={handleChange}
+        value={message.value}
+        errorMessage={message.error}
+        onChange={handleFieldChange('message')}
         placeholder='Your message'
         rows={7}
-        minLength={2}
-        maxLength={1000}
         required
       />
       <Button
@@ -67,9 +58,8 @@ export const ContactForm = () => {
             Message sent <Icon glyph='check' width='15px' height='15px' />
           </>
         ) : (
-          'Send message'
+          isSubmitting ? 'Sending message...' : 'Send message'
         )}
-        {isSubmitting && <Loader />}
       </Button>
     </form>
   )
