@@ -19,10 +19,10 @@ enum MusicPlayerActionTypes {
 const { Play, Pause, UpdateProgress, ResetProgress } = MusicPlayerActionTypes
 
 type MusicPlayerAction =
-  | { type: MusicPlayerActionTypes.Play; payload: { trackName: string } }
-  | { type: MusicPlayerActionTypes.Pause }
-  | { type: MusicPlayerActionTypes.UpdateProgress; payload: { time: number } }
-  | { type: MusicPlayerActionTypes.ResetProgress }
+  | { type: typeof Play; payload: { trackName: string } }
+  | { type: typeof Pause }
+  | { type: typeof UpdateProgress; payload: { time: number } }
+  | { type: typeof ResetProgress }
 
 const initialState: TMusicPlayerState = {
   prevTrackName: '',
