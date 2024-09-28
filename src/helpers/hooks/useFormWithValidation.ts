@@ -109,7 +109,10 @@ const reducer = (state: ContactFormState, action: ContactFormAction) => {
 }
 
 export const useFormWithValidation = () => {
-  const [state, dispatch] = useReducer(reducer, initialContactFormState)
+  const [{ fields, isSubmitting, formSuccessfullySent }, dispatch] = useReducer(
+    reducer,
+    initialContactFormState
+  )
 
   const getFieldError = <K extends keyof ContactFormFields>(
     field: K,
@@ -155,10 +158,10 @@ export const useFormWithValidation = () => {
     }
 
   const isValid = useMemo(() => {
-    return Object.values(state.fields).every(
+    return Object.values(fields).every(
       ({ wasChanged, error }) => wasChanged && !error
     )
-  }, [state.fields])
+  }, [fields])
 
   // TODO: replace with email sending service
   const simulateFormSubmission = () => {
@@ -192,7 +195,7 @@ export const useFormWithValidation = () => {
   useEffect(() => {
     let timeoutId: NodeJS.Timeout | undefined
 
-    if (state.formSuccessfullySent) {
+    if (formSuccessfullySent) {
       timeoutId = setTimeout(
         () => dispatch({ type: CompleteFormSubmission }),
         CONTACT_FORM_RESET_TIMEOUT
@@ -201,13 +204,13 @@ export const useFormWithValidation = () => {
 
     // Clear timeout on component unmount
     return () => clearTimeout(timeoutId)
-  }, [state.formSuccessfullySent])
+  }, [formSuccessfullySent])
 
   return {
-    fields: state.fields,
+    fields,
     isValid,
-    isSubmitting: state.isSubmitting,
-    formSuccessfullySent: state.formSuccessfullySent,
+    isSubmitting,
+    formSuccessfullySent,
     handleFieldChange,
     handleSubmit,
   }
