@@ -1,10 +1,4 @@
-import {
-  ChangeEvent,
-  FormEvent,
-  useEffect,
-  useMemo,
-  useReducer,
-} from 'react'
+import { ChangeEvent, FormEvent, useEffect, useMemo, useReducer } from 'react'
 import { CustomValidationMessages } from '../constants'
 
 const CONTACT_FORM_RESET_TIMEOUT = 10000
@@ -32,12 +26,33 @@ interface ContactFormState {
   submissionError?: string
 }
 
-type ContactFormAction<K extends keyof ContactFormFields = keyof ContactFormFields> =
-  | { type: 'UPDATE_FIELD'; payload: { field: K; value: ContactFormFields[K]; error?: string }}
-  | { type: 'START_FORM_SUBMISSION' }
-  | { type: 'SET_FORM_SUBMISSION_SUCCESS' }
-  | { type: 'SET_FORM_SUBMISSION_FAILURE'; payload: { error: string } }
-  | { type: 'COMPLETE_FORM_SUBMISSION' }
+enum ContactFormActionTypes {
+  UpdateField,
+  StartFormSubmission,
+  SetFormSubmissionSuccess,
+  SetFormSubmissionFailure,
+  CompleteFormSubmission,
+}
+
+const {
+  UpdateField,
+  StartFormSubmission,
+  SetFormSubmissionSuccess,
+  SetFormSubmissionFailure,
+  CompleteFormSubmission,
+} = ContactFormActionTypes
+
+type ContactFormAction<
+  K extends keyof ContactFormFields = keyof ContactFormFields,
+> =
+  | {
+      type: typeof UpdateField
+      payload: { field: K; value: ContactFormFields[K]; error?: string }
+    }
+  | { type: typeof StartFormSubmission }
+  | { type: typeof SetFormSubmissionSuccess }
+  | { type: typeof SetFormSubmissionFailure; payload: { error: string } }
+  | { type: typeof CompleteFormSubmission }
 
 const initialContactFormFieldsState: ContactFormFieldsState = {
   name: { value: '', wasChanged: false },
@@ -53,7 +68,7 @@ const initialContactFormState: ContactFormState = {
 
 const reducer = (state: ContactFormState, action: ContactFormAction) => {
   switch (action.type) {
-    case 'UPDATE_FIELD':
+    case UpdateField:
       return {
         ...state,
         fields: {
@@ -65,25 +80,25 @@ const reducer = (state: ContactFormState, action: ContactFormAction) => {
           },
         },
       }
-    case 'START_FORM_SUBMISSION':
+    case StartFormSubmission:
       return {
         ...state,
         isSubmitting: true,
       }
-    case 'SET_FORM_SUBMISSION_SUCCESS':
+    case SetFormSubmissionSuccess:
       return {
         ...state,
         fields: initialContactFormFieldsState,
         isSubmitting: false,
         formSuccessfullySent: true,
       }
-    case 'SET_FORM_SUBMISSION_FAILURE':
+    case SetFormSubmissionFailure:
       return {
         ...state,
         isSubmitting: false,
         submissionError: action.payload.error,
       }
-    case 'COMPLETE_FORM_SUBMISSION':
+    case CompleteFormSubmission:
       return {
         ...state,
         formSuccessfullySent: false,
@@ -111,7 +126,8 @@ export const useFormWithValidation = () => {
         break
       case 'email':
         if (!trimmedValue) return email.VALUE_MISSING
-        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net)$/.test(trimmedValue)) return email.PATTERN_MISMATCH
+        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net)$/.test(trimmedValue))
+          return email.PATTERN_MISMATCH
         break
       case 'message':
         if (!trimmedValue) return message.VALUE_MISSING
@@ -123,16 +139,20 @@ export const useFormWithValidation = () => {
     }
   }
 
-  const handleFieldChange = <K extends keyof ContactFormFields>(field: K) => ({ target: { value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    dispatch({
-      type: 'UPDATE_FIELD',
-      payload: {
-        field,
-        value,
-        error: getFieldError(field, value),
-      },
-    })
-  }
+  const handleFieldChange =
+    <K extends keyof ContactFormFields>(field: K) =>
+    ({
+      target: { value },
+    }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      dispatch({
+        type: UpdateField,
+        payload: {
+          field,
+          value,
+          error: getFieldError(field, value),
+        },
+      })
+    }
 
   const isValid = useMemo(() => {
     return Object.values(state.fields).every(
@@ -154,14 +174,16 @@ export const useFormWithValidation = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    dispatch({ type: 'START_FORM_SUBMISSION' })
+    dispatch({ type: StartFormSubmission })
 
     simulateFormSubmission()
-      .then(() => dispatch({ type: 'SET_FORM_SUBMISSION_SUCCESS' }))
+      .then(() => dispatch({ type: SetFormSubmissionSuccess }))
       .catch(error => {
         dispatch({
-          type: 'SET_FORM_SUBMISSION_FAILURE',
-          payload: { error: error.message || CustomValidationMessages.SUBMIT_FAILURE },
+          type: SetFormSubmissionFailure,
+          payload: {
+            error: error.message || CustomValidationMessages.SUBMIT_FAILURE,
+          },
         })
       })
   }
@@ -169,14 +191,14 @@ export const useFormWithValidation = () => {
   // Set timeout to reset button text based on formSuccessfullySent
   useEffect(() => {
     let timeoutId: NodeJS.Timeout | undefined
-  
+
     if (state.formSuccessfullySent) {
       timeoutId = setTimeout(
-        () => dispatch({ type: 'COMPLETE_FORM_SUBMISSION' }),
+        () => dispatch({ type: CompleteFormSubmission }),
         CONTACT_FORM_RESET_TIMEOUT
       )
     }
-  
+
     // Clear timeout on component unmount
     return () => clearTimeout(timeoutId)
   }, [state.formSuccessfullySent])
