@@ -18,6 +18,5 @@ export const CustomValidationMessages = {
       'Please use only latin letters. Special characters are not allowed',
   },
   SUBMIT_SUCCESS: 'Your message successfully sent!',
-  SUBMIT_FAILURE:
-    "Oops! Something went wrong. We're working to resolve the issue.",
+  SUBMIT_FAILURE: "Something went wrong. We're working to resolve the issue.",
 }
