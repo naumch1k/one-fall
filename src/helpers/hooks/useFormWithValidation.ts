@@ -1,5 +1,10 @@
 import { ChangeEvent, FormEvent, useEffect, useMemo, useReducer } from 'react'
 import { CustomValidationMessages } from '../constants'
+import {
+  validEmailRegexp,
+  validMessageRegexp,
+  validNameRegexp,
+} from '../constants/regexps'
 
 const CONTACT_FORM_RESET_TIMEOUT = 10000
 
@@ -124,16 +129,18 @@ export const useFormWithValidation = () => {
     switch (field) {
       case 'name':
         if (!trimmedValue) return name.VALUE_MISSING
+        if (!validNameRegexp.test(trimmedValue)) return name.PATTERN_MISMATCH
         if (trimmedValue.length < 2) return name.TOO_SHORT
         if (trimmedValue.length > 50) return name.TOO_LONG
         break
       case 'email':
         if (!trimmedValue) return email.VALUE_MISSING
-        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net)$/.test(trimmedValue))
-          return email.PATTERN_MISMATCH
+        if (!validEmailRegexp.test(trimmedValue)) return email.PATTERN_MISMATCH
         break
       case 'message':
         if (!trimmedValue) return message.VALUE_MISSING
+        if (!validMessageRegexp.test(trimmedValue))
+          return message.PATTERN_MISMATCH
         if (trimmedValue.length < 2) return message.TOO_SHORT
         if (trimmedValue.length > 500) return message.TOO_LONG
         break
