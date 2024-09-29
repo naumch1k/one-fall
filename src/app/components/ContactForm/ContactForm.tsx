@@ -15,6 +15,7 @@ export const ContactForm = () => {
     formSuccessfullySent,
     handleFieldChange,
     handleSubmit,
+    submissionError,
   } = useFormWithValidation()
   const { name, email, message } = fields
 
@@ -57,10 +58,13 @@ export const ContactForm = () => {
           <>
             Message sent <Icon glyph='check' width='15px' height='15px' />
           </>
+        ) : isSubmitting ? (
+          'Sending message...'
         ) : (
-          isSubmitting ? 'Sending message...' : 'Send message'
+          'Send message'
         )}
       </Button>
+      {submissionError && <p className={styles.error}>{submissionError}</p>}
     </form>
   )
 }

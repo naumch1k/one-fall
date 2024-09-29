@@ -114,10 +114,10 @@ const reducer = (state: ContactFormState, action: ContactFormAction) => {
 }
 
 export const useFormWithValidation = () => {
-  const [{ fields, isSubmitting, formSuccessfullySent }, dispatch] = useReducer(
-    reducer,
-    initialContactFormState
-  )
+  const [
+    { fields, isSubmitting, formSuccessfullySent, submissionError },
+    dispatch,
+  ] = useReducer(reducer, initialContactFormState)
 
   const getFieldError = <K extends keyof ContactFormFields>(
     field: K,
@@ -220,5 +220,6 @@ export const useFormWithValidation = () => {
     formSuccessfullySent,
     handleFieldChange,
     handleSubmit,
+    submissionError,
   }
 }
