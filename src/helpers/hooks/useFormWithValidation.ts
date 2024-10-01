@@ -89,6 +89,7 @@ const reducer = (state: ContactFormState, action: ContactFormAction) => {
       return {
         ...state,
         isSubmitting: true,
+        submissionError: '',
       }
     case SetFormSubmissionSuccess:
       return {
