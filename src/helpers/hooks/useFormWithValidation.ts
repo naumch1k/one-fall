@@ -173,13 +173,13 @@ export const useFormWithValidation = () => {
 
   // TODO: replace with email sending service
   const simulateFormSubmission = () => {
-    return new Promise<void>(resolve => {
-      setTimeout(() => resolve(), 2000)
-    })
-
-    // return new Promise<void>((_, reject) => {
-    //   setTimeout(() => reject(new Error(CustomValidationMessages.SUBMIT_FAILURE)), 2000)
+    // return new Promise<void>(resolve => {
+    //   setTimeout(() => resolve(), 2000)
     // })
+
+    return new Promise<void>((_, reject) => {
+      setTimeout(() => reject(new Error(CustomValidationMessages.SUBMIT_FAILURE)), 2000)
+    })
   }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
