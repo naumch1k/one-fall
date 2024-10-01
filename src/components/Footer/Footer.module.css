@@ -51,9 +51,10 @@
     grid-template-areas:
       'form     nav      listen  '
       'form     socials  socials '
+      'form     .        .       '
       'footnote footnote footnote';
     grid-template-columns: 450px 1.5fr 2fr;
-    grid-template-rows: unset;
+    grid-template-rows: auto auto 30px auto;
     gap: 0 120px;
   }
 }
