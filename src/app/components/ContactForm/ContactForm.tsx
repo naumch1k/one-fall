@@ -64,7 +64,7 @@ export const ContactForm = () => {
           'Send message'
         )}
       </Button>
-      {submissionError && <p className={styles.error}>{submissionError}</p>}
+      <p className={styles.error}>{submissionError}</p>
     </form>
   )
 }
