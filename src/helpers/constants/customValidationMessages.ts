@@ -11,8 +11,8 @@ export const CustomValidationMessages = {
   },
   message: {
     VALUE_MISSING: 'Please include your message',
-    TOO_SHORT: 'Message should have at least 2 letters',
-    TOO_LONG: 'Message cannot exceed 1000 letters',
+    TOO_SHORT: 'Message should have at least 2 characters',
+    TOO_LONG: 'Message cannot exceed 1000 characters',
     PATTERN_MISMATCH:
       'Yikes! Only letters, numbers, spaces, and \' ’ " , . ! ? - are allowed',
   },
