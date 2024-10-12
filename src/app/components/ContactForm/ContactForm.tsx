@@ -27,7 +27,7 @@ export const ContactForm = () => {
         type='text'
         errorMessage={name.error}
         onChange={handleFieldChange('name')}
-        placeholder='Your name'
+        placeholder='Your name*'
         required
       />
       <TextInput
@@ -36,7 +36,7 @@ export const ContactForm = () => {
         type='email'
         errorMessage={email.error}
         onChange={handleFieldChange('email')}
-        placeholder='Your email'
+        placeholder='Your email*'
         required
       />
       <TextArea
@@ -44,7 +44,7 @@ export const ContactForm = () => {
         value={message.value}
         errorMessage={message.error}
         onChange={handleFieldChange('message')}
-        placeholder='Your message'
+        placeholder='Your message*'
         rows={7}
         required
       />
