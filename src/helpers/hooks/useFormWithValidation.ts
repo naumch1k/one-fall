@@ -143,7 +143,7 @@ export const useFormWithValidation = () => {
         if (!validMessageRegexp.test(trimmedValue))
           return message.PATTERN_MISMATCH
         if (trimmedValue.length < 2) return message.TOO_SHORT
-        if (trimmedValue.length > 500) return message.TOO_LONG
+        if (trimmedValue.length > 1000) return message.TOO_LONG
         break
       default:
         return
