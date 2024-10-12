@@ -1,0 +1,13 @@
+.skeletons {
+  position: relative;
+  height: 100vh;
+}
+
+.bandImage, .skeletonArt {
+  object-fit: cover;
+}
+
+.skeletonArt {
+  width: 100%;
+  height: 100%;
+}
