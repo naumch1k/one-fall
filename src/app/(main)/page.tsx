@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+
 import { Hero } from '@/app/components/Hero/Hero'
+import { Skeletons } from '../components/Skeletons/Skeletons'
 import { About } from '@/app/components/About/About'
 import { Music } from '@/app/components/Music/Music'
 import { Events } from '@/app/components/Events/Events'
@@ -17,6 +19,7 @@ export default function Main() {
   return (
     <>
       <Hero />
+      <Skeletons />
       <About />
       <Music />
       <Events />
