@@ -29,7 +29,6 @@ export const MerchCard = ({
 
   return (
     <div className={styles.root}>
-      <span className={styles.type}>{type}</span>
       <div className={styles.imageWrapper}>
         <Image
           className={styles.image}
