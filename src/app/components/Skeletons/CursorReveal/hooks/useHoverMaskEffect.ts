@@ -1,12 +1,14 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react'
 import { useMotionTemplate, useMotionValue } from 'framer-motion'
 import { useMediaQuery } from '@/helpers/hooks'
+import { Breakpoints } from '@/helpers/constants'
 import { SkeletonsMaskSizes } from '@/helpers/constants/skeletonsMaskSizes'
+import { IMember } from '@/helpers/types'
 
-const { DEFAULT, HOVER_DESKTOP, HOVER_LARGE_DESKTOP } = SkeletonsMaskSizes
+const calculateMaskSize = (hoveredMember: IMember | null, isLargeDesktop: boolean): number => {
+  const { DEFAULT, HOVER_DESKTOP, HOVER_LARGE_DESKTOP } = SkeletonsMaskSizes
 
-const getMaskSize = (isHovered: boolean, isLargeDesktop: boolean): number => {
-  if (!isHovered) return DEFAULT
+  if (!hoveredMember) return DEFAULT
 
   return isLargeDesktop ? HOVER_LARGE_DESKTOP : HOVER_DESKTOP
 }
@@ -24,21 +26,21 @@ const generateMaskImage = (maskSize: number): string => {
   return `url("data:image/svg+xml,${encodedSvg}")`
 }
 
-export const useSkeletonsMask = (isHovered: boolean) => {
-  const isLargeDesktop = useMediaQuery(`(min-width: 2560px)`)
+export const useHoverMaskEffect = (hoveredMember: IMember | null) => {
+  const isLargeDesktop = useMediaQuery(`(min-width: ${Breakpoints.LARGE_DESKTOP}px)`)
   const containerRef = useRef<HTMLDivElement | null>(null)
   const mousePositionRef = useRef({ x: 0, y: 0 })
-  const maskX = useMotionValue(0)
-  const maskY = useMotionValue(0)
+  const maskPositionX = useMotionValue(0)
+  const maskPositionY = useMotionValue(0)
 
   // Determine maskSize
-  const maskSize = getMaskSize(isHovered, isLargeDesktop)
+  const maskSize = calculateMaskSize(hoveredMember, isLargeDesktop)
 
   // Generate the SVG mask based on maskSize
   const maskImage = useMemo(() => generateMaskImage(maskSize), [maskSize])
 
   // Combine maskX and maskY into a single CSS value
-  const maskPosition = useMotionTemplate`${maskX}px ${maskY}px`
+  const maskPosition = useMotionTemplate`${maskPositionX}px ${maskPositionY}px`
 
   // Handle mouse movement over the container
   const updateMaskPosition = useCallback(() => {
@@ -47,10 +49,10 @@ export const useSkeletonsMask = (isHovered: boolean) => {
       const x = mousePositionRef.current.x - rect.left - maskSize / 2
       const y = mousePositionRef.current.y - rect.top - maskSize / 2
 
-      maskX.set(x)
-      maskY.set(y)
+      maskPositionX.set(x)
+      maskPositionY.set(y)
     }
-  }, [maskSize, maskX, maskY])
+  }, [maskSize, maskPositionX, maskPositionY])
 
   const handleMouseMove = useCallback(
     (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -71,5 +73,14 @@ export const useSkeletonsMask = (isHovered: boolean) => {
   // Update mask position when maskSize changes
   useEffect(() =>  updateMaskPosition(), [maskSize, updateMaskPosition])
 
-  return { containerRef, maskImage, maskSize, maskPosition, handleMouseMove }
+  const maskStyles = useMemo(() => ({
+    WebkitMaskPosition: maskPosition,
+    maskPosition,
+    WebkitMaskImage: maskImage,
+    maskImage,
+    WebkitMaskSize: `${maskSize}px ${maskSize}px`,
+    maskSize: `${maskSize}px ${maskSize}px`,
+  }), [maskPosition, maskImage, maskSize])
+
+  return { containerRef, maskStyles, handleMouseMove }
 }

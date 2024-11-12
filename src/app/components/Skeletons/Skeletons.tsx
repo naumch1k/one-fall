@@ -1,10 +1,11 @@
 'use client'
 
+import { CursorReveal } from './CursorReveal/CursorReveal'
 import { useMediaQuery } from '@/helpers/hooks'
-import { SkeletonsCursorReveal } from './CursorReveal/SkeletonsCursorReveal'
+import { Breakpoints } from '@/helpers/constants'
 
 export const Skeletons = () => {
-  const isDesktop = useMediaQuery(`(min-width: 1272px)`)
+  const isDesktop = useMediaQuery(`(min-width: ${Breakpoints.DESKTOP}px)`)
 
-  return isDesktop ? <SkeletonsCursorReveal /> : null
+  return isDesktop ? <CursorReveal /> : null
 }
