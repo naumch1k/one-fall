@@ -2,10 +2,10 @@
   position: relative;
   display: grid;
   align-items: center;
-  grid-template-rows: 320px min-content;
+  grid-template-rows: 252px min-content;
   gap: 40px;
   height: 100%;
-  padding: 49px 24px 24px;
+  padding: 32px 16px 16px;
   border: 1px solid rgb(var(--rgb-border));
   border-radius: 16px;
   overflow: hidden;
@@ -24,27 +24,28 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 8px;
 }
 
 .title {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.2;
   font-weight: 600;
-  text-transform: capitalize;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 
 .description {
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.4;
   color: rgb(var(--rgb-foreground), .9);
 }
 
-.price {
+/* .price {
   margin-left: 6px;
   font-size: 15px;
   line-height: 1.2;
   font-weight: 600;
   text-transform: uppercase;
   color: rgb(var(--rgb-foreground));
-}
+} */

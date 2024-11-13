@@ -43,9 +43,9 @@ export const MerchCard = ({
         <p className={styles.description}>{description}</p>
         {isTablet && (
           <>
-            <p className={styles.description}>
+            {/* <p className={styles.description}>
               Price: <span className={styles.price}>{price} USD</span>
-            </p>
+            </p> */}
             <ArrowLink
               className={styles.link}
               href={purchaseUrl}
