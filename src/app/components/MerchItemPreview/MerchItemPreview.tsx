@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { ArrowLink } from '@/components/ui/ArrowLink/ArrowLink'
 import { IMerchItem } from '@/helpers/types'
 import styles from './MerchItemPreview.module.css'
+import { Button } from '@/components/ui/Button/Button'
 
 export const MerchItemPreview = ({
   title,
@@ -23,7 +24,7 @@ export const MerchItemPreview = ({
         />
       </div>
       <div className={styles.content}>
-        <span className={styles.type}>{type}</span>
+        {/* <span className={styles.type}>{type}</span> */}
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.paragraphs}>
           {fullDescription.map((paragraph: string, index: number) => (
@@ -33,11 +34,15 @@ export const MerchItemPreview = ({
         <p className={styles.paragraph}>
           Price: <span className={styles.price}>{price} USD</span>
         </p>
-        <ArrowLink
+        <Button
           className={styles.link}
+          isLink
           href={purchaseUrl}
-          text='Buy on Bandcamp'
-        />
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          Buy on Bandcamp
+        </Button>
       </div>
     </article>
   )
