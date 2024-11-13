@@ -99,9 +99,9 @@
   gap: 11px;
   margin-top: 7px;
   font-size: 14px;
-  line-height: 19.5px;
+  line-height: 1.4;
   font-weight: 500;
-  color: rgb(var(--rgb-foreground), 0.8);
+  color: rgb(var(--rgb-foreground), .9);
 }
 
 @media screen and (min-width: 768px) {

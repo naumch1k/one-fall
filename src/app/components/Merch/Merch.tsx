@@ -1,19 +1,18 @@
 'use client'
 
-import Image from 'next/image'
 import { List } from '@/components/ui/List/List'
-import { Carousel } from '@/components/ui/Carousel/Carousel'
 import { MerchCard } from '../MerchCard/MerchCard'
+import { MerchItemPreview } from '../MerchItemPreview/MerchItemPreview'
 import { Modal } from '@/components/ui/Modal/Modal'
-import { useFullscreenImageView, useMediaQuery } from '@/helpers/hooks'
+import { useFullscreenImageView } from '@/helpers/hooks'
+import { Button } from '@/components/ui/Button/Button'
 import { IMerchItem } from '@/helpers/types'
 import styles from './Merch.module.css'
 
 import data from './data.json'
 
 export const Merch = () => {
-  const { items } = data
-  const isDesktop = useMediaQuery(`(min-width: 1272px)`)
+  const { items, allMerchUrl } = data
   const {
     isModalOpen,
     closeModal,
@@ -26,23 +25,22 @@ export const Merch = () => {
     <>
       <section data-toc-idx='4' className={styles.root}>
       <h2 className='visuallyHidden'>Merch</h2>
-        {isDesktop ? (
-          <List type='merch-list'>
-            {items.map(item => (
-              <List.Item key={item.id}>
-                <MerchCard {...item} onImageClick={handleImageClick} />
-              </List.Item>
-            ))}
-          </List>
-        ) : (
-          <Carousel
-            border='topBottom'
-            items={items}
-            SlideComponent={item => (
+        <List type='merch-list'>
+          {items.map(item => (
+            <List.Item key={item.id}>
               <MerchCard {...item} onImageClick={handleImageClick} />
-            )}
-          />
-        )}
+            </List.Item>
+          ))}
+        </List>
+        <Button
+          className={styles.button}
+          isLink
+          href={allMerchUrl}
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          View more on Bandcamp
+        </Button>
       </section>
       {currentItemIndex !== undefined && (
         <Modal
@@ -51,13 +49,7 @@ export const Merch = () => {
           onClose={closeModal}
           onBackdropClick={closeByBackdropClick}
         >
-          <Image
-            className={styles.modalImage}
-            src={items[currentItemIndex].imageUrl}
-            alt={items[currentItemIndex].title}
-            width={500}
-            height={500}
-          />
+          <MerchItemPreview {...items[currentItemIndex]} />
         </Modal>
       )}
     </>

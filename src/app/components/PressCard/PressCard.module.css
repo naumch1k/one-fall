@@ -25,15 +25,18 @@
 }
 
 .title {
-  font-weight: 600;
   font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: rgb(var(--rgb-foreground));
 }
 
 .outline {
-  color: rgb(var(--rgb-foreground), 0.9);
+  font-size: 15px;
+  line-height: 1.4;
+  color: rgb(var(--rgb-foreground), .9);
 }
 
 .imgWrapper {

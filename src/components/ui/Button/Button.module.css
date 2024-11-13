@@ -21,6 +21,7 @@
 .primary {
   color: rgb(var(--rgb-background));
   background-color: rgb(var(--rgb-accent));
+  border: none;
 }
 
 .secondary {
@@ -44,7 +45,6 @@
     box-shadow: 
       0px 0px 0px 2px rgb(var(--rgb-background)),
       0px 0px 0px 3px rgb(var(--rgb-accent));
-
   }
 
   .secondary:not(:disabled):hover,
